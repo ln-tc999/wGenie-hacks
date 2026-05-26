@@ -33,7 +33,7 @@ interface BuildProposalParams {
 /**
  * Build a unified TransactionProposalOutput from an action creation result.
  * Handles simulation, action list assembly, and output formatting.
- * Used by all 6 action creation tools (alpha + yo-treasury).
+ * Used by all 6 action creation tools (alpha + wgenie-cfo).
  */
 export async function buildTransactionProposal({
   newAction,
