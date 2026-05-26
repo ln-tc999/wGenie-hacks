@@ -29,7 +29,7 @@ export interface SimulationInput {
   chainId: number;
   callerAddress: string;
   flatFuseActions: Array<{ fuse: string; data: string }>;
-  /** Extra token addresses to include in balance snapshots (e.g. YO vault underlyings) */
+  /** Extra token addresses to include in balance snapshots (e.g. Mantle vault underlyings) */
   additionalTokenAddresses?: string[];
 }
 
