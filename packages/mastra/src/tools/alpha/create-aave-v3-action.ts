@@ -5,7 +5,7 @@ import { PlasmaVault, AaveV3 } from '@wgenie/fusion-sdk';
 import { getPublicClient } from '../plasma-vault/utils/viem-clients';
 import { buildTransactionProposal, transactionProposalOutputSchema } from './build-transaction-proposal';
 import { formatTokenAmount } from './format-amount';
-import { existingActionSchema } from '../yo-treasury/types';
+import { existingActionSchema } from '../wgenie-cfo/types';
 
 export const createAaveV3ActionTool = createTool({
   id: 'create-aave-v3-action',
