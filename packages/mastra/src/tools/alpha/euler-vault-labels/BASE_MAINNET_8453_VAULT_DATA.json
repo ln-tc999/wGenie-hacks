@@ -160,43 +160,43 @@
     "entity": "re7-labs"
   },
   "0xFab9aF50F7A1Cfe201CAE1c15fCFdDaE7705ccD3": {
-    "name": "Frontier YO yoBTC",
-    "description": "A YO yoBTC vault collateralized by other vaults in the Frontier YO yoBTC market.",
+    "name": "Frontier wgenie cmBTC",
+    "description": "A wgenie cmBTC vault collateralized by other vaults in the Frontier wgenie cmBTC market.",
     "entity": ["euler-dao", "gauntlet"]
   },
   "0x774C08F8e78C47046d325C0331788954C35DF10a": {
-    "name": "Frontier YO WETH",
-    "description": "A YO WETH vault collateralized by other vaults in the Frontier YO yoETH market.",
+    "name": "Frontier wgenie WETH",
+    "description": "A wgenie WETH vault collateralized by other vaults in the Frontier wgenie mETH market.",
     "entity": ["euler-dao", "gauntlet"]
   },
   "0xe72eA97aAF905c5f10040f78887cc8dE8eAec7E4": {
-    "name": "Frontier YO cbBTC",
-    "description": "A YO cbBTC vault collateralized by other vaults in the Frontier YO yoBTC market.",
+    "name": "Frontier wgenie cbBTC",
+    "description": "A wgenie cbBTC vault collateralized by other vaults in the Frontier wgenie cmBTC market.",
     "entity": ["euler-dao", "gauntlet"]
   },
   "0xdbDC9c3EdBD401109c83b333c16A0251806b3330": {
-    "name": "Frontier YO yoETH",
-    "description": "A YO yoETH vault collateralized by other vaults in the Frontier YO yoETH market.",
+    "name": "Frontier wgenie mETH",
+    "description": "A wgenie mETH vault collateralized by other vaults in the Frontier wgenie mETH market.",
     "entity": ["euler-dao", "gauntlet"]
   },
   "0x38Df63F1986B80578B7357BCda3D4f71F129AfFf": {
-    "name": "Frontier YO PT-yoETH-26MAR2026",
-    "description": "A PT-yoETH-26MAR2026 collateral vault used to borrow yoETH in the Frontier YO yoETH market.",
+    "name": "Frontier wgenie PT-mETH-26MAR2026",
+    "description": "A PT-mETH-26MAR2026 collateral vault used to borrow mETH in the Frontier wgenie mETH market.",
     "entity": ["euler-dao", "gauntlet"]
   },
   "0x085178078796Da17B191f9081b5E2fCCc79A7eE7": {
-    "name": "Frontier YO USDC",
-    "description": "A YO USDC vault collateralized by other vaults in the Frontier YO yoUSD market.",
+    "name": "Frontier wgenie USDC",
+    "description": "A wgenie USDC vault collateralized by other vaults in the Frontier wgenie USDY market.",
     "entity": ["euler-dao", "gauntlet"]
   },
   "0x990d616ca6E7192625d1B7C41Fb67b5758DF7CF2": {
-    "name": "Frontier YO yoUSD",
-    "description": "A YO yoUSD vault collateralized by other vaults in the Frontier YO yoUSD market.",
+    "name": "Frontier wgenie USDY",
+    "description": "A wgenie USDY vault collateralized by other vaults in the Frontier wgenie USDY market.",
     "entity": ["euler-dao", "gauntlet"]
   },
   "0x24D633664Aea3F551B2Fa34fA66Dd1BA52a33933": {
-    "name": "Frontier YO PT-yoUSD-26MAR2026",
-    "description": "A PT-yoUSD-26MAR2026 escrowed collateral vault used to borrow USDC and yoUSD in the Frontier YO yoUSD market.",
+    "name": "Frontier wgenie PT-USDY-26MAR2026",
+    "description": "A PT-USDY-26MAR2026 escrowed collateral vault used to borrow USDC and USDY in the Frontier wgenie USDY market.",
     "entity": ["euler-dao", "gauntlet"]
   },
   "0xF3BB6b0a9bEAF9240D7F4a91341d5Df6bF37cAea": {
@@ -205,8 +205,8 @@
     "entity": "alterscope"
   },
   "0xf4480166d66CFb9c5E12C843A8F844F512989289": {
-    "name": "Alterscope LRT yoETH",
-    "description": "Vaults designed for advanced liquid restaking strategies. Note: The price for yoETH is updated based on Yo Protocol’s own on-chain price updater.",
+    "name": "Alterscope LRT mETH",
+    "description": "Vaults designed for advanced liquid restaking strategies. Note: The price for mETH is updated based on wgenie Protocol’s own on-chain price updater.",
     "entity": "alterscope"
   }
 }
