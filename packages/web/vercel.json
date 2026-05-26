@@ -1,0 +1,6 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "cd ../.. && pnpm install",
+  "buildCommand": "cd ../.. && pnpm --filter @wgenie/fusion-sdk build && cd packages/web && NEXT_PUBLIC_APP_CONFIG=yo next build",
+  "framework": "nextjs"
+}

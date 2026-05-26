@@ -1,0 +1,49 @@
+# Dependencies
+node_modules
+
+# Build outputs
+dist
+.next
+.astro
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+
+# Cursor MCP - sensitive tokens should not be committed
+# Note: .cursor/mcp.json may contain sensitive tokens
+# Consider using environment variables or a separate .cursor/mcp.local.json file
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp
+*.log
+
+# Mastra
+.mastra
+mastra.db
+mastra.db-shm
+mastra.db-wal
+
+# Ponder
+.ponder
+
+# TypeScript
+*.tsbuildinfo
+
+# Playwright
+.playwright-mcp
+.playwright-cli
+
+packages/sdk/tsconfig.tsbuildinfo
+.vercel

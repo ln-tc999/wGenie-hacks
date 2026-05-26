@@ -1,0 +1,23 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Project Structure
+
+When introducing changes to the project, always follow the directory structure below:
+
+- `./src` - source code
+- `./src/api` - Hono server configuration and REST api endpoints
+- `./src/assets` - code realated to erc20 assets
+- `./src/vaults` - code realated to erc4626 vaults
+- `./src/utils` - other code
+- `./ponder.config.ts` - Ponder app config with configuration for chains, indexed smart contracts and database connection
+- `./abis.ts` - ABI files
+- `./containers` - Docker containers related files
+
+When modifying the directory structure, always update this structure.
+
+
+
+

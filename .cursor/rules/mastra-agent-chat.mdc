@@ -1,0 +1,18 @@
+---
+description: Rules for testing agents in Mastra Studio browser chat interface
+globs:
+alwaysApply: true
+---
+
+# CRITICAL: Read Before Browser Actions
+
+## Mastra Agent Chat (ALWAYS FOLLOW)
+
+When testing agents in Mastra Studio:
+
+1. **Agent CAN** type messages into the chat input field
+2. **Agent CANNOT submit** - the browser automation cannot reliably click Send or press Enter, technical limitation
+3. **ALWAYS ask user** to press Enter or click the Send button after typing a message in mastra agent chat
+4. After user submits, wait and take a snapshot to see the agent's response
+
+This applies to ALL agent testing sessions. Never attempt to submit messages automatically.

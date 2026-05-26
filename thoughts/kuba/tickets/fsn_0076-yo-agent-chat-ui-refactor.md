@@ -1,0 +1,24 @@
+# Refactor YO Treasury agent
+
+- http://localhost:3000/vaults/8453/0x09d1C2E03F73853916Ee86b4e1A729F9FbAA960D
+- I want to refactor:
+  - packages/web/src/yo-treasury/components/treasury-chat.tsx
+  - packages/web/src/yo-treasury/components/yo-tool-renderer.tsx
+  - packages/mastra/src/agents/yo-treasury-agent.ts
+  - packages/mastra/src/agents/alpha-agent.ts
+  - packages/web/src/vault-details/components/alpha-tool-renderer.tsx
+- I want to keep all tools displayed in both chats (alpha, yo-treasury) in `packages/web/src/app/alpha/tools` folder
+- That's shared directory for all tools output to display in the chat
+- All these features are part of Fusion Alpha functionality
+- A single tool is each switch statement case
+- Separate subfolder for each tools `packages/web/src/app/alpha/tools/<tool-name>`, whitch contains:
+  - tool component
+  - tool component stories
+  - other possible files
+- Create storybook stories for each tool - I want to easily explore what UI of each tools looks like and what it does
+- Stories should be well documented, it should be a raport of what is purpose if each feature
+- Analyze all the tools
+- Identify issues and parts that could be refactored
+- Prepare comprehansive refactor plan for both - yo and fusion alpha
+- I want to keep it as two separate agents on Mastra side but 
+- Refactor should cover also on Mastra (backend) side

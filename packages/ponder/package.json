@@ -1,0 +1,51 @@
+{
+  "name": "@wgenie/fusion-ponder",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.14"
+  },
+  "scripts": {
+    "dev": "ponder dev",
+    "start": "ponder start",
+    "db": "ponder db",
+    "codegen": "ponder codegen",
+    "serve": "ponder serve",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@wgenie/fusion-sdk": "workspace:*",
+    "date-fns": "4.1.0",
+    "hono": "4.8.3",
+    "ponder": "0.16.3",
+    "remeda": "2.25.0",
+    "viem": "2.45.1",
+    "zod": "4.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "24.0.4",
+    "eslint": "^8.57.0",
+    "eslint-config-ponder": "0.16.3",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-prettier": "5.5.3",
+    "husky": "9.1.7",
+    "lint-staged": "16.1.2",
+    "prettier": "3.6.2",
+    "typescript": "5.8.3",
+    "vitest": "3.2.4"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+name: defi-panda-ponder
+
+services:
+  defi-panda-ponder-postgres:
+    container_name: defi-panda-ponder-postgres
+    image: postgres:17.2-alpine3.21
+    restart: always
+    command: -c 'max_connections=200'
+    ports:
+      - '7433:5432'
+    stop_grace_period: 30s
+    volumes:
+      - defi-panda-ponder-postgres-data:/var/lib/postgresql/data
+    environment:
+      - TZ=${TIMEZONE}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    networks:
+      - defi-panda-ponder-net
+
+volumes:
+  defi-panda-ponder-postgres-data:
+    name: defi-panda-ponder-postgres-data
+    driver: local
+
+networks:
+  defi-panda-ponder-net:
+    name: defi-panda-ponder-net
+    driver: bridge
+    ipam:
+      config:
+        - subnet: '${SUBNET_IP}/16'
+          gateway: '${GATEWAY_IP}'

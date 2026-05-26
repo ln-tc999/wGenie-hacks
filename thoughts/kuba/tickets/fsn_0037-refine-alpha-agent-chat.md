@@ -1,0 +1,25 @@
+# Refine Alpha agent chat
+
+- Simulate on fork after each actions modification ALWAYS - integrated into the tool - probably separate component for simulation is no longer needed
+- Always use anvil simulation don't fallback to simple stattic cals
+- Improve chat components:
+  - use protocol icons
+  - Use correct market labels
+  - use token icons
+  - identify other parts to improve, be creative
+- Look how it's done in http://localhost:8088/fusion/base/0xa13f7342a1db4c32f8dc0539e3b6d1cf101e7d04 use Playwright MCP to inspect that page - Credit Markets and ERC20 Tokens
+- Look for the code in /Users/kuba/wgenie-labs/wgenie-webapp/src
+- Vault for testing 0xa13f7342a1db4c32f8dc0539e3b6d1cf101e7d04 on base 
+- Account for testing 0x35b4915b0fCA6097167fAa8340D3af3E51AA3841 - this is alpha, you can execute transactions
+- Test in browser using Playwright MCP, test web app http://localhost:3000/vaults/8453/0xa13f7342a1db4c32f8dc0539e3b6d1cf101e7d04/alpha
+- Test following cases
+  - small deposit to each of available markets
+  - small withdraw of each market
+  - Test single actions to identify issue source
+- Check if simulation result is correct
+- Identify issues and fix, transactions should pass, if you see transaction errors identify what's wrong and fix
+- If tools responds with json data - messages should be brief - alpha agent should't duplicate informations from the json output - just brief summary.
+- Before you test in browser run in background
+  - `pnpm dev:web`
+  - `pnpm dev:mastra`
+- IMPORTANT: fix any issue you identify, if you can't write them into next ticket

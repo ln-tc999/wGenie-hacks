@@ -1,0 +1,908 @@
+- generic [active] [ref=e1]:
+  - alert [ref=e2]: yoUSD Vault | YO Protocol
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - navigation [ref=e7]:
+          - generic [ref=e422]:
+            - link "YO" [ref=e423] [cursor=pointer]:
+              - /url: /
+              - img "YO" [ref=e424]
+            - generic [ref=e425]:
+              - button "Feedback" [ref=e426] [cursor=pointer]:
+                - img
+                - text: Feedback
+              - link "Rewards" [ref=e427] [cursor=pointer]:
+                - /url: /rewards
+              - 'button "TOTAL TVL: $63.35m" [ref=e2098] [cursor=pointer]':
+                - heading "TOTAL TVL:" [level=5] [ref=e429]
+                - heading "$63.35m" [level=5] [ref=e2099]
+              - button "Connect Wallet" [ref=e431] [cursor=pointer]
+        - separator [ref=e19]
+        - main [ref=e20]:
+          - generic [ref=e456]:
+            - generic [ref=e457]:
+              - generic [ref=e461]:
+                - img "Dollar" [ref=e463]
+                - heading "yoUSD" [level=2] [ref=e466]
+              - generic [ref=e467]:
+                - tablist [ref=e469]:
+                  - tab "Overview" [selected] [ref=e470] [cursor=pointer]
+                  - tab "Rewards" [ref=e471] [cursor=pointer]
+                  - tab "Vault breakdown" [ref=e472] [cursor=pointer]
+                  - tab "Performance" [ref=e473] [cursor=pointer]
+                  - tab "Rebalancing" [ref=e474] [cursor=pointer]
+                  - tab "Vault activity" [ref=e475] [cursor=pointer]
+                - separator [ref=e476]
+            - generic [ref=e478]:
+              - generic [ref=e481]:
+                - generic [ref=e485]:
+                  - generic [ref=e486]:
+                    - img "YO Token" [ref=e487]
+                    - paragraph [ref=e488]:
+                      - generic [ref=e489]: $YO airdrop is live
+                      - generic [ref=e490]: The yield engine for crypto. Claim your $YO allocation!
+                  - link "CLAIM" [ref=e492] [cursor=pointer]:
+                    - /url: /claim
+                    - button "CLAIM" [ref=e493]
+                - generic [ref=e494]:
+                  - generic [ref=e495]:
+                    - generic [ref=e496]:
+                      - generic [ref=e497]:
+                        - heading "7D APY" [level=5] [ref=e498]:
+                          - button "7D APY" [ref=e499] [cursor=pointer]:
+                            - text: 7D APY
+                            - img [ref=e500]
+                        - generic [ref=e502]:
+                          - text: 19.56%
+                          - generic [ref=e503]: ✨
+                      - generic [ref=e504]:
+                        - heading "APY Rank" [level=5] [ref=e505]:
+                          - button "APY Rank" [ref=e506] [cursor=pointer]:
+                            - text: APY Rank
+                            - img [ref=e507]
+                        - generic [ref=e509]: Top 16%
+                    - img [ref=e514]
+                  - generic [ref=e639]:
+                    - generic [ref=e640]:
+                      - heading "TVL" [level=5] [ref=e641]
+                      - paragraph [ref=e642]: $36.07m
+                    - generic [ref=e646]:
+                      - img [ref=e647]
+                      - generic:
+                        - generic:
+                          - generic: Jun 25, 2025
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - generic: TVL
+                                - generic: $12.38m • 12.38m USDC
+                - generic [ref=e652]:
+                  - generic [ref=e654]:
+                    - heading "YIELD SOURCES" [level=5] [ref=e655]:
+                      - button "YIELD SOURCES" [ref=e656] [cursor=pointer]:
+                        - text: YIELD SOURCES
+                        - img [ref=e657]
+                    - paragraph [ref=e659]:
+                      - generic [ref=e660]: "52"
+                  - generic [ref=e662]:
+                    - heading "INSTANT REDEMPTIONS" [level=5] [ref=e663]:
+                      - button "INSTANT REDEMPTIONS" [ref=e664] [cursor=pointer]:
+                        - text: INSTANT REDEMPTIONS
+                        - img [ref=e665]
+                    - paragraph [ref=e667]:
+                      - generic [ref=e668]: 2,520,708 USDC
+                  - generic [ref=e670]:
+                    - heading "FEE" [level=5] [ref=e671]
+                    - paragraph [ref=e672]:
+                      - generic [ref=e673]: 0%
+                  - generic [ref=e675]:
+                    - heading "PRICE" [level=5] [ref=e676]
+                    - paragraph [ref=e677]:
+                      - generic [ref=e678]:
+                        - generic [ref=e679]: 1 yoUSD
+                        - img [ref=e681]
+                        - generic [ref=e684]: 1.0690 USD
+              - region "How it works" [ref=e685]:
+                - generic [ref=e686]:
+                  - heading "How it works" [level=2] [ref=e687]
+                  - generic [ref=e688]:
+                    - list [ref=e691]:
+                      - listitem [ref=e692]:
+                        - generic [ref=e693]: "1"
+                        - paragraph [ref=e694]: YO continuously reallocates your assets across chains and protocols to maximize yield.
+                      - listitem [ref=e695]:
+                        - generic [ref=e696]: "2"
+                        - paragraph [ref=e697]: YO tracks the best risk-adjusted yield across chains so your assets are in the right place.
+                      - listitem [ref=e698]:
+                        - generic [ref=e699]: "3"
+                        - paragraph [ref=e700]: Because bridging may be needed, withdrawals can take up to 24h.
+                    - generic [ref=e701]:
+                      - heading "HELPFUL LINKS" [level=5] [ref=e702]
+                      - 'link "Token Address: 0x0000...8a65" [ref=e703] [cursor=pointer]':
+                        - /url: https://basescan.org/address/0x0000000f2eB9f69274678c76222B35eEc7588a65
+                        - generic [ref=e704]: "Token Address:"
+                        - text: 0x0000...8a65
+                        - img [ref=e705]
+                      - button "Dollar Add token to wallet" [ref=e709] [cursor=pointer]:
+                        - generic [ref=e710]:
+                          - img "Dollar"
+                        - text: Add token to wallet
+                      - link "CoinGecko CoinGecko" [ref=e711] [cursor=pointer]:
+                        - /url: https://www.coingecko.com/en/coins/yield-optimizer-usd
+                        - img "CoinGecko" [ref=e712]
+                        - text: CoinGecko
+                        - img [ref=e713]
+                      - link "DeBank Debank" [ref=e717] [cursor=pointer]:
+                        - /url: https://debank.com/profile/0x0000000f2eB9f69274678c76222B35eEc7588a65
+                        - img "DeBank" [ref=e718]
+                        - text: Debank
+                        - img [ref=e719]
+                      - link "Octav Octav" [ref=e723] [cursor=pointer]:
+                        - /url: https://pro.octav.fi/?addresses=0x0000000f2eB9f69274678c76222B35eEc7588a65
+                        - img "Octav" [ref=e724]
+                        - text: Octav
+                        - img [ref=e725]
+                      - link "Portals Portals" [ref=e729] [cursor=pointer]:
+                        - /url: https://explorer.portals.fi/yield/base:0x0000000f2eB9f69274678c76222B35eEc7588a65
+                        - img "Portals" [ref=e730]
+                        - text: Portals
+                        - img [ref=e731]
+              - region "Rewards" [ref=e735]:
+                - generic [ref=e736]:
+                  - heading "Rewards" [level=2] [ref=e737]
+                  - generic [ref=e738]:
+                    - generic [ref=e740]:
+                      - paragraph [ref=e742]: 4 campaigns
+                      - link "Dollar Deposit into yoUSD REWARD YIELD 14.00% ACTION Deposit & hold PROTOCOL yo" [ref=e743] [cursor=pointer]:
+                        - /url: /vault/base/0x0000000f2eB9f69274678c76222B35eEc7588a65
+                        - generic [ref=e744]:
+                          - img "Dollar" [ref=e746]
+                          - generic [ref=e751]: Deposit into yoUSD
+                        - generic [ref=e752]:
+                          - paragraph [ref=e753]: REWARD YIELD
+                          - generic [ref=e755]: 14.00%
+                        - generic [ref=e756]:
+                          - paragraph [ref=e757]: ACTION
+                          - generic [ref=e759]: Deposit & hold
+                        - generic [ref=e760]:
+                          - paragraph [ref=e761]: PROTOCOL
+                          - generic [ref=e763]: yo
+                        - img [ref=e765]
+                      - link "Dollar LP in Pendle yoUSD | 26MAR2026 REWARD YIELD 4.17% ACTION Provide Liquidity PROTOCOL Pendle" [ref=e767] [cursor=pointer]:
+                        - /url: https://app.pendle.finance/trade/pools/0xa679ce6d07cbe579252f0f9742fc73884b1c611c/zap/in?chain=base
+                        - generic [ref=e768]:
+                          - img "Dollar" [ref=e770]
+                          - generic [ref=e773]:
+                            - generic [ref=e775]: LP in Pendle
+                            - generic [ref=e776]: yoUSD | 26MAR2026
+                        - generic [ref=e777]:
+                          - paragraph [ref=e778]: REWARD YIELD
+                          - generic [ref=e780]: 4.17%
+                        - generic [ref=e781]:
+                          - paragraph [ref=e782]: ACTION
+                          - generic [ref=e784]: Provide Liquidity
+                        - generic [ref=e785]:
+                          - paragraph [ref=e786]: PROTOCOL
+                          - generic [ref=e788]: Pendle
+                        - img [ref=e790]
+                      - link "Dollar Hold YT yoUSD | 26MAR2026 REWARD YIELD 927.47% ACTION Deposit & hold PROTOCOL Pendle" [ref=e792] [cursor=pointer]:
+                        - /url: https://app.pendle.finance/trade/markets/0xa679ce6d07cbe579252f0f9742fc73884b1c611c/swap?view=yt&chain=base
+                        - generic [ref=e793]:
+                          - img "Dollar" [ref=e795]
+                          - generic [ref=e798]:
+                            - generic [ref=e800]: Hold YT
+                            - generic [ref=e801]: yoUSD | 26MAR2026
+                        - generic [ref=e802]:
+                          - paragraph [ref=e803]: REWARD YIELD
+                          - generic [ref=e805]: 927.47%
+                        - generic [ref=e806]:
+                          - paragraph [ref=e807]: ACTION
+                          - generic [ref=e809]: Deposit & hold
+                        - generic [ref=e810]:
+                          - paragraph [ref=e811]: PROTOCOL
+                          - generic [ref=e813]: Pendle
+                        - img [ref=e815]
+                      - link "Dollar Stake Pendle LP Equilibria yoUSD | 26MAR2026 REWARD YIELD 4.61% ACTION Staking PROTOCOL equilibria" [ref=e817] [cursor=pointer]:
+                        - /url: https://equilibria.fi/stake
+                        - generic [ref=e818]:
+                          - img "Dollar" [ref=e820]
+                          - generic [ref=e823]:
+                            - generic [ref=e825]: Stake Pendle LP
+                            - generic [ref=e826]: Equilibria yoUSD | 26MAR2026
+                        - generic [ref=e827]:
+                          - paragraph [ref=e828]: REWARD YIELD
+                          - generic [ref=e830]: 4.61%
+                        - generic [ref=e831]:
+                          - paragraph [ref=e832]: ACTION
+                          - generic [ref=e834]: Staking
+                        - generic [ref=e835]:
+                          - paragraph [ref=e836]: PROTOCOL
+                          - generic [ref=e838]: equilibria
+                        - img [ref=e840]
+                    - link "View all Rewards" [ref=e844] [cursor=pointer]:
+                      - /url: /vault/base/0x0000000f2eB9f69274678c76222B35eEc7588a65/rewards
+              - region "Vault breakdown" [ref=e846]:
+                - generic [ref=e847]:
+                  - heading "Vault breakdown share on x" [level=2] [ref=e848]:
+                    - text: Vault breakdown
+                    - button "share on x" [ref=e849] [cursor=pointer]:
+                      - text: share on
+                      - img "x" [ref=e850]
+                  - generic [ref=e855]:
+                    - tablist [ref=e856]:
+                      - tab "Yield source" [selected] [ref=e857] [cursor=pointer]
+                      - tab "Protocol" [ref=e858] [cursor=pointer]
+                      - tab "Chain" [ref=e859] [cursor=pointer]
+                    - paragraph [ref=e860]:
+                      - text: Yield data by
+                      - link "Vaults.fyi" [ref=e861] [cursor=pointer]:
+                        - /url: https://vaults.fyi/
+                      - text: "& public sources"
+                    - tabpanel "Yield source" [ref=e862]:
+                      - generic [ref=e864]:
+                        - generic [ref=e866]:
+                          - img [ref=e870]:
+                            - generic [ref=e871]:
+                              - img [ref=e873]
+                              - img [ref=e875]
+                              - img [ref=e877]
+                              - img [ref=e879]
+                              - img [ref=e881]
+                              - img [ref=e883]
+                              - img [ref=e885]
+                              - img [ref=e887]
+                              - img [ref=e889]
+                              - img [ref=e891]
+                              - img [ref=e893]
+                              - img [ref=e895]
+                              - img [ref=e897]
+                              - img [ref=e899]
+                              - img [ref=e901]
+                              - img [ref=e903]
+                              - img [ref=e905]
+                              - img [ref=e907]
+                          - generic [ref=e908]:
+                            - heading "7D APY" [level=5] [ref=e909]
+                            - generic [ref=e910]: 5.56%
+                        - generic [ref=e911]:
+                          - generic [ref=e912]:
+                            - link "Auto baseUSD base ALLOCATION 16.05% RISK Moderate YIELD 4.20%" [ref=e913] [cursor=pointer]:
+                              - /url: https://app.auto.finance/pools/baseUSD
+                              - generic [ref=e916]:
+                                - generic [ref=e917]: Auto baseUSD
+                                - paragraph [ref=e918]: base
+                              - generic [ref=e919]:
+                                - generic [ref=e920]:
+                                  - paragraph [ref=e921]: ALLOCATION
+                                  - generic [ref=e923]: 16.05%
+                                - generic [ref=e924]:
+                                  - paragraph [ref=e925]: RISK
+                                  - generic [ref=e927]: Moderate
+                                - generic [ref=e928]:
+                                  - paragraph [ref=e929]: YIELD
+                                  - generic [ref=e931]: 4.20%
+                              - img [ref=e934]
+                            - link "Morpho Re Ecosystem USDC ethereum ALLOCATION 10.84% RISK Low YIELD 7.24%" [ref=e936] [cursor=pointer]:
+                              - /url: https://app.morpho.org/ethereum/vault/0xD1E9242e075Db4bdd3f3c721D7d5fd4180A94A7e/re-ecosystem-vault
+                              - generic [ref=e939]:
+                                - generic [ref=e940]: Morpho Re Ecosystem USDC
+                                - paragraph [ref=e941]: ethereum
+                              - generic [ref=e942]:
+                                - generic [ref=e943]:
+                                  - paragraph [ref=e944]: ALLOCATION
+                                  - generic [ref=e946]: 10.84%
+                                - generic [ref=e947]:
+                                  - paragraph [ref=e948]: RISK
+                                  - generic [ref=e950]: Low
+                                - generic [ref=e951]:
+                                  - paragraph [ref=e952]: YIELD
+                                  - generic [ref=e954]: 7.24%
+                              - img [ref=e957]
+                            - link "Morpho V2 Sentora PYUSD ethereum ALLOCATION 10.44% RISK Low YIELD 6.05%" [ref=e959] [cursor=pointer]:
+                              - /url: https://app.morpho.org/ethereum/vault/0xb576765fB15505433aF24FEe2c0325895C559FB2/sentora-pyusd-main
+                              - generic [ref=e962]:
+                                - generic [ref=e963]: Morpho V2 Sentora PYUSD
+                                - paragraph [ref=e964]: ethereum
+                              - generic [ref=e965]:
+                                - generic [ref=e966]:
+                                  - paragraph [ref=e967]: ALLOCATION
+                                  - generic [ref=e969]: 10.44%
+                                - generic [ref=e970]:
+                                  - paragraph [ref=e971]: RISK
+                                  - generic [ref=e973]: Low
+                                - generic [ref=e974]:
+                                  - paragraph [ref=e975]: YIELD
+                                  - generic [ref=e977]: 6.05%
+                              - img [ref=e980]
+                            - link "Morpho PT-sNUSD-4MAR2026/USDC ethereum ALLOCATION 9.48% RISK Low YIELD 7.16%" [ref=e982] [cursor=pointer]:
+                              - /url: https://app.morpho.org/ethereum/market/0x2a9a5c436719badcfadbad3ad8e8179a160ded758603eaa03a883f922a1790d3/pt-snusd-5mar2026-usdc?subTab=advanced
+                              - generic [ref=e985]:
+                                - generic [ref=e986]: Morpho PT-sNUSD-4MAR2026/USDC
+                                - paragraph [ref=e987]: ethereum
+                              - generic [ref=e988]:
+                                - generic [ref=e989]:
+                                  - paragraph [ref=e990]: ALLOCATION
+                                  - generic [ref=e992]: 9.48%
+                                - generic [ref=e993]:
+                                  - paragraph [ref=e994]: RISK
+                                  - generic [ref=e996]: Low
+                                - generic [ref=e997]:
+                                  - paragraph [ref=e998]: YIELD
+                                  - generic [ref=e1000]: 7.16%
+                              - img [ref=e1003]
+                            - link "InfiniFi liUSD 1-week ethereum ALLOCATION 7.67% RISK Moderate YIELD 4.79%" [ref=e1005] [cursor=pointer]:
+                              - /url: https://app.infinifi.xyz/lock
+                              - generic [ref=e1008]:
+                                - generic [ref=e1009]: InfiniFi liUSD 1-week
+                                - paragraph [ref=e1010]: ethereum
+                              - generic [ref=e1011]:
+                                - generic [ref=e1012]:
+                                  - paragraph [ref=e1013]: ALLOCATION
+                                  - generic [ref=e1015]: 7.67%
+                                - generic [ref=e1016]:
+                                  - paragraph [ref=e1017]: RISK
+                                  - generic [ref=e1019]: Moderate
+                                - generic [ref=e1020]:
+                                  - paragraph [ref=e1021]: YIELD
+                                  - generic [ref=e1023]: 4.79%
+                              - img [ref=e1026]
+                          - link "View all yield sources" [ref=e1031] [cursor=pointer]:
+                            - /url: /vault/base/0x0000000f2eB9f69274678c76222B35eEc7588a65/vault-breakdown?tab=pool
+                  - generic [ref=e1034]:
+                    - generic [ref=e1036]:
+                      - heading "MAX % PER YIELD SOURCE" [level=5] [ref=e1037]:
+                        - button "MAX % PER YIELD SOURCE" [ref=e1038] [cursor=pointer]:
+                          - text: MAX % PER YIELD SOURCE
+                          - img [ref=e1039]
+                      - paragraph [ref=e1041]:
+                        - generic [ref=e1042]: 50%
+                    - generic [ref=e1044]:
+                      - heading "MAX % PER PROTOCOL" [level=5] [ref=e1045]:
+                        - button "MAX % PER PROTOCOL" [ref=e1046] [cursor=pointer]:
+                          - text: MAX % PER PROTOCOL
+                          - img [ref=e1047]
+                      - paragraph [ref=e1049]:
+                        - generic [ref=e1050]: 70%
+                    - generic [ref=e1052]:
+                      - heading "MAX % FIXED MATURITY" [level=5] [ref=e1053]
+                      - paragraph [ref=e1054]:
+                        - generic [ref=e1055]: 40%
+                    - generic [ref=e1057]:
+                      - heading "MAX % PER CHAIN" [level=5] [ref=e1058]:
+                        - button "MAX % PER CHAIN" [ref=e1059] [cursor=pointer]:
+                          - text: MAX % PER CHAIN
+                          - img [ref=e1060]
+                      - paragraph [ref=e1062]:
+                        - generic [ref=e1063]: 100%
+                    - generic [ref=e1065]:
+                      - heading "MAX % PER RISK RATING" [level=5] [ref=e1066]:
+                        - button "MAX % PER RISK RATING" [ref=e1067] [cursor=pointer]:
+                          - text: MAX % PER RISK RATING
+                          - img [ref=e1068]
+                      - paragraph [ref=e1070]:
+                        - generic [ref=e1071]: 100%
+                    - generic [ref=e1073]:
+                      - heading "NUMBER OF YIELD SOURCES" [level=5] [ref=e1074]
+                      - paragraph [ref=e1075]:
+                        - generic [ref=e1076]: "52"
+              - region "Performance" [ref=e1077]:
+                - generic [ref=e1078]:
+                  - heading "Performance" [level=2] [ref=e1079]
+                  - generic [ref=e1080]:
+                    - generic [ref=e1082]:
+                      - generic [ref=e1084]:
+                        - generic [ref=e1085]:
+                          - heading "SHARE PRICE" [level=5] [ref=e1086]
+                          - paragraph [ref=e1087]: 1.068917 USDC
+                        - img [ref=e1092]
+                      - generic [ref=e1102]:
+                        - generic [ref=e1104]:
+                          - heading "7D PERFORMANCE" [level=5] [ref=e1105]
+                          - paragraph [ref=e1106]:
+                            - generic [ref=e1107]: 0.08%
+                        - generic [ref=e1109]:
+                          - heading "30D PERFORMANCE" [level=5] [ref=e1110]
+                          - paragraph [ref=e1111]:
+                            - generic [ref=e1112]: 0.39%
+                        - generic [ref=e1114]:
+                          - heading "ALL TIME PERFORMANCE" [level=5] [ref=e1115]
+                          - paragraph [ref=e1116]:
+                            - generic [ref=e1117]: 6.89%
+                      - generic [ref=e1119]:
+                        - generic [ref=e1120]: Compare to
+                        - button "Aave V3 USDC" [ref=e1121] [cursor=pointer]: Aave V3 USDC
+                        - button "Ethena sUSDe" [ref=e1123] [cursor=pointer]: Ethena sUSDe
+                        - button "Sky sUSDS" [ref=e1125] [cursor=pointer]: Sky sUSDS
+                    - link "View detailed performance" [ref=e1129] [cursor=pointer]:
+                      - /url: /vault/base/0x0000000f2eB9f69274678c76222B35eEc7588a65/performance
+              - region "Rebalancing" [ref=e1131]:
+                - generic [ref=e1132]:
+                  - heading "Rebalancing" [level=2] [ref=e1133]
+                  - generic [ref=e1134]:
+                    - img [ref=e1140]:
+                      - generic [ref=e1142]:
+                        - generic [ref=e1145]: Jun 5
+                        - generic [ref=e1148]: Jul 19
+                        - generic [ref=e1151]: Sep 1
+                        - generic [ref=e1154]: Oct 15
+                        - generic [ref=e1157]: Nov 28
+                        - generic [ref=e1160]: Jan 11
+                        - generic [ref=e1163]: Feb 28
+                      - generic [ref=e1165]:
+                        - generic [ref=e1169]: "0"
+                        - generic [ref=e1173]: "10"
+                        - generic [ref=e1177]: "20"
+                        - generic [ref=e1181]: "30"
+                        - generic [ref=e1185]: "40"
+                        - generic [ref=e1189]: "50"
+                        - generic [ref=e1193]: "60"
+                        - generic [ref=e1197]: "70"
+                        - generic [ref=e1201]: "80"
+                        - generic [ref=e1205]: "90"
+                        - generic [ref=e1209]: "100"
+                    - generic [ref=e1524]:
+                      - generic [ref=e1526]:
+                        - heading "REBALANCE ACTIONS" [level=5] [ref=e1527]:
+                          - button "REBALANCE ACTIONS" [ref=e1528] [cursor=pointer]:
+                            - text: REBALANCE ACTIONS
+                            - img [ref=e1529]
+                        - paragraph [ref=e1531]:
+                          - generic [ref=e1532]: 10,635
+                      - generic [ref=e1534]:
+                        - heading "USER SAVED TIME" [level=5] [ref=e1535]:
+                          - button "USER SAVED TIME" [ref=e1536] [cursor=pointer]:
+                            - text: USER SAVED TIME
+                            - img [ref=e1537]
+                        - paragraph [ref=e1539]:
+                          - generic [ref=e1540]: 236.3 hours
+                    - paragraph [ref=e1543]: Continuous monitoring and rebalancing optimize yields by reallocating assets from lower- to higher-performing pools, factoring in risk thresholds and transaction costs.
+                    - generic [ref=e1545]:
+                      - generic [ref=e1546]:
+                        - heading "TOP GAINERS (7D)" [level=5] [ref=e1547]
+                        - generic [ref=e1548]:
+                          - link "Morpho V2 Clearstar High Yield USDC ethereum ALLOCATION 0.00% → 2.94% CHANGE +100.00%" [ref=e1550] [cursor=pointer]:
+                            - /url: https://app.morpho.org/ethereum/vault/0xFa17f7AAdbfAc2C5d3C8125555404c1AE17Df853/clearstar-high-yield-usdc
+                            - generic [ref=e1551]:
+                              - img [ref=e1553]
+                              - generic [ref=e1556]:
+                                - generic [ref=e1557]: Morpho V2 Clearstar High Yield USDC
+                                - paragraph [ref=e1558]: ethereum
+                            - generic [ref=e1559]:
+                              - paragraph [ref=e1560]: ALLOCATION
+                              - generic [ref=e1562]: 0.00% → 2.94%
+                            - generic [ref=e1563]:
+                              - paragraph [ref=e1564]: CHANGE
+                              - generic [ref=e1566]: +100.00%
+                            - img [ref=e1568]
+                          - link "Euler Sentora Ondo Global Markets PYUSD ethereum ALLOCATION 0.00% → 2.37% CHANGE +100.00%" [ref=e1571] [cursor=pointer]:
+                            - /url: https://app.euler.finance/vault/0x69ebF644533655B5D3b6455e8E47ddE21b5993f1?network=ethereum
+                            - generic [ref=e1572]:
+                              - img [ref=e1574]
+                              - generic [ref=e1577]:
+                                - generic [ref=e1578]: Euler Sentora Ondo Global Markets PYUSD
+                                - paragraph [ref=e1579]: ethereum
+                            - generic [ref=e1580]:
+                              - paragraph [ref=e1581]: ALLOCATION
+                              - generic [ref=e1583]: 0.00% → 2.37%
+                            - generic [ref=e1584]:
+                              - paragraph [ref=e1585]: CHANGE
+                              - generic [ref=e1587]: +100.00%
+                            - img [ref=e1589]
+                          - link "Clearstar USDC Reactor arbitrum ALLOCATION 0.00% → 0.03% CHANGE +100.00%" [ref=e1592] [cursor=pointer]:
+                            - /url: https://app.morpho.org/arbitrum/vault/0xa53Cf822FE93002aEaE16d395CD823Ece161a6AC/clearstar-usdc-reactor#overview
+                            - generic [ref=e1593]:
+                              - img [ref=e1595]
+                              - generic [ref=e1598]:
+                                - generic [ref=e1599]: Clearstar USDC Reactor
+                                - paragraph [ref=e1600]: arbitrum
+                            - generic [ref=e1601]:
+                              - paragraph [ref=e1602]: ALLOCATION
+                              - generic [ref=e1604]: 0.00% → 0.03%
+                            - generic [ref=e1605]:
+                              - paragraph [ref=e1606]: CHANGE
+                              - generic [ref=e1608]: +100.00%
+                            - img [ref=e1610]
+                          - link "Aave sGHO ethereum ALLOCATION 2.68% → 5.78% CHANGE +3.10%" [ref=e1613] [cursor=pointer]:
+                            - /url: https://app.aave.com/sgho/
+                            - generic [ref=e1614]:
+                              - img [ref=e1616]
+                              - generic [ref=e1619]:
+                                - generic [ref=e1620]: Aave sGHO
+                                - paragraph [ref=e1621]: ethereum
+                            - generic [ref=e1622]:
+                              - paragraph [ref=e1623]: ALLOCATION
+                              - generic [ref=e1625]: 2.68% → 5.78%
+                            - generic [ref=e1626]:
+                              - paragraph [ref=e1627]: CHANGE
+                              - generic [ref=e1629]: +3.10%
+                            - img [ref=e1631]
+                          - link "Morpho Re Ecosystem USDC ethereum ALLOCATION 7.79% → 10.85% CHANGE +3.06%" [ref=e1634] [cursor=pointer]:
+                            - /url: https://app.morpho.org/ethereum/vault/0xD1E9242e075Db4bdd3f3c721D7d5fd4180A94A7e/re-ecosystem-vault
+                            - generic [ref=e1635]:
+                              - img [ref=e1637]
+                              - generic [ref=e1640]:
+                                - generic [ref=e1641]: Morpho Re Ecosystem USDC
+                                - paragraph [ref=e1642]: ethereum
+                            - generic [ref=e1643]:
+                              - paragraph [ref=e1644]: ALLOCATION
+                              - generic [ref=e1646]: 7.79% → 10.85%
+                            - generic [ref=e1647]:
+                              - paragraph [ref=e1648]: CHANGE
+                              - generic [ref=e1650]: +3.06%
+                            - img [ref=e1652]
+                      - generic [ref=e1654]:
+                        - heading "TOP LOSERS (7D)" [level=5] [ref=e1655]
+                        - generic [ref=e1656]:
+                          - generic [ref=e1658]:
+                            - generic [ref=e1659]:
+                              - img [ref=e1661]
+                              - generic [ref=e1664]:
+                                - generic [ref=e1665]: Aave USDG
+                                - paragraph [ref=e1666]: unknown
+                            - generic [ref=e1667]:
+                              - paragraph [ref=e1668]: ALLOCATION
+                              - generic [ref=e1670]: 7.09% → 0.00%
+                            - generic [ref=e1671]:
+                              - paragraph [ref=e1672]: CHANGE
+                              - generic [ref=e1674]: "-100.00%"
+                            - img [ref=e1676]
+                          - link "Maple syrupUSDC/USDC ethereum ALLOCATION 5.94% → 0.00% CHANGE -100.00%" [ref=e1679] [cursor=pointer]:
+                            - /url: https://app.maple.finance/earn
+                            - generic [ref=e1680]:
+                              - img [ref=e1682]
+                              - generic [ref=e1685]:
+                                - generic [ref=e1686]: Maple syrupUSDC/USDC
+                                - paragraph [ref=e1687]: ethereum
+                            - generic [ref=e1688]:
+                              - paragraph [ref=e1689]: ALLOCATION
+                              - generic [ref=e1691]: 5.94% → 0.00%
+                            - generic [ref=e1692]:
+                              - paragraph [ref=e1693]: CHANGE
+                              - generic [ref=e1695]: "-100.00%"
+                            - img [ref=e1697]
+                          - link "Auto baseUSD base ALLOCATION 16.92% → 16.06% CHANGE -0.86%" [ref=e1700] [cursor=pointer]:
+                            - /url: https://app.auto.finance/pools/baseUSD
+                            - generic [ref=e1701]:
+                              - img [ref=e1703]
+                              - generic [ref=e1706]:
+                                - generic [ref=e1707]: Auto baseUSD
+                                - paragraph [ref=e1708]: base
+                            - generic [ref=e1709]:
+                              - paragraph [ref=e1710]: ALLOCATION
+                              - generic [ref=e1712]: 16.92% → 16.06%
+                            - generic [ref=e1713]:
+                              - paragraph [ref=e1714]: CHANGE
+                              - generic [ref=e1716]: "-0.86%"
+                            - img [ref=e1718]
+                          - link "Morpho Extrafi XLend USDC base ALLOCATION 3.07% → 2.57% CHANGE -0.50%" [ref=e1721] [cursor=pointer]:
+                            - /url: https://app.morpho.org/base/vault/0x23479229e52Ab6aaD312D0B03DF9F33B46753B5e/extrafi-xlend-usdc
+                            - generic [ref=e1722]:
+                              - img [ref=e1724]
+                              - generic [ref=e1727]:
+                                - generic [ref=e1728]: Morpho Extrafi XLend USDC
+                                - paragraph [ref=e1729]: base
+                            - generic [ref=e1730]:
+                              - paragraph [ref=e1731]: ALLOCATION
+                              - generic [ref=e1733]: 3.07% → 2.57%
+                            - generic [ref=e1734]:
+                              - paragraph [ref=e1735]: CHANGE
+                              - generic [ref=e1737]: "-0.50%"
+                            - img [ref=e1739]
+                          - link "InfiniFi liUSD 1-week ethereum ALLOCATION 8.10% → 7.68% CHANGE -0.42%" [ref=e1742] [cursor=pointer]:
+                            - /url: https://app.infinifi.xyz/lock
+                            - generic [ref=e1743]:
+                              - img [ref=e1745]
+                              - generic [ref=e1748]:
+                                - generic [ref=e1749]: InfiniFi liUSD 1-week
+                                - paragraph [ref=e1750]: ethereum
+                            - generic [ref=e1751]:
+                              - paragraph [ref=e1752]: ALLOCATION
+                              - generic [ref=e1754]: 8.10% → 7.68%
+                            - generic [ref=e1755]:
+                              - paragraph [ref=e1756]: CHANGE
+                              - generic [ref=e1758]: "-0.42%"
+                            - img [ref=e1760]
+                    - link "View all rebalances" [ref=e1764] [cursor=pointer]:
+                      - /url: /vault/base/0x0000000f2eB9f69274678c76222B35eEc7588a65/rebalancing
+              - region "Vault activity" [ref=e1766]:
+                - generic [ref=e1767]:
+                  - heading "Vault activity" [level=2] [ref=e1768]
+                  - generic [ref=e1769]:
+                    - generic [ref=e1772]:
+                      - link "Dollar REDEEMED AMOUNT 89.030433 yoUSD DATE Feb 28, 2026, 1:03:03 PM" [ref=e1774] [cursor=pointer]:
+                        - /url: https://basescan.org/tx/0x20239f618cc665bb4c6de572750ac8525963b164fd908ee77cab03f8ff954c09
+                        - generic [ref=e1775]:
+                          - img "Dollar" [ref=e1777]
+                          - generic [ref=e1780]:
+                            - paragraph [ref=e1781]: REDEEMED AMOUNT
+                            - generic [ref=e1782]: 89.030433 yoUSD
+                        - generic [ref=e1783]:
+                          - paragraph [ref=e1784]: DATE
+                          - generic [ref=e1785]: Feb 28, 2026, 1:03:03 PM
+                        - img [ref=e1787]
+                      - link "Dollar REDEEMED AMOUNT 77.265398 yoUSD DATE Feb 28, 2026, 1:02:37 PM" [ref=e1790] [cursor=pointer]:
+                        - /url: https://basescan.org/tx/0x6b885d476c34cfab54494e2399b0a1d19eb9e0facd2646082e44ddb612ea16fa
+                        - generic [ref=e1791]:
+                          - img "Dollar" [ref=e1793]
+                          - generic [ref=e1796]:
+                            - paragraph [ref=e1797]: REDEEMED AMOUNT
+                            - generic [ref=e1798]: 77.265398 yoUSD
+                        - generic [ref=e1799]:
+                          - paragraph [ref=e1800]: DATE
+                          - generic [ref=e1801]: Feb 28, 2026, 1:02:37 PM
+                        - img [ref=e1803]
+                      - link "Dollar REDEEMED AMOUNT 2.152896 yoUSD DATE Feb 28, 2026, 12:57:43 PM" [ref=e1806] [cursor=pointer]:
+                        - /url: https://basescan.org/tx/0x3304787cd6a8c68d886a4574a930f65716c4266baa041b25c789a09360343158
+                        - generic [ref=e1807]:
+                          - img "Dollar" [ref=e1809]
+                          - generic [ref=e1812]:
+                            - paragraph [ref=e1813]: REDEEMED AMOUNT
+                            - generic [ref=e1814]: 2.152896 yoUSD
+                        - generic [ref=e1815]:
+                          - paragraph [ref=e1816]: DATE
+                          - generic [ref=e1817]: Feb 28, 2026, 12:57:43 PM
+                        - img [ref=e1819]
+                      - link "Dollar DEPOSITED AMOUNT 1877.76 USDC DATE Feb 28, 2026, 12:54:39 PM" [ref=e1822] [cursor=pointer]:
+                        - /url: https://basescan.org/tx/0x2dd610b7b29f3be18503c4fcffc4e362e389c317dcd4f3ae131f39768b939c9f
+                        - generic [ref=e1823]:
+                          - img "Dollar" [ref=e1825]
+                          - generic [ref=e1828]:
+                            - paragraph [ref=e1829]: DEPOSITED AMOUNT
+                            - generic [ref=e1830]: 1877.76 USDC
+                        - generic [ref=e1831]:
+                          - paragraph [ref=e1832]: DATE
+                          - generic [ref=e1833]: Feb 28, 2026, 12:54:39 PM
+                        - img [ref=e1835]
+                      - link "Dollar DEPOSITED AMOUNT 77.823000 USDC DATE Feb 28, 2026, 12:52:59 PM" [ref=e1838] [cursor=pointer]:
+                        - /url: https://basescan.org/tx/0x4b51b9a20c8d38da6424dfcd5f90104f2f98d390378b3d2792fba89bfa5d98e7
+                        - generic [ref=e1839]:
+                          - img "Dollar" [ref=e1841]
+                          - generic [ref=e1844]:
+                            - paragraph [ref=e1845]: DEPOSITED AMOUNT
+                            - generic [ref=e1846]: 77.823000 USDC
+                        - generic [ref=e1847]:
+                          - paragraph [ref=e1848]: DATE
+                          - generic [ref=e1849]: Feb 28, 2026, 12:52:59 PM
+                        - img [ref=e1851]
+                      - link "Dollar DEPOSITED AMOUNT 9.500000 USDC DATE Feb 28, 2026, 12:51:17 PM" [ref=e1854] [cursor=pointer]:
+                        - /url: https://basescan.org/tx/0x50940fc51a23186392f0e9ff5a9c64b4b0faa041f28e0fce63c64f0fca66437f
+                        - generic [ref=e1855]:
+                          - img "Dollar" [ref=e1857]
+                          - generic [ref=e1860]:
+                            - paragraph [ref=e1861]: DEPOSITED AMOUNT
+                            - generic [ref=e1862]: 9.500000 USDC
+                        - generic [ref=e1863]:
+                          - paragraph [ref=e1864]: DATE
+                          - generic [ref=e1865]: Feb 28, 2026, 12:51:17 PM
+                        - img [ref=e1867]
+                      - link "Dollar REDEEMED AMOUNT 935.480823 yoUSD DATE Feb 28, 2026, 12:33:19 PM" [ref=e1870] [cursor=pointer]:
+                        - /url: https://basescan.org/tx/0xf2d907bf752e791f57cbfe0129530a1c495a8773f3e5f39848a48ef233386bc2
+                        - generic [ref=e1871]:
+                          - img "Dollar" [ref=e1873]
+                          - generic [ref=e1876]:
+                            - paragraph [ref=e1877]: REDEEMED AMOUNT
+                            - generic [ref=e1878]: 935.480823 yoUSD
+                        - generic [ref=e1879]:
+                          - paragraph [ref=e1880]: DATE
+                          - generic [ref=e1881]: Feb 28, 2026, 12:33:19 PM
+                        - img [ref=e1883]
+                      - link "Dollar REDEEMED AMOUNT 1351.89 yoUSD DATE Feb 28, 2026, 12:32:19 PM" [ref=e1886] [cursor=pointer]:
+                        - /url: https://basescan.org/tx/0x1b133f11e6ec286547e94419f6ed88b4aed419d2ff99655d3cc7bf9dd617acbb
+                        - generic [ref=e1887]:
+                          - img "Dollar" [ref=e1889]
+                          - generic [ref=e1892]:
+                            - paragraph [ref=e1893]: REDEEMED AMOUNT
+                            - generic [ref=e1894]: 1351.89 yoUSD
+                        - generic [ref=e1895]:
+                          - paragraph [ref=e1896]: DATE
+                          - generic [ref=e1897]: Feb 28, 2026, 12:32:19 PM
+                        - img [ref=e1899]
+                      - link "Dollar DEPOSITED AMOUNT 2003.95 USDC DATE Feb 28, 2026, 12:17:05 PM" [ref=e1902] [cursor=pointer]:
+                        - /url: https://basescan.org/tx/0x01b5fd9a64f4af2abdaeab8dc28116cd8d1a734af59e1d47fa10a5c4a02f6907
+                        - generic [ref=e1903]:
+                          - img "Dollar" [ref=e1905]
+                          - generic [ref=e1908]:
+                            - paragraph [ref=e1909]: DEPOSITED AMOUNT
+                            - generic [ref=e1910]: 2003.95 USDC
+                        - generic [ref=e1911]:
+                          - paragraph [ref=e1912]: DATE
+                          - generic [ref=e1913]: Feb 28, 2026, 12:17:05 PM
+                        - img [ref=e1915]
+                      - link "Dollar DEPOSITED AMOUNT 2000.00 USDC DATE Feb 28, 2026, 12:16:29 PM" [ref=e1918] [cursor=pointer]:
+                        - /url: https://basescan.org/tx/0x4f96be121158a74a8e4e1eb195c589b75e3d6aef81b8a55ea9560c3cf1dabc1d
+                        - generic [ref=e1919]:
+                          - img "Dollar" [ref=e1921]
+                          - generic [ref=e1924]:
+                            - paragraph [ref=e1925]: DEPOSITED AMOUNT
+                            - generic [ref=e1926]: 2000.00 USDC
+                        - generic [ref=e1927]:
+                          - paragraph [ref=e1928]: DATE
+                          - generic [ref=e1929]: Feb 28, 2026, 12:16:29 PM
+                        - img [ref=e1931]
+                      - link "Dollar REDEEMED AMOUNT 1924.78 yoUSD DATE Feb 28, 2026, 12:14:45 PM" [ref=e1934] [cursor=pointer]:
+                        - /url: https://basescan.org/tx/0x17681ed37a6c6c3ff9f3774b36367667f6da9a7df8e3945bc6ae9a047bc3598a
+                        - generic [ref=e1935]:
+                          - img "Dollar" [ref=e1937]
+                          - generic [ref=e1940]:
+                            - paragraph [ref=e1941]: REDEEMED AMOUNT
+                            - generic [ref=e1942]: 1924.78 yoUSD
+                        - generic [ref=e1943]:
+                          - paragraph [ref=e1944]: DATE
+                          - generic [ref=e1945]: Feb 28, 2026, 12:14:45 PM
+                        - img [ref=e1947]
+                      - link "Dollar DEPOSITED AMOUNT 353.712000 USDC DATE Feb 28, 2026, 12:07:49 PM" [ref=e1950] [cursor=pointer]:
+                        - /url: https://basescan.org/tx/0x048b5f2a6ce5b2ef37a7b8af1f5a00ffa0237c0808b61e6dc39ffd7ba45e74c9
+                        - generic [ref=e1951]:
+                          - img "Dollar" [ref=e1953]
+                          - generic [ref=e1956]:
+                            - paragraph [ref=e1957]: DEPOSITED AMOUNT
+                            - generic [ref=e1958]: 353.712000 USDC
+                        - generic [ref=e1959]:
+                          - paragraph [ref=e1960]: DATE
+                          - generic [ref=e1961]: Feb 28, 2026, 12:07:49 PM
+                        - img [ref=e1963]
+                      - link "Dollar REDEEMED AMOUNT 285.008098 yoUSD DATE Feb 28, 2026, 12:03:03 PM" [ref=e1966] [cursor=pointer]:
+                        - /url: https://basescan.org/tx/0x5afa2c60695544e87c58d5de1ac2476c96c27fd2f7528a2232447c4702205ec6
+                        - generic [ref=e1967]:
+                          - img "Dollar" [ref=e1969]
+                          - generic [ref=e1972]:
+                            - paragraph [ref=e1973]: REDEEMED AMOUNT
+                            - generic [ref=e1974]: 285.008098 yoUSD
+                        - generic [ref=e1975]:
+                          - paragraph [ref=e1976]: DATE
+                          - generic [ref=e1977]: Feb 28, 2026, 12:03:03 PM
+                        - img [ref=e1979]
+                      - link "Dollar DEPOSITED AMOUNT 48.316000 USDC DATE Feb 28, 2026, 11:33:53 AM" [ref=e1982] [cursor=pointer]:
+                        - /url: https://basescan.org/tx/0x032dd4a2e91323a57043eabd837746da8f3f40c7984f78361fd1e1dc91e97a0e
+                        - generic [ref=e1983]:
+                          - img "Dollar" [ref=e1985]
+                          - generic [ref=e1988]:
+                            - paragraph [ref=e1989]: DEPOSITED AMOUNT
+                            - generic [ref=e1990]: 48.316000 USDC
+                        - generic [ref=e1991]:
+                          - paragraph [ref=e1992]: DATE
+                          - generic [ref=e1993]: Feb 28, 2026, 11:33:53 AM
+                        - img [ref=e1995]
+                      - link "Dollar REDEEMED AMOUNT 7217.11 yoUSD DATE Feb 28, 2026, 11:33:09 AM" [ref=e1998] [cursor=pointer]:
+                        - /url: https://basescan.org/tx/0x589e689fc453fae0e7e0ccd2e3d5082ddd88d6398541ddd6ee238594e7000746
+                        - generic [ref=e1999]:
+                          - img "Dollar" [ref=e2001]
+                          - generic [ref=e2004]:
+                            - paragraph [ref=e2005]: REDEEMED AMOUNT
+                            - generic [ref=e2006]: 7217.11 yoUSD
+                        - generic [ref=e2007]:
+                          - paragraph [ref=e2008]: DATE
+                          - generic [ref=e2009]: Feb 28, 2026, 11:33:09 AM
+                        - img [ref=e2011]
+                      - link "Dollar DEPOSITED AMOUNT 499.003984 USDC DATE Feb 28, 2026, 11:32:23 AM" [ref=e2014] [cursor=pointer]:
+                        - /url: https://arbiscan.io/tx/0x491b15d8ac7d7552a340d27541573a2bc791ed30420a8f52aedcab016edac2ba
+                        - generic [ref=e2015]:
+                          - img "Dollar" [ref=e2017]
+                          - generic [ref=e2020]:
+                            - paragraph [ref=e2021]: DEPOSITED AMOUNT
+                            - generic [ref=e2022]: 499.003984 USDC
+                        - generic [ref=e2023]:
+                          - paragraph [ref=e2024]: DATE
+                          - generic [ref=e2025]: Feb 28, 2026, 11:32:23 AM
+                        - img [ref=e2027]
+                      - link "Dollar REDEEMED AMOUNT 936.000000 yoUSD DATE Feb 28, 2026, 11:29:59 AM" [ref=e2030] [cursor=pointer]:
+                        - /url: https://etherscan.io/tx/0x5d8b9493bb513c30f1e8249d9158e44c9880431866894dad778c905dd33440b5
+                        - generic [ref=e2031]:
+                          - img "Dollar" [ref=e2033]
+                          - generic [ref=e2036]:
+                            - paragraph [ref=e2037]: REDEEMED AMOUNT
+                            - generic [ref=e2038]: 936.000000 yoUSD
+                        - generic [ref=e2039]:
+                          - paragraph [ref=e2040]: DATE
+                          - generic [ref=e2041]: Feb 28, 2026, 11:29:59 AM
+                        - img [ref=e2043]
+                      - link "Dollar REDEEMED AMOUNT 0.009995 yoUSD DATE Feb 28, 2026, 11:28:33 AM" [ref=e2046] [cursor=pointer]:
+                        - /url: https://basescan.org/tx/0x15e0ae6ddf15e71f7112e2c19f96c0b39f1a792246ed2ffa8bb2c3032bb37f02
+                        - generic [ref=e2047]:
+                          - img "Dollar" [ref=e2049]
+                          - generic [ref=e2052]:
+                            - paragraph [ref=e2053]: REDEEMED AMOUNT
+                            - generic [ref=e2054]: 0.009995 yoUSD
+                        - generic [ref=e2055]:
+                          - paragraph [ref=e2056]: DATE
+                          - generic [ref=e2057]: Feb 28, 2026, 11:28:33 AM
+                        - img [ref=e2059]
+                      - link "Dollar REDEEMED AMOUNT 80.000000 yoUSD DATE Feb 28, 2026, 11:27:17 AM" [ref=e2062] [cursor=pointer]:
+                        - /url: https://basescan.org/tx/0x3417b75998813cbec32117a27de29ddc48a08f3a70abc3eb3efeb526bd638862
+                        - generic [ref=e2063]:
+                          - img "Dollar" [ref=e2065]
+                          - generic [ref=e2068]:
+                            - paragraph [ref=e2069]: REDEEMED AMOUNT
+                            - generic [ref=e2070]: 80.000000 yoUSD
+                        - generic [ref=e2071]:
+                          - paragraph [ref=e2072]: DATE
+                          - generic [ref=e2073]: Feb 28, 2026, 11:27:17 AM
+                        - img [ref=e2075]
+                      - link "Dollar DEPOSITED AMOUNT 0.500000 USDC DATE Feb 28, 2026, 11:18:29 AM" [ref=e2078] [cursor=pointer]:
+                        - /url: https://basescan.org/tx/0x015e9db269cc6de1c736382ceebf85e5f1daff7257943f23d796dbca0615ce39
+                        - generic [ref=e2079]:
+                          - img "Dollar" [ref=e2081]
+                          - generic [ref=e2084]:
+                            - paragraph [ref=e2085]: DEPOSITED AMOUNT
+                            - generic [ref=e2086]: 0.500000 USDC
+                        - generic [ref=e2087]:
+                          - paragraph [ref=e2088]: DATE
+                          - generic [ref=e2089]: Feb 28, 2026, 11:18:29 AM
+                        - img [ref=e2091]
+                    - link "View all depositors" [ref=e2095] [cursor=pointer]:
+                      - /url: /vault/base/0x0000000f2eB9f69274678c76222B35eEc7588a65/vault-activity
+      - contentinfo [ref=e128]:
+        - generic [ref=e129]:
+          - generic [ref=e130]:
+            - generic [ref=e131]:
+              - img "YO" [ref=e132]
+              - paragraph [ref=e133]: The best yield in DeFi, period.
+              - generic [ref=e134]:
+                - link "Telegram" [ref=e135] [cursor=pointer]:
+                  - /url: https://t.me/yo_protocol
+                  - img "Telegram" [ref=e136]
+                - link "X" [ref=e137] [cursor=pointer]:
+                  - /url: https://x.com/yield
+                  - img "X" [ref=e138]
+                - link "Discord" [ref=e139] [cursor=pointer]:
+                  - /url: https://discord.gg/yoprotocol
+                  - img "Discord" [ref=e140]
+                - link "GitHub" [ref=e141] [cursor=pointer]:
+                  - /url: https://github.com/yoprotocol
+                  - img "GitHub" [ref=e142]
+                - link "DeFiLlama" [ref=e143] [cursor=pointer]:
+                  - /url: https://defillama.com/protocol/yo-protocol
+                  - img "DeFiLlama" [ref=e144]
+                - link "Exponential" [ref=e145] [cursor=pointer]:
+                  - /url: https://exponential.fi/protocols/yo/8056939b-d456-48f7-8611-e14e31a6f8e7
+                  - img "Exponential" [ref=e146]
+            - generic [ref=e147]:
+              - heading "Product" [level=4] [ref=e148]
+              - list [ref=e149]:
+                - listitem [ref=e150]:
+                  - link "Whitepaper" [ref=e151] [cursor=pointer]:
+                    - /url: https://www.yo.xyz/whitepaper
+                - listitem [ref=e152]:
+                  - button "Got Feedback?" [ref=e153] [cursor=pointer]
+            - generic [ref=e154]:
+              - heading "Developers" [level=4] [ref=e155]
+              - list [ref=e156]:
+                - listitem [ref=e157]:
+                  - link "Docs" [ref=e158] [cursor=pointer]:
+                    - /url: https://docs.yo.xyz/
+                - listitem [ref=e159]:
+                  - link "YO SDK" [ref=e160] [cursor=pointer]:
+                    - /url: https://www.npmjs.com/package/@yo-protocol/core
+                - listitem [ref=e161]:
+                  - link "Build" [ref=e162] [cursor=pointer]:
+                    - /url: https://www.yo.xyz/build
+                - listitem [ref=e163]:
+                  - link "Protocol Upgrades" [ref=e164] [cursor=pointer]:
+                    - /url: /upgrade
+            - generic [ref=e165]:
+              - heading "Company" [level=4] [ref=e166]
+              - list [ref=e167]:
+                - listitem [ref=e168]:
+                  - link "Blog" [ref=e169] [cursor=pointer]:
+                    - /url: https://www.yo.xyz/blog
+                - listitem [ref=e170]:
+                  - link "Brand Kit" [ref=e171] [cursor=pointer]:
+                    - /url: https://quick-switch-22c.notion.site/YO-Brand-Assets-2235bae1f3288016bbaaf13ac2ae6fd7
+                - listitem [ref=e172]:
+                  - link "Jobs" [ref=e173] [cursor=pointer]:
+                    - /url: https://yo.xyz/jobs
+            - generic [ref=e174]:
+              - heading "Legal" [level=4] [ref=e175]
+              - list [ref=e176]:
+                - listitem [ref=e177]:
+                  - link "Terms of Service" [ref=e178] [cursor=pointer]:
+                    - /url: https://www.yo.xyz/terms-of-service
+                - listitem [ref=e179]:
+                  - link "Privacy Policy" [ref=e180] [cursor=pointer]:
+                    - /url: https://www.yo.xyz/privacy-policy
+          - paragraph [ref=e182]: © 2026 YO Protocol. All rights reserved.
+    - region "Notifications (F8)":
+      - list
+  - generic [ref=e2097]: "0"

@@ -1,0 +1,409 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Product Requirements Document (PRD) - DeFi Panda
+
+## 1. Product overview
+
+DeFi Panda is a web-based analytics platform designed to provide comprehensive insights into ERC4626 vault investments. The platform serves as a centralized hub for DeFi investors, analysts, and data-driven users who need reliable, transparent data about DeFi vault performance and activities.
+
+### Product Details
+- **Product Name:** DeFi Panda
+- **Product Type:** Web-based analytics platform  
+- **Target Users:** DeFi investors and analysts seeking comprehensive vault data, DeFi degens, data-driven power users
+- **Platform:** Web application (desktop-first design)
+- **Technology Stack:** Astro 5, TypeScript 5, React 19, Tailwind CSS 4, shadcn/ui
+
+### Core Value Proposition
+DeFi Panda aggregates and presents comprehensive ERC4626 vault data that is often hidden or unavailable on individual protocol websites, enabling users to make informed investment decisions through technical and fundamental analysis.
+
+## 2. User problem
+
+### Primary Problem
+Finding comprehensive and reliable information about DeFi investments across web resources is challenging and time-consuming. Users don't want to spend entire days conducting research and analyzing data about ERC4626 vaults.
+
+### Contributing Factors
+- DeFi protocols often prioritize positive public relations over transparency
+- Critical data that might reveal vulnerabilities or unfavorable metrics is deliberately withheld
+- Information is scattered across multiple sources and difficult to aggregate
+- Lack of standardized data presentation across different protocols
+- Time-intensive manual research process for investment analysis
+
+### Impact on Users
+- Inefficient allocation of time and resources
+- Increased risk of making uninformed investment decisions
+- Difficulty in conducting comprehensive technical and fundamental analysis
+- Limited ability to compare vaults across different protocols
+
+## 3. Functional requirements
+
+### 3.1 Vault Directory System
+- Display comprehensive list of tracked ERC4626 vaults in full-width card layout
+- Show 20 vaults per page with pagination controls
+- Present vault information including: vault name, protocol name, TVL in USD, underlying asset, current depositor count, and 7-day net flow
+- Implement advanced filtering system with TVL range, depositor count ranges, net flow toggles, and underlying asset multi-select
+- Provide sorting options by TVL, depositor count, and vault age
+- Persist all filter and sort states in localStorage and URL parameters
+
+### 3.2 Vault Detail Pages
+- Create individual pages for each vault with tab-based navigation in each vault
+- Implement global time selector affecting all time-based charts (7d, 30d, 90d, 1y)
+- Provide four main tabs: Overview, Depositors, Activity, and Performance
+- Include breadcrumb navigation for clear user orientation
+- Reflect active tabs in URL structure for bookmarking and sharing
+
+### 3.3 Data Visualization and Analytics
+- Display interactive line charts for TVL trends and share price performance
+- Show inflow/outflow charts with time-based controls
+- Present depositor data in sortable, paginated tables
+- Provide deposit and withdraw transactions history visualization
+- Include tooltips for chart interactions without zoom functionality
+
+### 3.4 User Interface and Experience
+- Implement responsive design with 1200px breakpoint
+- Use shadcn/ui components for consistent design system
+- Provide skeleton loading states for all data components
+- Handle error states gracefully with appropriate messaging
+- Support horizontal scrolling for tables on smaller screens
+
+### 3.5 External Integration
+- Provide direct links to the block explorer and DeBank (opening in new tabs)
+- Include copy functionality for wallet addresses
+- Support external link navigation with appropriate visual indicators
+
+## 4. Product boundaries
+
+### 4.1 Included in MVP Scope
+- Vault tracking and monitoring for ERC4626 standard vaults
+- Comprehensive vault directory with filtering and sorting
+- Detailed analytics pages for individual vaults
+- Data visualization through charts and tables
+- Responsive web interface
+- State persistence for user preferences
+
+### 4.2 Explicitly Excluded from MVP Scope
+- Transaction capabilities (no depositing, withdrawing, or execution)
+- Vault management features (users cannot add vaults through interface)
+- Backend development (APIs handled by separate infrastructure)
+- Mobile application development
+- User authentication and account management
+- Data export functionality
+- Wallet connection capabilities
+- Data sharing between users
+- User onboarding flows
+- Performance optimization requirements
+
+### 4.3 Technical Boundaries
+- Web-only platform (no native mobile apps)
+- Desktop-first responsive design approach
+- No real-time data requirements
+- No user-generated content management
+- No payment processing or financial transactions
+
+## 5. User stories
+
+### DP-001: View Vaults Directory
+**Title:** View comprehensive vault directory
+**Description:** As a DeFi investor, I want to view a comprehensive list of ERC4626 vaults so that I can discover and evaluate different investment opportunities.
+**Acceptance Criteria:**
+- Vault directory displays at `/vaults` URL
+- Shows 20 vaults per page in full-width card layout
+- Each vault card displays: vault name, protocol name, TVL in USD, underlying asset, current depositor count, 7-day net flow
+- Pagination controls are visible and functional
+- Total vault count is displayed
+- Each vault is represented by its ethereum address
+
+### DP-002: Navigate Vault Directory Pages
+**Title:** Navigate between vault directory pages
+**Description:** As a user, I want to navigate through multiple pages of vaults so that I can explore all available options.
+**Acceptance Criteria:**
+- Pagination component shows current page and total pages
+- Next/Previous buttons function correctly
+- Direct page number navigation works
+- URL updates to reflect current page
+- Page state persists when navigating back
+- Pagination is disabled appropriately at first/last pages
+
+### DP-003: Filter Vaults by TVL
+**Title:** Filter vaults by Total Value Locked
+**Description:** As an investor, I want to filter vaults by TVL range so that I can focus on vaults matching my investment size preference.
+**Acceptance Criteria:**
+- TVL filter appears above vault listing
+- Range slider allows setting minimum and maximum TVL values
+- Input fields allow precise value entry
+- Filter updates vault listing immediately
+- Active filter state is visible in the UI
+- Filter state persists in localStorage and URL
+- Filter can be cleared/reset
+
+### DP-004: Filter Vaults by Depositor Count
+**Title:** Filter vaults by number of depositors
+**Description:** As a user, I want to filter vaults by depositor count ranges so that I can find vaults with appropriate community size.
+**Acceptance Criteria:**
+- Depositor count filter dropdown with predefined ranges
+- Ranges include: 1-10, 11-50, 51-100, 100-500, 500+ depositors
+- Filter updates listing immediately
+- Active selections are visible in dropdown
+- Filter state persists in localStorage and URL
+
+### DP-005: Filter Vaults by Net Flow
+**Title:** Filter vaults by 7-day net flow
+**Description:** As an analyst, I want to filter vaults by their recent flow activity so that I can identify trending vaults.
+**Acceptance Criteria:**
+- Net flow filter has three options: Positive, Negative, All
+- Toggle interface clearly shows selected state
+- Filter updates vault listing immediately
+- Active filter state is visible
+- Filter state persists in localStorage and URL
+- Default state shows all vaults
+
+### DP-006: Filter Vaults by Underlying Asset
+**Title:** Filter vaults by underlying assets
+**Description:** As an investor, I want to filter vaults by underlying assets so that I can focus on specific tokens I'm interested in.
+**Acceptance Criteria:**
+- Multi-select dropdown shows all available underlying assets
+- Users can select multiple assets simultaneously
+- Selected assets are clearly indicated
+- Filter updates listing immediately
+- Active selections are visible in dropdown
+- Filter state persists in localStorage and URL
+- Search functionality within asset dropdown
+
+### DP-007: Sort Vault Directory
+**Title:** Sort vaults by different criteria
+**Description:** As a user, I want to sort the vault directory so that I can prioritize vaults based on my preferences.
+**Acceptance Criteria:**
+- Sorting options: TVL (high to low), Current depositor count, Newest first
+- Sort selection is clearly visible
+- Sorting applies immediately to current page
+- Sort state persists across pagination
+- Sort state persists in localStorage and URL
+- Default sort is TVL high to low
+
+### DP-008: Clear All Filters
+**Title:** Clear all applied filters
+**Description:** As a user, I want to clear all filters at once so that I can start fresh with my vault exploration.
+**Acceptance Criteria:**
+- Clear filters button is visible when filters are active
+- Single click clears all filters simultaneously
+- Vault listing returns to default unfiltered state
+- URL parameters are cleared
+- localStorage filter state is reset
+- Button is hidden when no filters are active
+
+### DP-009: Navigate to Vault Detail Page
+**Title:** Navigate to individual vault details
+**Description:** As a user, I want to click on a vault to view its detailed information so that I can conduct deeper analysis.
+**Acceptance Criteria:**
+- Vault cards are clickable and navigate to `/vaults/<chain-id>/<vault-address>`
+- Navigation preserves vault directory filter state
+- Browser back button returns to directory with preserved state
+- Vault address is validated and error shown for invalid addresses
+
+### DP-010: View Vault Overview Tab
+**Title:** View vault overview information
+**Description:** As an investor, I want to see key vault metrics and overview information so that I can quickly assess the vault's status.
+**Acceptance Criteria:**
+- Overview tab is selected by default at `/vaults/<chain-id>/<vault-address>`
+- Displays current TVL prominently
+- Shows total depositors count (current and all-time)
+- Displays inflow/outflow chart
+- Shows vault age
+- Includes links to BlockExplorer and DeBank with external link icons
+- Links open in new tabs
+
+### DP-011: Switch Between Vault Tabs
+**Title:** Navigate between vault detail tabs
+**Description:** As a user, I want to switch between different tabs on the vault detail page so that I can access different types of information.
+**Acceptance Criteria:**
+- Four tabs available: Overview, Depositors, Activity, Performance
+- Active tab is visually highlighted
+- Tab switching updates URL to `/vaults/<chain-id>/<vault-address>/<tab-name>`
+- Tab content loads immediately when switching
+- URL can be bookmarked and shared
+- Breadcrumb navigation reflects current tab
+
+### DP-012: View Depositors Tab
+**Title:** View vault depositor information
+**Description:** As an analyst, I want to see detailed depositor information so that I can understand the vault's user base composition.
+**Acceptance Criteria:**
+- Depositors tab shows at `/vaults/<chain-id>/<vault-address>/depositors`
+- Table displays: wallet address (truncated), amount deposited, percentage of total, join date
+- Wallet addresses have copy functionality
+- Copy success feedback is provided
+- Table supports sorting by amount deposited and join date (first deposit)
+- Table has pagination for large depositor lists
+- No search functionality is included
+
+### DP-013: View Activity Tab
+**Title:** View vault transaction activity
+**Description:** As a user, I want to see deposit and withdrawal transaction history so that I can understand vault activity patterns.
+**Acceptance Criteria:**
+- Activity tab shows at `/vaults/<chain-id>/<vault-address>/activity`
+- Displays deposit and withdrawal transactions
+- Shows advanced inflow chart visualization
+- Chart responds to global time selector
+- Chart tooltips show specific transaction details
+- Shows table of deposit and withdraw transactions with columns: address, amount, timestamp
+- Transaction data is paginated appropriately
+
+### DP-014: View Performance Tab
+**Title:** View vault performance metrics
+**Description:** As an investor, I want to see vault performance data so that I can evaluate its historical returns.
+**Acceptance Criteria:**
+- Performance tab shows at `/vaults/<chain-id>/<vault-address>/performance`
+- Displays share price over time as line chart
+- Chart responds to global time selector
+- Chart includes hover tooltips
+- Performance data covers selected time range
+
+### DP-015: Change Global Time Selector
+**Title:** Adjust time range for vault charts
+**Description:** As a user, I want to change the time range for all charts so that I can analyze different historical periods.
+**Acceptance Criteria:**
+- Time selector options: 7d, 30d, 90d, 1y
+- Selection affects all time-based charts simultaneously
+- Active time range is visually highlighted
+- Charts update immediately when time range changes
+- Time selection persists across tab navigation
+- Default time range is 7 days
+
+### DP-016: Copy Wallet Addresses
+**Title:** Copy depositor wallet addresses
+**Description:** As a user, I want to copy wallet addresses so that I can research them on external platforms.
+**Acceptance Criteria:**
+- Copy button/functionality available for each wallet address
+- Wallet addresses are truncated for display
+- Copy action copies full address to clipboard
+- Visual feedback confirms successful copy
+
+### DP-017: Sort Depositor Table
+**Title:** Sort depositors by different columns
+**Description:** As a user, I want to sort the depositor table so that I can prioritize depositors by different criteria.
+**Acceptance Criteria:**
+- All columns support sorting: address, amount, percentage, join date
+- Sort direction toggles between ascending/descending
+- Visual indicators show current sort column and direction
+- Sort state persists during pagination
+- Default sort is by amount deposited (highest first)
+- Only one column can be sorted at a time
+
+### DP-018: Navigate Depositor Table Pages
+**Title:** Navigate through depositor table pages
+**Description:** As a user, I want to navigate through depositor pages so that I can view all depositors when there are many.
+**Acceptance Criteria:**
+- Pagination controls appear when depositors exceed page limit
+- Shows current page and total pages
+- Next/Previous navigation works correctly
+- Direct page selection available
+- Pagination preserves sort settings
+- Shows total depositor count
+
+### DP-019: Handle Loading States
+**Title:** Display appropriate loading indicators
+**Description:** As a user, I want to see loading indicators so that I know the system is working while data loads.
+**Acceptance Criteria:**
+- Skeleton components show for vault directory while loading
+- Skeleton components show for vault detail sections while loading
+- Loading states are visually consistent with design system
+- Loading indicators are accessible to screen readers
+- Loading states are responsive across screen sizes
+
+### DP-020: Handle Error States
+**Title:** Display appropriate error messages
+**Description:** As a user, I want to see clear error messages when something goes wrong so that I understand what happened.
+**Acceptance Criteria:**
+- Error message "Sorry, we couldn't load the data" appears for data failures
+- Partial page failures don't break entire page experience
+- Error states provide refresh/retry options where appropriate
+- Error messages are user-friendly and non-technical
+- Different error types have appropriate messaging
+- Error states maintain page layout and navigation
+
+### DP-021: Persist Filter State
+**Title:** Maintain filter preferences across sessions
+**Description:** As a user, I want my filter preferences to be remembered so that I don't have to re-apply them each time.
+**Acceptance Criteria:**
+- Filter states are saved to localStorage
+- Filter states are reflected in URL parameters
+- Filters are restored when returning to the page
+- Filter state persists across browser sessions
+- URL can be shared with filter state intact
+
+### DP-022: Responsive Table Behavior
+**Title:** Handle tables on smaller screens
+**Description:** As a user on a smaller screen, I want to be able to access table data so that I can use the platform effectively.
+**Acceptance Criteria:**
+- Tables scroll horizontally on screens below 1200px
+- Horizontal scroll is smooth and responsive
+- All table columns remain accessible during scroll
+- Table headers remain visible during scroll
+- No mobile-specific variants are provided
+- Functionality remains intact on smaller screens
+
+### DP-023: Navigate with Breadcrumbs
+**Title:** Use breadcrumb navigation
+**Description:** As a user, I want clear breadcrumb navigation so that I can understand my location and navigate efficiently.
+**Acceptance Criteria:**
+- Breadcrumbs appear on vault detail pages
+- Breadcrumbs show: Home > Vaults > [Vault Name] > [Tab Name]
+- Each breadcrumb level is clickable
+- Breadcrumbs update when switching tabs
+- Breadcrumb navigation preserves filter state when returning to directory
+- Breadcrumbs are accessible and properly labeled
+
+### DP-024: Handle Chart Interactions
+**Title:** Interact with chart elements
+**Description:** As a user, I want to interact with charts so that I can get detailed information about specific data points.
+**Acceptance Criteria:**
+- Charts display tooltips on hover
+- Tooltips show relevant data for hovered point
+- No zoom functionality is provided
+- Chart interactions are smooth and responsive
+- Tooltips appear within chart boundaries
+- Charts handle missing or null data points appropriately
+
+### DP-025: Access External Links
+**Title:** Navigate to external platforms
+**Description:** As a user, I want to access external links so that I can research vaults on other platforms.
+**Acceptance Criteria:**
+- External links open in new tabs
+- External link icons are visible and recognizable
+- Links to BlockExplorer and DeBank function correctly
+- Links include appropriate vault/address parameters
+- External links are accessible and properly labeled
+- Links work consistently across browsers
+
+## 6. Success metrics
+
+### 6.1 User Engagement Metrics
+- Users successfully discover valuable insights for technical and fundamental analysis
+- Average session duration indicates thorough exploration of vault data
+- Return user rate demonstrates ongoing platform value
+- Page views per session show comprehensive data consumption
+
+### 6.2 User Satisfaction Indicators
+- Users report that the application provides helpful data for making informed investment decisions
+- Positive feedback on data comprehensiveness compared to individual protocol websites
+- Users confirm the platform reveals important information not readily available elsewhere
+- Low bounce rate on vault detail pages indicates engaging content
+
+### 6.3 Technical Performance Metrics
+- Smooth user experience with consistent loading states and error handling
+- Page load times under 3 seconds for directory, under 5 seconds for detail pages
+- Error rates below 1% for data loading operations
+- Cross-browser compatibility maintained across supported platforms
+
+### 6.4 Feature Adoption Metrics
+- Filter usage indicates users finding targeted vault information
+- Tab navigation patterns show comprehensive vault analysis
+- Filter state persistence demonstrates workflow enhancement value
+- External link click-through rates show research continuation beyond platform
+
+### 6.5 Platform Reliability Measures
+- Uptime above 99.5% during business hours
+- Consistent data accuracy compared to source protocols
+- Graceful degradation during partial system failures
+- Responsive performance across different screen sizes and devices

@@ -1,0 +1,35 @@
+# Refactor alpha tools
+
+- Files:
+  - packages/mastra/src/agents/yo-treasury-agent.ts
+  - packages/web/src/alpha/tools/tool-renderer.tsx
+- This are two endpoint files for both Mastra agent backend and Nextjs frontend
+- Don't use TVL and APR in Yo Treasury agent
+  - this agent is purely for exacution
+  - this agent should be focused only on executing transactions, remove any data, any parts that are not needed to execute transactions
+- Consolidate, merge all these four tools into one:
+  - pending-actions
+  - execute-actions
+  - action-with-simulation
+  - market-balances - no need fot this one - user sees balances above
+- User has current balances in the app, this is his lookup to TVL, APRs and all yo vualts insights
+- So there is no need to have special tool for that like 'market-balances'
+- Agent UI chat is meant for transaction execution
+- User asks to to execute transactions
+  - then agent displays everyting together as all these three parts are related to each other
+  - in one tool show pending actions, simulations result and execute button
+  - This provide very clean situation: user sees what are actions, what are balances before/after simulation and cant execute transaction without extra prompt
+- That reduces needed responses to minimum
+  - user don't need to ask everytime for each separate action
+  - agent should just propose transaction to sign
+- Consider the situation when agents needs to execute action in steps , step by step
+  - what if there is conplex sequence of transaction like withdraw from one pool -> swap to two diferent tokens -> deposit to two diferent pools?
+  - Agent should be able to execute transaction step by step to progressively verify transactions
+  - Do we need to display middle steps? If yes then hide execute button and mark on UI that transaction is not fully prepared
+- remove all mesages in square brakets [...] - user should not see that in UI
+- Remember to show correctly formated token amounts
+  - don't say: `650000000 USDC` in bare token units, always use decimals so USD 6 decimals is `650 USDC` for that
+- Test in browser using playwright-cli with --headed mode
+  - use this story to talk to yo treasury agent: http://localhost:6007/iframe.html?globals=theme%3Adark&args=&id=yo-treasury-chat--default&viewMode=story
+  - this story is the whole subject - verify and test everything it's displayed here
+- spawn multiple agents in team to make deep research on all fields, to work from different perspectives, diferrent angles

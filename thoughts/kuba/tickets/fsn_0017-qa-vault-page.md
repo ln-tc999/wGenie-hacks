@@ -1,0 +1,23 @@
+# Fix Issues And Refactor Vault Page
+
+- Refactor `packages/web/src/app/vaults`
+- Test in browser using Playwright MCP
+  - http://localhost:3000/vaults/1/0xB8a451107A9f87FDe481D4D686247D6e43Ed715e - overview page of the vault
+  - http://localhost:3000/vaults/1/0xB8a451107A9f87FDe481D4D686247D6e43Ed715e/depositors - depositors page of the vault
+- Redesign this page like you started from scratch
+- Parts that are good and don't need refactor
+  - Flow Analysis chart
+  - Depositors Distribution chart
+  - Depositors list/table
+- Create separate serverside routes for each tab - including empty Activity and Performance tabs
+- All vault pages should be server side rendered as much as it's possible
+- Use TokenIcon and ChainIcon components
+- Breadcrumbs and all links shouldb nextjs links not programatic redirects - use best proctices
+- Don't use global time range - time rage should handled internally by featues itself
+- present links to blockexplorer and debank gracefully - use `packages/web/public/assets/debank-icon.svg`
+- Move External Links to top
+- Indentify all issues and fix
+- Improve UI/UX, align to the best design guidelines and patterns
+- Test in browser using Playwright MCP `http://localhost:3000/vaults/1/0xB8a451107A9f87FDe481D4D686247D6e43Ed715e`
+- Test agains mobile devices
+- Support for mobile view should be world class, no horizontal scroll, adjusted sized, great space management, above the fold focus, details below

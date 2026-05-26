@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "mastra": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@mastra/mcp-docs-server"
+      ]
+    },
+    "supabase-ponder-db": {
+      "url": "http://127.0.0.1:54341/mcp"
+    }
+  }
+}

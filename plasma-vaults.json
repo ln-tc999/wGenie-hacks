@@ -1,0 +1,1200 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Single source of truth for all Plasma Vault instances across the wGenie Fusion ecosystem",
+  "vaults": [
+    {
+      "name": "wGenie DAI Prime",
+      "address": "0x20e934c725b6703f0ac696f1689008057db9ac44",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "Lending Optimizer",
+        "wgenie-fusion"
+      ],
+      "startBlock": 20855944,
+      "url": "https://app.wGenie.io/fusion/ethereum/0x20e934c725b6703f0ac696f1689008057db9ac44",
+      "apps": [
+        "fusion",
+        "wgenie-dao"
+      ]
+    },
+    {
+      "name": "wGenie USDC Prime",
+      "address": "0xa91267a25939b2b0f046013fbf9597008f7f014b",
+      "chainId": 42161,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "Lending Optimizer",
+        "wgenie-fusion"
+      ],
+      "startBlock": 249623036,
+      "url": "https://app.wGenie.io/fusion/arbitrum/0xa91267a25939b2b0f046013fbf9597008f7f014b",
+      "apps": [
+        "fusion",
+        "wgenie-dao"
+      ]
+    },
+    {
+      "name": "wGenie USDC Prime",
+      "address": "0x45aa96f0b3188d47a1dafdbefce1db6b37f58216",
+      "chainId": 8453,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "Lending Optimizer",
+        "wgenie-fusion"
+      ],
+      "startBlock": 22140976,
+      "url": "https://app.wGenie.io/fusion/base/0x45aa96f0b3188d47a1dafdbefce1db6b37f58216",
+      "apps": [
+        "fusion",
+        "wgenie-dao"
+      ]
+    },
+    {
+      "name": "wGenie USDC Prime",
+      "address": "0x43ee0243ea8cf02f7087d8b16c8d2007cc9c7ca2",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "Lending Optimizer",
+        "wgenie-fusion"
+      ],
+      "startBlock": 20855940,
+      "url": "https://app.wGenie.io/fusion/ethereum/0x43ee0243ea8cf02f7087d8b16c8d2007cc9c7ca2",
+      "apps": [
+        "fusion",
+        "wgenie-dao"
+      ]
+    },
+    {
+      "name": "wGenie USDC Prime",
+      "address": "0xD855296f9868fF659F3f359C90B7D005EC049228",
+      "chainId": 42161,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 0,
+      "url": "https://app.wGenie.io/fusion/arbitrum/0xd855296f9868ff659f3f359c90b7d005ec049228",
+      "apps": [
+        "fusion",
+        "wgenie-dao"
+      ]
+    },
+    {
+      "name": "wGenie USDT Prime",
+      "address": "0xabab980f0ecb232d52f422c6b68d25c3d0c18e3e",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "Lending Optimizer",
+        "wgenie-fusion"
+      ],
+      "startBlock": 20855937,
+      "url": "https://app.wGenie.io/fusion/ethereum/0xabab980f0ecb232d52f422c6b68d25c3d0c18e3e",
+      "apps": [
+        "fusion",
+        "wgenie-dao"
+      ]
+    },
+    {
+      "name": "wGenie wstETH Base",
+      "address": "0xC4C00d8b323f37527eEda27c87412378be9F68Ec",
+      "chainId": 8453,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "Leveraged Looping",
+        "wgenie-fusion"
+      ],
+      "startBlock": 30169251,
+      "url": "https://app.wGenie.io/fusion/base/0xc4c00d8b323f37527eeda27c87412378be9f68ec",
+      "apps": [
+        "fusion",
+        "wgenie-dao"
+      ]
+    },
+    {
+      "name": "wGenie wstETH Base (Deprecated)",
+      "address": "0xfe8b23b493579e5c3a0a3bc5bbf20662b3072de6",
+      "chainId": 8453,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 0,
+      "url": "https://app.wGenie.io/fusion/base/0xfe8b23b493579e5c3a0a3bc5bbf20662b3072de6",
+      "apps": [
+        "fusion",
+        "wgenie-dao"
+      ]
+    },
+    {
+      "name": "wGenie wstETH Arbitrum",
+      "address": "0x2c6f1e2BBd074822773Fc142922CAbdBF535696C",
+      "chainId": 42161,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 372168724,
+      "url": "https://app.wGenie.io/fusion/arbitrum/0x2c6f1e2bbd074822773fc142922cabdbf535696c",
+      "apps": [
+        "fusion",
+        "wgenie-dao"
+      ]
+    },
+    {
+      "name": "wGenie weETH Ethereum",
+      "address": "0x981a6c7cA4496ACC3FF7bCDcC3B834fe0C4Db5Bc",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 22231441,
+      "url": "https://app.wGenie.io/fusion/ethereum/0x981a6c7ca4496acc3ff7bcdcc3b834fe0c4db5bc",
+      "apps": [
+        "fusion",
+        "wgenie-dao"
+      ]
+    },
+    {
+      "name": "wGenie stETH Ethereum",
+      "address": "0xB8a451107A9f87FDe481D4D686247D6e43Ed715e",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 23617599,
+      "url": "https://app.wGenie.io/fusion/ethereum/0xb8a451107a9f87fde481d4d686247d6e43ed715e",
+      "apps": [
+        "fusion",
+        "wgenie-dao"
+      ]
+    },
+    {
+      "name": "Singularity Vault",
+      "address": "0xcafC0A559a9Bf2fc77a7ECFaF04BD929a7D9c5Cf",
+      "chainId": 42161,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "DEX LP",
+        "wgenie-fusion"
+      ],
+      "startBlock": 316667987,
+      "url": "https://app.wGenie.io/fusion/arbitrum/0xcafc0a559a9bf2fc77a7ecfaf04bd929a7d9c5cf",
+      "apps": [
+        "fusion",
+        "clearstar"
+      ]
+    },
+    {
+      "name": "Clearstar Core",
+      "address": "0xf2f8386b88cb15c5ceade069c44f57fd2fd35e95",
+      "chainId": 8453,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "Lending Optimizer",
+        "wgenie-fusion"
+      ],
+      "startBlock": 31987604,
+      "url": "https://app.wGenie.io/fusion/base/0xf2f8386b88cb15c5ceade069c44f57fd2fd35e95",
+      "apps": [
+        "fusion",
+        "clearstar"
+      ]
+    },
+    {
+      "name": "Clearstar Synchrotron",
+      "address": "0x6d6ca3a393a36AB94f25664Ca94B10DA117A111D",
+      "chainId": 8453,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 33025005,
+      "url": "https://app.wGenie.io/fusion/base/0x6d6ca3a393a36ab94f25664ca94b10da117a111d",
+      "apps": [
+        "fusion",
+        "clearstar"
+      ]
+    },
+    {
+      "name": "Clearstar Synchrotron (Deprecated)",
+      "address": "0xb02d87eb201f56ba6afa24c0969982bc4c4e8599",
+      "chainId": 8453,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 0,
+      "url": "https://app.wGenie.io/fusion/base/0xb02d87eb201f56ba6afa24c0969982bc4c4e8599",
+      "apps": [
+        "fusion",
+        "clearstar"
+      ]
+    },
+    {
+      "name": "yoUSD Loooper",
+      "address": "0x1166250D1d6B5a1DBb73526257f6bb2Bbe235295",
+      "chainId": 8453,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 35091747,
+      "url": "https://app.wGenie.io/fusion/base/0x1166250d1d6b5a1dbb73526257f6bb2bbe235295",
+      "apps": [
+        "fusion",
+        "clearstar"
+      ]
+    },
+    {
+      "name": "yoETH Loooper",
+      "address": "0xfd843a3D9329C91CA22c5daA994BeA762541F954",
+      "chainId": 8453,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 35620213,
+      "url": "https://app.wGenie.io/fusion/base/0xfd843a3d9329c91ca22c5daa994bea762541f954",
+      "apps": [
+        "fusion",
+        "clearstar"
+      ]
+    },
+    {
+      "name": "yoGOLD",
+      "address": "0x8f973733a422fEcf0714F5C84E6C212C198BDDa1",
+      "chainId": 9745,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 3600741,
+      "url": "https://app.wGenie.io/fusion/plasma/0x8f973733a422fecf0714f5c84e6c212c198bdda1",
+      "apps": [
+        "fusion",
+        "clearstar"
+      ]
+    },
+    {
+      "name": "AlchemistCS",
+      "address": "0x87428d886F43068A44d7bDEeF106D3c42E1d6f23",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 23825452,
+      "url": "https://app.wGenie.io/fusion/ethereum/0x87428d886f43068a44d7bdeef106d3c42e1d6f23",
+      "apps": [
+        "fusion",
+        "clearstar"
+      ]
+    },
+    {
+      "name": "Tesseract Managed BTC",
+      "address": "0xdab31950ddcc814c49e6bbd5153dd2062e44f368",
+      "chainId": 8453,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 23314207,
+      "url": "https://app.wGenie.io/fusion/base/0xdab31950ddcc814c49e6bbd5153dd2062e44f368",
+      "apps": [
+        "fusion",
+        "tesseract"
+      ]
+    },
+    {
+      "name": "Tesseract Managed BTC",
+      "address": "0x1fdf5dc3f915cb40e0ad5690de51e3cb464d1bad",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 22187989,
+      "url": "https://app.wGenie.io/fusion/ethereum/0x1fdf5dc3f915cb40e0ad5690de51e3cb464d1bad",
+      "apps": [
+        "fusion",
+        "tesseract"
+      ]
+    },
+    {
+      "name": "Tesseract Managed ETH",
+      "address": "0x9824dcdac89f208bf8b5cb5c4dc41f04a0878607",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 22019437,
+      "url": "https://app.wGenie.io/fusion/ethereum/0x9824dcdac89f208bf8b5cb5c4dc41f04a0878607",
+      "apps": [
+        "fusion",
+        "tesseract"
+      ]
+    },
+    {
+      "name": "Tesseract AVAX Looping",
+      "address": "0xbCbEd2f9A037DC7E0B2Bda17a0cD0E43E563BCE9",
+      "chainId": 43114,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 70309870,
+      "url": "https://app.wGenie.io/fusion/avalanche/0xbcbed2f9a037dc7e0b2bda17a0cd0e43e563bce9",
+      "apps": [
+        "fusion",
+        "tesseract"
+      ]
+    },
+    {
+      "name": "Tesseract USDC Lending Optimizer",
+      "address": "0xc2A119EA6De75e4B1451330321CB2474Eb8D82d4",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 23189764,
+      "url": "https://app.wGenie.io/fusion/ethereum/0xc2a119ea6de75e4b1451330321cb2474eb8d82d4",
+      "apps": [
+        "fusion",
+        "tau-labs"
+      ]
+    },
+    {
+      "name": "Ethereum Xerberus Prime Index",
+      "address": "0xD7412A93Db3D39AA7Ab9C30c471f069A3F059aD5",
+      "chainId": 8453,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 27839895,
+      "url": "https://app.wGenie.io/fusion/base/0xd7412a93db3d39aa7ab9c30c471f069a3f059ad5",
+      "apps": [
+        "fusion",
+        "xerberus"
+      ]
+    },
+    {
+      "name": "Xerberus Evergreen",
+      "address": "0xe2996fe2d49b41e37b5c01df32cdfc125329e5d0",
+      "chainId": 8453,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 30563636,
+      "url": "https://app.wGenie.io/fusion/base/0xe2996fe2d49b41e37b5c01df32cdfc125329e5d0",
+      "apps": [
+        "fusion",
+        "xerberus"
+      ]
+    },
+    {
+      "name": "Xerberus BASE 10 - Risk Weighted",
+      "address": "0xa51787E262E53220bbEef297613ee28a9C011937",
+      "chainId": 8453,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 30729154,
+      "url": "https://app.wGenie.io/fusion/base/0xa51787e262e53220bbeef297613ee28a9c011937",
+      "apps": [
+        "fusion",
+        "xerberus"
+      ]
+    },
+    {
+      "name": "Autopilot USDC Arbitrum",
+      "address": "0xC015d83e24FDDe23100AD1E9baD837878fbfaB94",
+      "chainId": 42161,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 310817805,
+      "url": "https://app.wGenie.io/fusion/arbitrum/0xc015d83e24fdde23100ad1e9bad837878fbfab94",
+      "apps": [
+        "fusion",
+        "harvest"
+      ]
+    },
+    {
+      "name": "Autopilot WETH Arbitrum",
+      "address": "0xcE4D997A3B404F9Eaa796F89DEae40747D3647B7",
+      "chainId": 42161,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 391468536,
+      "url": "https://app.wGenie.io/fusion/arbitrum/0xce4d997a3b404f9eaa796f89deae40747d3647b7",
+      "apps": [
+        "fusion",
+        "harvest"
+      ]
+    },
+    {
+      "name": "Autopilot WBTC Arbitrum",
+      "address": "0x49b2248f7a7a703731852db0b2217f40da75B8aB",
+      "chainId": 42161,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 391472856,
+      "url": "https://app.wGenie.io/fusion/arbitrum/0x49b2248f7a7a703731852db0b2217f40da75b8ab",
+      "apps": [
+        "fusion",
+        "harvest"
+      ]
+    },
+    {
+      "name": "Autopilot USDC DRIP Arbitrum",
+      "address": "0x407d3d942d0911a2fea7e22417f81e27c02d6c6f",
+      "chainId": 42161,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 376957845,
+      "url": "https://app.wGenie.io/fusion/arbitrum/0x407d3d942d0911a2fea7e22417f81e27c02d6c6f",
+      "apps": [
+        "fusion",
+        "harvest"
+      ]
+    },
+    {
+      "name": "Autopilot USDC Base",
+      "address": "0x0d877Dc7C8Fa3aD980DfDb18B48eC9F8768359C4",
+      "chainId": 8453,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "Yield Optimizer",
+        "Harvest",
+        "wgenie-fusion"
+      ],
+      "startBlock": 26982214,
+      "url": "https://app.wGenie.io/fusion/base/0x0d877dc7c8fa3ad980dfdb18b48ec9f8768359c4",
+      "apps": [
+        "fusion",
+        "harvest"
+      ]
+    },
+    {
+      "name": "Autopilot WETH Base",
+      "address": "0x7872893e528Fe2c0829e405960db5B742112aa97",
+      "chainId": 8453,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "Yield Optimizer",
+        "Harvest",
+        "wgenie-fusion"
+      ],
+      "startBlock": 26982314,
+      "url": "https://app.wGenie.io/fusion/base/0x7872893e528fe2c0829e405960db5b742112aa97",
+      "apps": [
+        "fusion",
+        "harvest"
+      ]
+    },
+    {
+      "name": "Autopilot cbBTC Base",
+      "address": "0x31A421271414641cb5063B71594b642D2666dB6B",
+      "chainId": 8453,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "Yield Optimizer",
+        "Harvest",
+        "wgenie-fusion"
+      ],
+      "startBlock": 26982399,
+      "url": "https://app.wGenie.io/fusion/base/0x31A421271414641cb5063B71594b642D2666dB6B",
+      "apps": [
+        "fusion",
+        "harvest"
+      ]
+    },
+    {
+      "name": "USDC Morpho-Only Autopilot",
+      "address": "0xd6701905c59ee618dc36dc747506bce0a4ac760a",
+      "chainId": 8453,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 35270153,
+      "url": "https://app.wGenie.io/fusion/base/0xd6701905c59ee618dc36dc747506bce0a4ac760a",
+      "apps": [
+        "fusion",
+        "harvest"
+      ]
+    },
+    {
+      "name": "Autopilot USDC Ethereum",
+      "address": "0x3151cee0cdb517c0e7db2b55ff5085e7d1809d90",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 22495129,
+      "url": "https://app.wGenie.io/fusion/ethereum/0x3151cee0cdb517c0e7db2b55ff5085e7d1809d90",
+      "apps": [
+        "fusion",
+        "harvest"
+      ]
+    },
+    {
+      "name": "Reservoir wsrUSD looping",
+      "address": "0xe9385eff3f937fcb0f0085da9a3f53d6c2b4fb5f",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "Leveraged Looping",
+        "Reservoir",
+        "wgenie-fusion"
+      ],
+      "startBlock": 21967467,
+      "url": "https://app.wGenie.io/fusion/ethereum/0xe9385eff3f937fcb0f0085da9a3f53d6c2b4fb5f",
+      "apps": [
+        "fusion",
+        "reservoir"
+      ]
+    },
+    {
+      "name": "Reservoir ETH Yield",
+      "address": "0xf6cD9E8415162C8fb3C52676c7cA68812A34f76E",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 23175844,
+      "url": "https://app.wGenie.io/fusion/ethereum/0xf6cd9e8415162c8fb3c52676c7ca68812a34f76e",
+      "apps": [
+        "fusion",
+        "reservoir"
+      ]
+    },
+    {
+      "name": "Reservoir BTC Yield",
+      "address": "0xE47358eae04719f3CF7025E95d0AD202e68BD9b2",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 23175891,
+      "url": "https://app.wGenie.io/fusion/ethereum/0xe47358eae04719f3cf7025e95d0ad202e68bd9b2",
+      "apps": [
+        "fusion",
+        "reservoir"
+      ]
+    },
+    {
+      "name": "Reservoir High Yield USDC Lending",
+      "address": "0xc197ad72936b7c558c96417f22041fe9e3c7043f",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 23884370,
+      "url": "https://app.wGenie.io/fusion/ethereum/0xc197ad72936b7c558c96417f22041fe9e3c7043f",
+      "apps": [
+        "fusion",
+        "reservoir"
+      ]
+    },
+    {
+      "name": "TAU Core",
+      "address": "0x707d816272ED15174c72F92ECCc4149D1dcB7a80",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 22565660,
+      "url": "https://app.wGenie.io/fusion/ethereum/0x707d816272ed15174c72f92eccc4149d1dcb7a80",
+      "apps": [
+        "fusion",
+        "tau-labs"
+      ]
+    },
+    {
+      "name": "TAU Core (Deprecated)",
+      "address": "0x9dC2819B49C3d39b11a5F4C8c0c17BD7e18126D9",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 0,
+      "url": "https://app.wGenie.io/fusion/ethereum/0x9dc2819b49c3d39b11a5f4c8c0c17bd7e18126d9",
+      "apps": [
+        "fusion",
+        "tau-labs"
+      ]
+    },
+    {
+      "name": "TAU Reservoir Pointsmax",
+      "address": "0x6f66b845604dad6e80b2a1472e6cacbbe66a8c40",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "Leveraged Looping",
+        "TAU",
+        "Reservoir",
+        "wgenie-fusion"
+      ],
+      "startBlock": 22234609,
+      "url": "https://app.wGenie.io/fusion/ethereum/0x6f66b845604dad6e80b2a1472e6cacbbe66a8c40",
+      "apps": [
+        "fusion",
+        "tau-labs"
+      ]
+    },
+    {
+      "name": "TAU Yield Bond ETF",
+      "address": "0x43a32D4f6c582f281c52393f8F9E5AcE1D4A1E68",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "Bond ETF",
+        "TAU",
+        "Pendle",
+        "wgenie-fusion"
+      ],
+      "startBlock": 22445035,
+      "url": "https://app.wGenie.io/fusion/ethereum/0x43a32d4f6c582f281c52393f8f9e5ace1d4a1e68",
+      "apps": [
+        "fusion",
+        "tau-labs"
+      ]
+    },
+    {
+      "name": "TAU Yield Bond ETF (Deprecated)",
+      "address": "0x08Dd57A51025A266cECc85154860AA4e71e48EE8",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 0,
+      "url": "https://app.wGenie.io/fusion/ethereum/0x08dd57a51025a266cecc85154860aa4e71e48ee8",
+      "apps": [
+        "fusion",
+        "tau-labs"
+      ]
+    },
+    {
+      "name": "TAU infiniFi Pointsmax",
+      "address": "0xB0f56BB0bf13ee05FeF8cD2d8DF5FfdFcAC7a74f",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "Leveraged Looping",
+        "TAU",
+        "infiniFi",
+        "wgenie-fusion"
+      ],
+      "startBlock": 23120189,
+      "url": "https://app.wGenie.io/fusion/ethereum/0xb0f56bb0bf13ee05fef8cd2d8df5ffdfcac7a74f",
+      "apps": [
+        "fusion",
+        "tau-labs"
+      ]
+    },
+    {
+      "name": "TAU InfiniFi BTC Carry",
+      "address": "0xe48cDD5eCeC5aA53E630A7B4dF12f79067B68Dac",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 23619085,
+      "url": "https://app.wGenie.io/fusion/ethereum/0xe48cdd5ecec5aa53e630a7b4df12f79067b68dac",
+      "apps": [
+        "fusion",
+        "tau-labs"
+      ]
+    },
+    {
+      "name": "TAU InfiniFi ETH Carry",
+      "address": "0xC50b2D51fd1E2Ac67A9c09Eaf63C24Ea2465C64B",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 23642188,
+      "url": "https://app.wGenie.io/fusion/ethereum/0xc50b2d51fd1e2ac67a9c09eaf63c24ea2465c64b",
+      "apps": [
+        "fusion",
+        "tau-labs"
+      ]
+    },
+    {
+      "name": "TAU Lending Optimizer",
+      "address": "0x63103375659d0aa94e9f35df15be01a3dd1ae9c0",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 23747913,
+      "url": "https://app.wGenie.io/fusion/ethereum/0x63103375659d0aa94e9f35df15be01a3dd1ae9c0",
+      "apps": [
+        "fusion",
+        "tau-labs"
+      ]
+    },
+    {
+      "name": "TAU InfiniFi cbBTC Carry",
+      "address": "0x60e36a79C3d21120350e39b5EA59AE26B75Ae74c",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 0,
+      "url": "https://app.wGenie.io/fusion/ethereum/0x60e36a79c3d21120350e39b5ea59ae26b75ae74c",
+      "apps": [
+        "fusion",
+        "tau-labs"
+      ]
+    },
+    {
+      "name": "TAU InfiniFi Pointsmaxx - Silo",
+      "address": "0xd36f53497507e948df9f277cF8c3eCecB09a1c1D",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 0,
+      "url": "https://app.wGenie.io/fusion/ethereum/0xd36f53497507e948df9f277cf8c3ececb09a1c1d",
+      "apps": [
+        "fusion",
+        "tau-labs"
+      ]
+    },
+    {
+      "name": "Magnus Lending Optimizer",
+      "address": "0xad685fec2066d7f5436f5804882998ba79725706",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 0,
+      "url": "https://app.wGenie.io/fusion/ethereum/0xad685fec2066d7f5436f5804882998ba79725706",
+      "apps": [
+        "fusion",
+        "tau-labs"
+      ]
+    },
+    {
+      "name": "AavEthena Loop Mainnet",
+      "address": "0x604117F0C94561231060F56cD2dDD16245D434c5",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 0,
+      "url": "https://app.wGenie.io/fusion/ethereum/0x604117f0c94561231060f56cd2ddd16245d434c5",
+      "apps": [
+        "fusion",
+        "tau-labs"
+      ]
+    },
+    {
+      "name": "AavEthena Loop Plasma",
+      "address": "0x0A71624ab3E8101f78D95DFc81E0F1f31128Ed7A",
+      "chainId": 9745,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 0,
+      "url": "https://app.wGenie.io/fusion/plasma/0x0a71624ab3e8101f78d95dfc81e0f1f31128ed7a",
+      "apps": [
+        "fusion",
+        "tau-labs"
+      ]
+    },
+    {
+      "name": "Tanken WETH Base",
+      "address": "0xebc6c7883ca32ef9484740ba32a816f5f88b7a41",
+      "chainId": 8453,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 34844070,
+      "url": "https://app.wGenie.io/fusion/base/0xebc6c7883ca32ef9484740ba32a816f5f88b7a41",
+      "apps": [
+        "fusion",
+        "tanken"
+      ]
+    },
+    {
+      "name": "Tanken WETH Base (Deprecated)",
+      "address": "0x496E39F0Aa349c24032E5636E9180e7265C3FeCD",
+      "chainId": 8453,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 0,
+      "url": "https://app.wGenie.io/fusion/base/0x496e39f0aa349c24032e5636e9180e7265c3fecd",
+      "apps": [
+        "fusion",
+        "tanken"
+      ]
+    },
+    {
+      "name": "Leveraged Falcon USDC Core",
+      "address": "0xB4790CfDF1DF71c2E4ac2F5c43dBCb975AD447ae",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 22565613,
+      "url": "https://app.wGenie.io/fusion/ethereum/0xb4790cfdf1df71c2e4ac2f5c43dbcb975ad447ae",
+      "apps": [
+        "fusion",
+        "alphaping"
+      ]
+    },
+    {
+      "name": "Leveraged sUSDf",
+      "address": "0xb530a1b5259a71187f1d69acf0488f102637a3ed",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "Leveraged Looping",
+        "Alphaping",
+        "wgenie-fusion"
+      ],
+      "startBlock": 22441642,
+      "url": "https://app.wGenie.io/fusion/ethereum/0xb530a1b5259a71187f1d69acf0488f102637a3ed",
+      "apps": [
+        "fusion",
+        "alphaping"
+      ]
+    },
+    {
+      "name": "Leveraged sUSDf (Deprecated)",
+      "address": "0x29d322DD088e9b9D1416F43188954F08748fafbb",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 0,
+      "url": "https://app.wGenie.io/fusion/ethereum/0x29d322dd088e9b9d1416f43188954f08748fafbb",
+      "apps": [
+        "fusion",
+        "alphaping"
+      ]
+    },
+    {
+      "name": "BC Vault One",
+      "address": "0x64d47d8516034857C6fc040ecd405e03643a464F",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 22545442,
+      "url": "https://app.wGenie.io/fusion/ethereum/0x64d47d8516034857c6fc040ecd405e03643a464f",
+      "apps": [
+        "fusion"
+      ]
+    },
+    {
+      "name": "BTC Valos",
+      "address": "0xfFB090Cb1829C5977fBd070ceBFf7425c76B0472",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 22551772,
+      "url": "https://app.wGenie.io/fusion/ethereum/0xffb090cb1829c5977fbd070cebff7425c76b0472",
+      "apps": [
+        "fusion"
+      ]
+    },
+    {
+      "name": "F1 Champion Principle Protected Note",
+      "address": "0xC1926C01ED88E93F5C266F3B43AF57c1f6E63b5D",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 22551806,
+      "url": "https://app.wGenie.io/fusion/ethereum/0xc1926c01ed88e93f5c266f3b43af57c1f6e63b5d",
+      "apps": [
+        "fusion"
+      ]
+    },
+    {
+      "name": "K3 Capital ETH Maxi",
+      "address": "0x2aF2146E6722B80A0A455F405eDFF3993715E417",
+      "chainId": 130,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "Leveraged Looping",
+        "K3 Capital",
+        "wgenie-fusion"
+      ],
+      "startBlock": 19492026,
+      "url": "https://app.wGenie.io/fusion/unichain/0x2af2146e6722b80a0a455f405edff3993715e417",
+      "apps": [
+        "fusion",
+        "k3-capital"
+      ]
+    },
+    {
+      "name": "K3 ALPHA EUR",
+      "address": "0x7F0409E03c83F3b42D8ba4B83485ffF72Cc9D7aB",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 23188212,
+      "url": "https://app.wGenie.io/fusion/ethereum/0x7f0409e03c83f3b42d8ba4b83485fff72cc9d7ab",
+      "apps": [
+        "fusion",
+        "k3-capital"
+      ]
+    },
+    {
+      "name": "K3 Leveraged syrupUSDT Strategy",
+      "address": "0x3b3bDAA4462851621818D2CEBC835E077587147A",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 0,
+      "url": "https://app.wGenie.io/fusion/ethereum/0x3b3bdaa4462851621818d2cebc835e077587147a",
+      "apps": [
+        "fusion",
+        "k3-capital"
+      ]
+    },
+    {
+      "name": "Strata srUSDe PT Looping",
+      "address": "0xD731F94c778f7C1090e2E0D797150A647De5188A",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "Leveraged Looping",
+        "Strata",
+        "MEV Capital",
+        "wgenie-fusion"
+      ],
+      "startBlock": 23030652,
+      "url": "https://app.wGenie.io/fusion/ethereum/0xd731f94c778f7c1090e2e0d797150a647de5188a",
+      "apps": [
+        "fusion",
+        "mev-capital"
+      ]
+    },
+    {
+      "name": "Stake DAO Smart Save (USDC)",
+      "address": "0xa4f39ec96B7A2178B381dE9CDc9021fB2490b409",
+      "chainId": 42161,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 363152197,
+      "url": "https://app.wGenie.io/fusion/arbitrum/0xa4f39ec96b7a2178b381de9cdc9021fb2490b409",
+      "apps": [
+        "fusion",
+        "stake-dao"
+      ]
+    },
+    {
+      "name": "LlamaRisk crvUSD Optimizer",
+      "address": "0x4c4f752fa54dafB6d51B4A39018271c90bA1156F",
+      "chainId": 42161,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 374850746,
+      "url": "https://app.wGenie.io/fusion/arbitrum/0x4c4f752fa54dafb6d51b4a39018271c90ba1156f",
+      "apps": [
+        "fusion",
+        "llama-risk"
+      ]
+    },
+    {
+      "name": "LlamaRisk crvUSD Optimizer",
+      "address": "0xbfA9d6EC0E04B6691fCAE5F8b48838C3918eC117",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 23926173,
+      "url": "https://app.wGenie.io/fusion/ethereum/0xbfa9d6ec0e04b6691fcae5f8b48838c3918ec117",
+      "apps": [
+        "fusion",
+        "llama-risk"
+      ]
+    },
+    {
+      "name": "TiD Base ETH",
+      "address": "0x2c4524F8d602260030185F8CEbcc8Cc4e1c70c17",
+      "chainId": 8453,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 34101484,
+      "url": "https://app.wGenie.io/fusion/base/0x2c4524f8d602260030185f8cebcc8cc4e1c70c17",
+      "apps": [
+        "fusion",
+        "tid-capital"
+      ]
+    },
+    {
+      "name": "Auto-Compounding Liquity ETH Stability Pool",
+      "address": "0x4536D493292e53c5c11DefA9e4C6826777502eFA",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 22838039,
+      "url": "https://app.wGenie.io/fusion/ethereum/0x4536d493292e53c5c11defa9e4c6826777502efa",
+      "apps": [
+        "fusion",
+        "sentinel"
+      ]
+    },
+    {
+      "name": "Sentinel stcUSD Adaptive Looping",
+      "address": "0xEf53663BB775a51181f04d590F88FC38d6bd5751",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 0,
+      "url": "https://app.wGenie.io/fusion/ethereum/0xef53663bb775a51181f04d590f88fc38d6bd5751",
+      "apps": [
+        "fusion",
+        "sentinel"
+      ]
+    },
+    {
+      "name": "Hyperithm mHYPER Looping",
+      "address": "0x0b45A1e71A8A09F5D382feD27202D50ed983AaF3",
+      "chainId": 1,
+      "protocol": "wGenie Fusion",
+      "tags": [
+        "wgenie-fusion"
+      ],
+      "startBlock": 0,
+      "url": "https://app.wGenie.io/fusion/ethereum/0x0b45a1e71a8a09f5d382fed27202d50ed983aaf3",
+      "apps": [
+        "fusion",
+        "hyperithm"
+      ]
+    },
+    {
+      "name": "YO Treasury",
+      "address": "0x09d1C2E03F73853916Ee86b4e1A729F9FbAA960D",
+      "chainId": 8453,
+      "protocol": "YO Protocol & wGenie Fusion",
+      "tags": [
+        "yo-treasury"
+      ],
+      "startBlock": 43046896,
+      "url": "https://app.wGenie.io/fusion/base/0x09d1c2e03f73853916ee86b4e1a729f9fbaa960d",
+      "apps": [
+        "yo"
+      ]
+    },
+    {
+      "name": "yoUSD",
+      "address": "0x0000000f2eb9f69274678c76222b35eec7588a65",
+      "chainId": 8453,
+      "protocol": "YO Protocol",
+      "tags": [
+        "yo-vault"
+      ],
+      "startBlock": 29056193,
+      "url": "https://yo.xyz",
+      "apps": [
+        "yo"
+      ]
+    },
+    {
+      "name": "yoETH",
+      "address": "0x3a43aec53490cb9fa922847385d82fe25d0e9de7",
+      "chainId": 8453,
+      "protocol": "YO Protocol",
+      "tags": [
+        "yo-vault"
+      ],
+      "startBlock": 29056193,
+      "url": "https://yo.xyz",
+      "apps": [
+        "yo"
+      ]
+    },
+    {
+      "name": "yoBTC",
+      "address": "0xbcbc8cb4d1e8ed048a6276a5e94a3e952660bcbc",
+      "chainId": 8453,
+      "protocol": "YO Protocol",
+      "tags": [
+        "yo-vault"
+      ],
+      "startBlock": 29056193,
+      "url": "https://yo.xyz",
+      "apps": [
+        "yo"
+      ]
+    },
+    {
+      "name": "yoEUR",
+      "address": "0x50c749ae210d3977adc824ae11f3c7fd10c871e9",
+      "chainId": 8453,
+      "protocol": "YO Protocol",
+      "tags": [
+        "yo-vault"
+      ],
+      "startBlock": 29056193,
+      "url": "https://yo.xyz",
+      "apps": [
+        "yo"
+      ]
+    }
+  ]
+}

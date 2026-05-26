@@ -1,0 +1,48 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# AI Rules for DeFi Panda
+
+DeFi Panda is a web-based analytics platform designed to provide comprehensive insights into ERC4626 vault investments. The platform serves as a centralized hub for DeFi investors, analysts, and data-driven users who need reliable, transparent data about DeFi vault performance and activities.
+
+## Support Level
+
+- Favor elegant, maintainable solutions over verbose code. Assume understanding of language idioms and design patterns.
+- Highlight potential performance implications and optimization opportunities in suggested code.
+- Frame solutions within broader architectural contexts and suggest design alternatives when appropriate.
+- Focus comments on 'why' not 'what' - assume code readability through well-named functions and variables.
+- Proactively address edge cases, race conditions, and security considerations without being prompted.
+- When debugging, provide targeted diagnostic approaches rather than shotgun solutions.
+- Suggest comprehensive testing strategies rather than just example tests, including considerations for mocking, test organization, and coverage.
+
+## Clean Code
+
+- Use feedback from linters to improve the code when making changes.
+- Prioritize error handling and edge cases.
+- Handle errors and edge cases at the beginning of functions.
+- Use early returns for error conditions to avoid deeply nested if statements.
+- Place the happy path last in the function for improved readability.
+- Avoid unnecessary else statements; use if-return pattern instead.
+- Use guard clauses to handle preconditions and invalid states early.
+
+## File and Variable Names
+
+- Use kebab-case for file names.
+- Use camelCase for variable names.
+- Use UPPER_SNAKE_CASE for constants, hardcoded values, or magic values.
+- Use unique file names across the entire codebase to enable clear reference when searching by file name.
+
+## TypeScript
+
+- Avoid explicitly typing return values. Always try to infer the type.
+- Use absolute paths for importing modules like `import { module } from '@/<path>';`
+- Use objects for function arguments. For example `const myFunc = (args: { a: string; b: number }) => {...}` instead of `const myFunc = (a: string, b: number) => {...}`
+
+
+
+
+
+
+

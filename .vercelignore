@@ -1,0 +1,7 @@
+# Packages not needed for Vercel deployments
+packages/ponder
+packages/hardhat-tests
+packages/supabase-mastra
+thoughts
+external
+.git

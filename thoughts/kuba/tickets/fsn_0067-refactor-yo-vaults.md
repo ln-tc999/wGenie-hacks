@@ -1,0 +1,21 @@
+# Refactor plan
+
+- Make Deposit / Withdraw features selectable with tabs 
+  - only one feature visible at once
+  - on right side of th screen like we do now
+- For overview tab (subpage):
+  - this page should be protocol specific - read it from tags
+  - For Yo treasury vault
+    - Show current dashboard: packages/web/src/yo-treasury/components/treasury-dashboard.tsx
+    - below show chat: packages/web/src/yo-treasury/components/treasury-chat.tsx
+  - For wGenie fusion (based on tags)
+    - show packages/web/src/vault-details/components/vault-overview-content.tsx
+- In Activity tab (http://localhost:3000/vaults/8453/0x09d1C2E03F73853916Ee86b4e1A729F9FbAA960D/activity):
+  - show flow chart packages/web/src/flow-chart/flow-chart.tsx
+  - show for all vaults regardless tags
+- Overview tab should be specific for the protocol (based on tags), other tabs are general for all vaults regardless tags (protocol)
+- Remove current YO Treasury tab (http://localhost:3000/vaults/8453/0x09d1C2E03F73853916Ee86b4e1A729F9FbAA960D/yo). Now everything is available in overview tab for YO treasury.
+- Remove standalone YO Treasury page - http://localhost:3000/yo-treasury
+  - we don't need that
+  - I want to use generic pattern, no special handling - http://localhost:3000/vaults/8453/0x09d1C2E03F73853916Ee86b4e1A729F9FbAA960D/yo
+  - In left side menu link to this page instead

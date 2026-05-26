@@ -1,0 +1,54 @@
+---
+alwaysApply: true
+---
+## Tech Stack
+
+DeFi Panda is built with a modern blockchain analytics stack optimized for indexing and serving DeFi vault data:
+
+### Core Framework
+- **Ponder (v0.11.20)** - Blockchain indexing framework for building real-time analytics applications
+- **Node.js (>=22.14)** - Runtime environment
+- **TypeScript (v5.8.3)** - Primary language for type safety and developer experience
+
+### API & Web Framework
+- **Hono (v4.8.3)** - Fast, lightweight web framework for building REST APIs
+- **Viem (v2.31.4)** - TypeScript interface for Ethereum, providing type-safe blockchain interactions
+
+### Data & Validation
+- **Zod (v4.0.5)** - Schema validation library for runtime type checking and API validation
+- **date-fns (v4.1.0)** - Modern date utility library for time-based calculations and formatting
+
+### Utilities
+- **Remeda (v2.25.0)** - Functional programming utility library (lodash alternative) for data transformations
+
+### Development & Testing
+- **Vitest (v3.2.4)** - Fast unit testing framework with TypeScript support
+- **ESLint (v9.29.0)** - Code linting with Ponder-specific configuration
+- **eslint-config-ponder (v0.11.20)** - Ponder framework ESLint rules and best practices
+
+### Development Guidelines
+- Use **TypeScript** for all source code with strict type checking
+- Leverage **Ponder** conventions for blockchain event indexing and database schema
+- Use **Hono** for REST API endpoints with proper error handling
+- Implement **Zod** schemas for all API inputs/outputs and data validation
+- Use **Viem** for all Ethereum interactions (no ethers.js or web3.js)
+- Apply **Remeda** for functional data transformations over imperative loops
+- Write tests with **Vitest** focusing on business logic and API endpoints
+- Follow **date-fns** patterns for all date/time operations
+
+### Architecture Patterns
+- Event-driven architecture for blockchain data indexing
+- RESTful API design with proper HTTP status codes
+- Functional programming patterns for data processing
+- Type-safe database operations through Ponder's ORM
+- Immutable data structures where possible
+
+### Maintenance
+**⚠️ Important:** Always update this tech stack documentation when:
+- Installing new dependencies (`pnpm add <package>`)
+- Upgrading existing packages (`pnpm update`)
+- Changing Node.js version requirements
+- Adding new development tools or frameworks
+- Removing deprecated libraries
+
+Keep version numbers current and update guidelines accordingly.

@@ -1,0 +1,24 @@
+{
+  "name": "@wgenie/fusion-sdk",
+  "version": "0.0.1",
+  "description": "wGenie Fusion SDK for TypeScript",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc --build",
+    "dev": "tsc --build --watch",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "find-unused-exports": "yarn ts-unused-exports ./tsconfig.json --ignoreLocallyUsed --maxIssues=1"
+  },
+  "dependencies": {
+    "remeda": "2.27.2",
+    "viem": "catalog:",
+    "zod": "4.0.5"
+  },
+  "devDependencies": {
+    "typescript": "catalog:",
+    "vitest": "3.0.5"
+  }
+}

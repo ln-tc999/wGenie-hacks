@@ -1,0 +1,9 @@
+[submodule "wgenie-fusion"]
+	path = external/wgenie-fusion
+	url = https://github.com/maulana-tech/wgenie-fusion.git
+[submodule "external/core"]
+	path = external/core
+	url = https://github.com/maulana-tech/core.git
+[submodule "external/yo-protocol-react-example"]
+	path = external/yo-protocol-react-example
+	url = https://github.com/maulana-tech/yo-protocol-react-example.git

@@ -1,0 +1,32 @@
+{
+  "name": "fusion-monorepo",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.28.2",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "db:start": "cd packages/supabase-ponder && supabase start",
+    "db:stop": "cd packages/supabase-ponder && supabase stop",
+    "db:status": "cd packages/supabase-ponder && supabase status",
+    "dev:web": "pnpm --filter @wgenie/fusion-web dev",
+    "dev:web:fusion": "NEXT_PUBLIC_APP_CONFIG=fusion pnpm --filter @wgenie/fusion-web dev",
+    "dev:web:yo": "NEXT_PUBLIC_APP_CONFIG=yo pnpm --filter @wgenie/fusion-web dev",
+    "dev:ponder": "pnpm --filter @wgenie/fusion-ponder dev",
+    "dev:mastra": "pnpm --filter @wgenie/fusion-mastra dev",
+    "build:sdk": "pnpm --filter @wgenie/fusion-sdk build",
+    "build:web": "pnpm --filter @wgenie/fusion-web build",
+    "test:sdk": "pnpm --filter @wgenie/fusion-sdk test",
+    "test:hardhat": "pnpm --filter @wgenie/fusion-hardhat-tests test"
+  },
+  "pnpm": {
+    "overrides": {
+      "viem": "2.45.1"
+    },
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp"
+    ]
+  }
+}
