@@ -16,4 +16,4 @@ export function formatCurrency(amount: number): string {
   return `$${amount.toFixed(2)}`;
 }
 
-export const satisifyType = <const T extends any>(value: T) => value;
+export const satisifyType = <T extends any>(value: T) => value;
