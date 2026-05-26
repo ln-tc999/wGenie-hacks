@@ -7,7 +7,7 @@
     ".": "./src/mastra/index.ts",
     "./agents": "./src/agents/index.ts",
     "./alpha-types": "./src/tools/alpha/types.ts",
-    "./yo-treasury-types": "./src/tools/yo-treasury/types.ts"
+    "./wgenie-cfo-types": "./src/tools/wgenie-cfo/types.ts"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
