@@ -83,12 +83,19 @@ Make sure to populate your API keys (OpenAI/Anthropic/OpenRouter) in `packages/m
 
 ### 3. Start the Database (Supabase)
 
+Ponder relies on a PostgreSQL database to index blockchain events. We use a local Supabase instance to handle this seamlessly while providing a robust REST API for the frontend.
+
 ```bash
 cd packages/supabase-ponder
 supabase start
 ```
-*Note: Run `supabase stop` when you are done.*
+*Note: This command requires Docker to be running. Run `supabase stop` when you are done to save resources.*
 
+#### Generating Database Types
+If you modify the database schema via Ponder or Supabase migrations, you must regenerate the TypeScript types:
+```bash
+pnpm --filter @wgenie/fusion-supabase-ponder gen:types
+```
 ### 4. Start the Application
 
 You can start individual components or run them all together from the root:
