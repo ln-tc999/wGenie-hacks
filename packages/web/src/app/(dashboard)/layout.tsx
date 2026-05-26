@@ -13,7 +13,7 @@ export default function DashboardLayout({
   const config = getAppConfig();
 
   // Landing page renders full-screen without sidebar
-  if (config.id === 'yo' && pathname === '/') {
+  if (config.id === 'wgenie' && pathname === '/') {
     return <>{children}</>;
   }
 
