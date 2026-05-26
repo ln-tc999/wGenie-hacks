@@ -2,7 +2,7 @@ import { z } from 'zod';
 
 /**
  * Creates a pending action schema with the given protocol enum values.
- * Shared between Alpha and YO Treasury agents.
+ * Shared between Alpha and WalletGenie Treasury agents.
  */
 export function createPendingActionSchema<T extends [string, ...string[]]>(protocols: T) {
   return z.object({
