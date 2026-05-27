@@ -26,7 +26,7 @@ export function TreasuryDashboard({ chainId, vaultAddress }: Props) {
     treasuryAddress: vaultAddress,
   });
 
-  // Mantle vault metadata (APR, TVL) via @walletgenie-protocol/core
+  // Mantle vault metadata (APR, TVL)
   const { data: vaultsData, isLoading: isVaultsLoading } =
     useMantleVaultsData(chainId);
 
