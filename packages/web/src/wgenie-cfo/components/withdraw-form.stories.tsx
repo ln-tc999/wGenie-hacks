@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { WalletDecorator } from '@/app/wallet.decorator';
-import { WithdrawForm } from '@/vault-actions/components/withdraw-form';
+import { YoWithdrawForm } from '@/vault-actions/components/withdraw-form';
 
-const meta: Meta<typeof WithdrawForm> = {
+const meta: Meta<typeof YoWithdrawForm> = {
   title: 'WalletGenie Treasury / Withdraw Form',
-  component: WithdrawForm,
+  component: YoWithdrawForm,
   decorators: [WalletDecorator],
   parameters: {
     layout: 'centered',
@@ -12,7 +12,7 @@ const meta: Meta<typeof WithdrawForm> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof WithdrawForm>;
+type Story = StoryObj<typeof YoWithdrawForm>;
 
 export const Base: Story = {
   args: {
