@@ -5,9 +5,8 @@ import { erc20Abi, erc4626Abi, formatUnits, type Address } from 'viem';
 
 /**
  * Mantle vault configs per chain.
- * Addresses from @walletgenie-protocol/core VAULTS registry.
  */
-const YO_VAULTS: Record<
+const MANTLE_VAULTS: Record<
   number,
   Array<{
     id: string;
@@ -89,7 +88,7 @@ export function useTreasuryPositions({
   chainId,
   treasuryAddress,
 }: UseTreasuryPositionsParams) {
-  const mantleVaults = YO_VAULTS[chainId] ?? [];
+  const mantleVaults = MANTLE_VAULTS[chainId] ?? [];
 
   // ─── Pass 1: Read share balances + per-vault unallocated balances ───
   const pass1Contracts = [
@@ -175,4 +174,4 @@ export function useTreasuryPositions({
   };
 }
 
-export { YO_VAULTS };
+export { MANTLE_VAULTS };
