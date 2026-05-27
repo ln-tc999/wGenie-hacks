@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { WalletDecorator } from '@/app/wallet.decorator';
-import { DepositForm } from '@/vault-actions/components/deposit-form';
+import { YoDepositForm } from '@/vault-actions/components/deposit-form';
 
-const meta: Meta<typeof DepositForm> = {
+const meta: Meta<typeof YoDepositForm> = {
   title: 'WalletGenie Treasury / Deposit Form',
-  component: DepositForm,
+  component: YoDepositForm,
   decorators: [WalletDecorator],
   parameters: {
     layout: 'centered',
@@ -12,7 +12,7 @@ const meta: Meta<typeof DepositForm> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof DepositForm>;
+type Story = StoryObj<typeof YoDepositForm>;
 
 export const Base: Story = {
   args: {
