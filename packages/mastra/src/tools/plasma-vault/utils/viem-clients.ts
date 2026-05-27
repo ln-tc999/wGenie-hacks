@@ -1,5 +1,5 @@
 import { createPublicClient, http, type PublicClient, type Chain } from 'viem';
-import { mainnet, arbitrum, base } from 'viem/chains';
+import { mainnet, arbitrum, base, mantle } from 'viem/chains';
 import { RPC_URLS } from '../../../env';
 
 /**
@@ -10,6 +10,7 @@ export const SUPPORTED_CHAINS: Record<number, Chain> = {
   1: mainnet,
   42161: arbitrum,
   8453: base,
+  5000: mantle,
 };
 
 /**
@@ -19,6 +20,7 @@ export const CHAIN_NAMES: Record<number, string> = {
   1: 'Ethereum',
   42161: 'Arbitrum',
   8453: 'Base',
+  5000: 'Mantle',
 };
 
 /**
