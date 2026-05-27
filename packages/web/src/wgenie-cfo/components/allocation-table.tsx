@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import { useUserPerformance } from '@walletgenie-protocol/react';
 import type { Address } from 'viem';
 import type { TreasuryPosition } from '../hooks/use-treasury-positions';
 import type { MantleVaultData } from '../hooks/use-vaults-data';
@@ -43,13 +42,7 @@ function formatCompactAsset(value: number, symbol: string): string {
 }
 
 function VaultRowPerformance({ vaultAddress }: { vaultAddress: Address }) {
-  const { performance } = useUserPerformance(vaultAddress);
-  if (!performance?.unrealized?.formatted) return <span className="text-wgenie-muted">—</span>;
-  return (
-    <span className="font-mono text-xs text-primary">
-      {performance.unrealized.formatted}
-    </span>
-  );
+  return <span className="text-wgenie-muted">—</span>;
 }
 
 function VaultDot({ color }: { color: string }) {
