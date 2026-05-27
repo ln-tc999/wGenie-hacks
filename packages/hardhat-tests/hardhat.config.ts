@@ -1,5 +1,5 @@
 import type { HardhatUserConfig } from 'hardhat/config';
-import { base, mainnet } from 'viem/chains';
+import { base, mainnet, mantleSepoliaTestnet } from 'viem/chains';
 
 import hardhatToolboxViemPlugin from '@nomicfoundation/hardhat-toolbox-viem';
 import '@nomicfoundation/hardhat-node-test-runner';
@@ -32,6 +32,11 @@ const config: HardhatUserConfig = {
       forking: {
         url: env.RPC_URL_BASE,
       },
+    },
+    mantleSepolia: {
+      url: env.RPC_URL_MANTLE_SEPOLIA,
+      chainId: mantleSepoliaTestnet.id,
+      accounts: env.DEPLOYER_PRIVATE_KEY ? [env.DEPLOYER_PRIVATE_KEY] : [],
     },
   },
 };
