@@ -1,6 +1,6 @@
 import { createConfig } from 'ponder';
 import { erc4626ABI } from './abis/erc4626ABI';
-import { arbitrum, base, mainnet, plasma, unichain } from 'viem/chains';
+import { arbitrum, base, mainnet, mantle, plasma, unichain } from 'viem/chains';
 import { getChainStartBlock, getChainVaults } from './src/contracts';
 
 export default createConfig({
@@ -29,6 +29,10 @@ export default createConfig({
       id: plasma.id,
       rpc: process.env.PONDER_RPC_URL_PLASMA,
     },
+    mantle: {
+      id: mantle.id,
+      rpc: process.env.PONDER_RPC_URL_MANTLE,
+    },
   },
   contracts: {
     ERC4626: {
@@ -53,6 +57,10 @@ export default createConfig({
         plasma: {
           address: getChainVaults(plasma.id).map((vault) => vault.address),
           startBlock: getChainStartBlock(plasma.id),
+        },
+        mantle: {
+          address: getChainVaults(mantle.id).map((vault) => vault.address),
+          startBlock: getChainStartBlock(mantle.id),
         },
       },
     },
