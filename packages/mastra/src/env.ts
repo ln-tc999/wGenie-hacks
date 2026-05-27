@@ -32,6 +32,7 @@ const envSchema = z.object({
   ETHEREUM_RPC_URL: z.string().url().optional(),
   ARBITRUM_RPC_URL: z.string().url().optional(),
   BASE_RPC_URL: z.string().url().optional(),
+  MANTLE_RPC_URL: z.string().url().optional(),
 
   /**
    * Turso remote LibSQL URL (required for Vercel deployment)
@@ -53,6 +54,7 @@ const envSchema = z.object({
   TENDERLY_RPC_URL_ETHEREUM: z.string().url().optional(),
   TENDERLY_RPC_URL_ARBITRUM: z.string().url().optional(),
   TENDERLY_RPC_URL_BASE: z.string().url().optional(),
+  TENDERLY_RPC_URL_MANTLE: z.string().url().optional(),
 
   /**
    * API key for authenticating requests to the Mastra server
@@ -81,6 +83,7 @@ export const RPC_URLS: Record<number, string | undefined> = {
   1: env.ETHEREUM_RPC_URL, // Ethereum Mainnet
   42161: env.ARBITRUM_RPC_URL, // Arbitrum One
   8453: env.BASE_RPC_URL, // Base
+  5000: env.MANTLE_RPC_URL, // Mantle
 };
 
 /**
@@ -90,4 +93,5 @@ export const TENDERLY_RPC_URLS: Record<number, string | undefined> = {
   1: env.TENDERLY_RPC_URL_ETHEREUM,
   42161: env.TENDERLY_RPC_URL_ARBITRUM,
   8453: env.TENDERLY_RPC_URL_BASE,
+  5000: env.TENDERLY_RPC_URL_MANTLE,
 };
