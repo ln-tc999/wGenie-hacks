@@ -29,3 +29,41 @@ export const ERC4626_ZAP_IN_WITH_NATIVE_TOKEN_ADDRESS = createChainAddresses({
   [ink.id]: '0x953d2890f39361CF0A776cC1D9B5D2789fC05d53',
   [base.id]: '0xEbCf47837ad71Fc98d5B608356eaC1FF38fa67DB',
 });
+
+// ─── Fusion Factory ───
+export const FUSION_FACTORY_ADDRESS = createChainAddresses({
+  [base.id]: '0x0000000000000000000000000000000000000000', // TODO: Ganti dengan alamat nyata FusionFactory
+});
+
+// ─── ERC4626 Supply Fuses ───
+export const ERC4626_SUPPLY_FUSE_SLOT1_ADDRESS = createChainAddresses({
+  [base.id]: '0x0000000000000000000000000000000000000000',
+});
+export const ERC4626_SUPPLY_FUSE_SLOT2_ADDRESS = createChainAddresses({
+  [base.id]: '0x0000000000000000000000000000000000000000',
+});
+export const ERC4626_SUPPLY_FUSE_SLOT3_ADDRESS = createChainAddresses({
+  [base.id]: '0x0000000000000000000000000000000000000000',
+});
+export const ERC4626_SUPPLY_FUSE_SLOT4_ADDRESS = createChainAddresses({
+  [base.id]: '0x0000000000000000000000000000000000000000',
+});
+
+// ─── ERC4626 Balance Fuses ───
+export const ERC4626_BALANCE_FUSE_SLOT1_ADDRESS = createChainAddresses({
+  [base.id]: '0x0000000000000000000000000000000000000000',
+});
+export const ERC4626_BALANCE_FUSE_SLOT2_ADDRESS = createChainAddresses({
+  [base.id]: '0x0000000000000000000000000000000000000000',
+});
+export const ERC4626_BALANCE_FUSE_SLOT3_ADDRESS = createChainAddresses({
+  [base.id]: '0x0000000000000000000000000000000000000000',
+});
+export const ERC4626_BALANCE_FUSE_SLOT4_ADDRESS = createChainAddresses({
+  [base.id]: '0x0000000000000000000000000000000000000000',
+});
+
+// ─── Universal Token Swapper Fuse ───
+export const UNIVERSAL_TOKEN_SWAPPER_FUSE_ADDRESS = createChainAddresses({
+  [base.id]: '0x706ca1cA4EcE9CF23301D6AB35ce6fb7Cf25DA15',
+});
