@@ -11,7 +11,10 @@ import {
 } from 'recharts';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
-import type { SharePriceHistoryPoint } from '@walletgenie-protocol/core';
+interface SharePriceHistoryPoint {
+  timestamp: number;
+  pricePerShare: string;
+}
 
 interface Props {
   history: SharePriceHistoryPoint[] | undefined;
