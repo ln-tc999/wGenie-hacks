@@ -3,10 +3,6 @@ import {
   PlasmaVault,
   MARKET_ID,
   substrateToAddress,
-  USDYC_ADDRESS,
-  YO_WETH_ADDRESS,
-  YO_CBBTC_ADDRESS,
-  MNTC_ADDRESS,
 } from '@wgenie/fusion-sdk';
 
 /** Minimal ERC4626 ABI — only functions used by this module */
@@ -52,7 +48,7 @@ export interface TreasuryAsset {
   valueUsd: string;
 }
 
-export interface YoPosition {
+export interface MantlePosition {
   vaultAddress: string;
   vaultSymbol: string;
   shares: string;
@@ -66,7 +62,7 @@ export interface YoPosition {
 
 export interface TreasuryBalanceSnapshot {
   assets: TreasuryAsset[];
-  yoPositions: YoPosition[];
+  mantlePositions: MantlePosition[];
   totalValueUsd: string;
 }
 
@@ -107,27 +103,9 @@ export async function readTreasuryBalances(
       functionName: 'asset',
     }) as Address;
 
-    // Include all Mantle vault underlying tokens + ERC20_VAULT_BALANCE substrates
-    const chainId = plasmaVault.chainId;
-    const yoUnderlyings = [
-      USDYC_ADDRESS[chainId],
-      YO_WETH_ADDRESS[chainId],
-      YO_CBBTC_ADDRESS[chainId],
-      MNTC_ADDRESS[chainId],
-    ].filter((a): a is Address => a !== undefined);
-
+    // Try ERC20_VAULT_BALANCE substrates for any extra tokens
     let tokenAddresses: Address[] = [underlyingAddress];
     const addrSet = new Set(tokenAddresses.map(a => a.toLowerCase()));
-
-    // Add all Mantle vault underlyings
-    for (const addr of yoUnderlyings) {
-      if (!addrSet.has(addr.toLowerCase())) {
-        tokenAddresses.push(addr);
-        addrSet.add(addr.toLowerCase());
-      }
-    }
-
-    // Also try ERC20_VAULT_BALANCE substrates for any extra tokens
     try {
       const substrates = await plasmaVault.getMarketSubstrates(MARKET_ID.ERC20_VAULT_BALANCE);
       const substrateAddrs = substrates
@@ -140,7 +118,7 @@ export async function readTreasuryBalances(
         }
       }
     } catch {
-      // ERC20_VAULT_BALANCE substrates not configured — fine, we have wgenie underlyings
+      // ERC20_VAULT_BALANCE substrates not configured — fine, just use underlying
     }
 
     const metadataResults = await publicClient.multicall({
@@ -199,7 +177,7 @@ export async function readTreasuryBalances(
 
   // ─── ERC4626 (Mantle vault) positions ───
 
-  const yoPositions: YoPosition[] = [];
+  const mantlePositions: MantlePosition[] = [];
 
   // Try getMarketIds first, fall back to known ERC4626 market IDs
   let activeMarketIds: bigint[] = [];
@@ -272,7 +250,7 @@ export async function readTreasuryBalances(
         }
 
         totalValueUsdFloat += valueUsd;
-        yoPositions.push({
+        mantlePositions.push({
           vaultAddress: vaultAddresses[i],
           vaultSymbol,
           shares: shares.toString(),
@@ -291,7 +269,7 @@ export async function readTreasuryBalances(
 
   return {
     assets,
-    yoPositions,
+    mantlePositions,
     totalValueUsd: totalValueUsdFloat.toFixed(2),
   };
 }
