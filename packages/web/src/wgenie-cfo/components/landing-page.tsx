@@ -13,7 +13,7 @@ import {
   Zap,
 } from 'lucide-react';
 
-const VAULT_URL = '/vaults/8453/0x09d1C2E03F73853916Ee86b4e1A729F9FbAA960D';
+const VAULT_URL = '/vaults/5000/0x0000000000000000000000000000000000000000';
 const FEATURES = [
   {
     icon: Zap,
@@ -46,7 +46,7 @@ const STEPS = [
     number: '01',
     title: 'Deploy Your Vault',
     description:
-      'A guided 6-step wizard deploys your personal PlasmaVault on Base with all roles, fuses, and market configurations ready.',
+      'A guided 6-step wizard deploys your personal PlasmaVault on Mantle with all roles, fuses, and market configurations ready.',
   },
   {
     number: '02',
@@ -390,11 +390,11 @@ export function YoLandingPage() {
               'wgenie Protocol SDK',
               'wGenie Fusion',
               'Mastra AI',
-              'Base L2',
+              'Mantle L2',
               'Next.js',
               'wagmi',
               'viem',
-              'Odos DEX',
+              'Merchant Moe',
               'ERC-4626',
             ].map((tech) => (
               <span
@@ -445,7 +445,7 @@ export function YoLandingPage() {
             <span>WalletGenie Treasury</span>
           </div>
           <span>
-            Built with wgenie Protocol SDK & wGenie Fusion — Deployed on Base
+            Built with wgenie Protocol SDK & wGenie Fusion — Deployed on Mantle
           </span>
         </div>
       </footer>
