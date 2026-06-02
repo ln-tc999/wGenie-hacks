@@ -4,6 +4,7 @@ import { exec } from 'child_process';
 import { promisify } from 'util';
 
 const execAsync = promisify(exec);
+const BYREAL_CLI = 'byreal-cli';
 
 export const getTopPoolsTool = createTool({
   id: 'get-top-pools',
@@ -21,13 +22,17 @@ Use this to analyze which pools are currently providing the best yield.`,
   }),
   execute: async ({ sortField, limit }) => {
     try {
-      // Assuming Byreal CLI supports JSON output format as required by RealClaw instructions
-      const { stdout } = await execAsync(`byreal-cli pools list --sort-field ${sortField} -o json`);
-      const pools = JSON.parse(stdout);
-      
+      const { stdout } = await execAsync(`${BYREAL_CLI} pools list --sort-field ${sortField} -o json`);
+      const parsed = JSON.parse(stdout);
+      const pools = Array.isArray(parsed)
+        ? parsed.slice(0, limit)
+        : Array.isArray(parsed?.pools)
+          ? parsed.pools.slice(0, limit)
+          : [];
+
       return {
         success: true,
-        pools: Array.isArray(pools) ? pools.slice(0, limit) : pools,
+        pools,
       };
     } catch (error) {
       return {
