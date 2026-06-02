@@ -3,11 +3,11 @@
 import { TreasuryDashboard } from './treasury-dashboard';
 import { useAccount } from 'wagmi';
 import { AgentChat } from '@/alpha/agent-chat';
-import { ToolRenderer } from '@/alpha/tools/tool-renderer';
 import { useAlphaRole } from '../hooks/use-alpha-role';
 import { Shield } from 'lucide-react';
 import type { ChainId } from '@/app/chains.config';
 import type { Address } from 'viem';
+import { TreasuryToolRenderer } from '../tools/tool-renderer';
 
 interface Props {
   chainId: ChainId;
@@ -36,7 +36,7 @@ export function TreasuryOverview({ chainId, vaultAddress }: Props) {
           apiEndpoint="/api/cfo/treasury/chat"
           body={{ callerAddress: address, vaultAddress, chainId }}
           chainId={chainId}
-          toolRenderer={ToolRenderer}
+          toolRenderer={TreasuryToolRenderer}
           emptyStateText="Ask about Mantle vaults or manage your treasury"
           placeholder="Ask about Mantle vaults or manage your treasury..."
         />
