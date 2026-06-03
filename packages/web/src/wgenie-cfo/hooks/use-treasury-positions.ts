@@ -1,7 +1,7 @@
 'use client';
 
-import { useReadContracts } from 'wagmi';
-import { erc20Abi, erc4626Abi, formatUnits, type Address } from 'viem';
+import { useReadContracts, useBalance } from 'wagmi';
+import { erc20Abi, erc4626Abi, formatUnits, type Address, zeroAddress } from 'viem';
 
 /**
  * Mantle vault configs per chain.
@@ -61,6 +61,60 @@ const MANTLE_VAULTS: Record<
       color: '#4E6FFF',
     },
   ],
+  5003: [
+    {
+      id: 'USDC',
+      name: 'USDC',
+      address: '0x0a268A0000000000000000000000000000000000',
+      underlying: 'USDC',
+      underlyingAddress: '0x0a268A0000000000000000000000000000000000',
+      underlyingDecimals: 6,
+      logo: '/assets/wgenie/USDY.png',
+      color: '#00FF8B',
+    },
+    {
+      id: 'MNT',
+      name: 'MNT',
+      address: '0x65e37b558f64e2be5768db46df22f93d85741a9e',
+      underlying: 'MNT',
+      underlyingAddress: '0x65e37b558f64e2be5768db46df22f93d85741a9e',
+      underlyingDecimals: 18,
+      logo: '/assets/wgenie/MNT.svg',
+      color: '#4E6FFF',
+    },
+    {
+      id: 'mETH',
+      name: 'mETH',
+      address: '0xdEAddEaDdeadDEadDEADDEAddEAddEAddead1111',
+      underlying: 'WETH',
+      underlyingAddress: '0xdEAddEaDdeadDEadDEADDEAddEAddEAddead1111',
+      underlyingDecimals: 18,
+      logo: '/assets/wgenie/mETH.svg',
+      color: '#627EEA',
+    },
+  ],
+  5000: [
+    {
+      id: 'USDY',
+      name: 'USDY',
+      address: '0x5b3B637651061C1D71542fF1c6628A6B0A89c256',
+      underlying: 'USDC',
+      underlyingAddress: '0x09bc4e0d864851411267c6aabd1c217ef5b28394',
+      underlyingDecimals: 6,
+      logo: '/assets/wgenie/USDY.png',
+      color: '#00FF8B',
+    },
+    {
+      id: 'mETH',
+      name: 'mETH',
+      address: '0xc1375d048dfd270830a6c6d32847385d82fe25d0',
+      underlying: 'WETH',
+      underlyingAddress: '0xdeaddeaddeaddeaddeaddeaddeaddeaddead1111',
+      underlyingDecimals: 18,
+      logo: '/assets/wgenie/mETH.svg',
+      color: '#627EEA',
+    },
+  ],
 };
 
 export interface TreasuryPosition {
@@ -89,6 +143,12 @@ export function useTreasuryPositions({
   treasuryAddress,
 }: UseTreasuryPositionsParams) {
   const mantleVaults = MANTLE_VAULTS[chainId] ?? [];
+
+  // ─── Native balance for MNT ───
+  const { data: nativeBalanceResult, isLoading: isNativeLoading } = useBalance({
+    address: treasuryAddress,
+    chainId,
+  });
 
   // ─── Pass 1: Read share balances + per-vault unallocated balances ───
   const pass1Contracts = [
@@ -122,7 +182,17 @@ export function useTreasuryPositions({
     return result?.status === 'success' ? (result.result as bigint) : 0n;
   });
 
-  const unallocatedBalances = mantleVaults.map((_, i) => {
+  const unallocatedBalances = mantleVaults.map((vault, i) => {
+    // If it's MNT vault on Mantle, use native balance if ERC20 balance is 0
+    if (
+      (vault.id === 'MNT' || vault.underlying === 'MNT') &&
+      nativeBalanceResult?.value &&
+      (chainId === 5000 || chainId === 5003)
+    ) {
+      const erc20Bal = pass1Data?.[n + i]?.status === 'success' ? (pass1Data[n + i].result as bigint) : 0n;
+      return erc20Bal > 0n ? erc20Bal : nativeBalanceResult.value;
+    }
+
     const result = pass1Data?.[n + i];
     return result?.status === 'success' ? (result.result as bigint) : 0n;
   });
@@ -169,7 +239,7 @@ export function useTreasuryPositions({
 
   return {
     positions,
-    isLoading: isPass1Loading || isPass2Loading,
+    isLoading: isPass1Loading || isPass2Loading || isNativeLoading,
     activePositions: positions.filter((p) => p.shares > 0n),
   };
 }
