@@ -1,16 +1,17 @@
 import { createPublicClient, http, type PublicClient, type Chain } from 'viem';
-import { mainnet, arbitrum, base, mantle } from 'viem/chains';
+import { mainnet, arbitrum, base, mantle, mantleSepoliaTestnet } from 'viem/chains';
 import { RPC_URLS } from '../../../env';
 
 /**
  * Supported chains mapping by chain ID
- * Starting with Ethereum, Base, and Arbitrum
+ * Starting with Ethereum, Base, Arbitrum, and Mantle
  */
 export const SUPPORTED_CHAINS: Record<number, Chain> = {
   1: mainnet,
   42161: arbitrum,
   8453: base,
   5000: mantle,
+  5003: mantleSepoliaTestnet,
 };
 
 /**
@@ -21,6 +22,7 @@ export const CHAIN_NAMES: Record<number, string> = {
   42161: 'Arbitrum',
   8453: 'Base',
   5000: 'Mantle',
+  5003: 'Mantle Sepolia',
 };
 
 /**
