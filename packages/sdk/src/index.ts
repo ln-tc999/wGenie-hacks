@@ -73,6 +73,7 @@ export {
   ERC4626_BALANCE_FUSE_SLOT3_ADDRESS,
   ERC4626_BALANCE_FUSE_SLOT4_ADDRESS,
   UNIVERSAL_TOKEN_SWAPPER_FUSE_ADDRESS,
+  WALLETGENIE_TREASURY_ADDRESS,
 } from './fusion.addresses';
 export { addressSchema, hexSchema } from './utils/schema';
 
