@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
     vaultAddress && isAddress(vaultAddress, { strict: false })
       ? ` The user's treasury vault address is ${vaultAddress} on chainId ${chainId}.`
       : ' The user has not created a treasury vault yet.';
-  const system = `CURRENT CONTEXT:${callerContext}${vaultContext} Chain: ${chainId ?? 8453} (Base).`;
+  const system = `CURRENT CONTEXT:${callerContext}${vaultContext} Chain: ${chainId ?? 5003} (Mantle Sepolia).`;
 
   // Include sessionId so each page refresh gets a fresh thread (no stale memory)
   const sessionSuffix = sessionId ? `-${sessionId}` : '';
