@@ -13,7 +13,7 @@ import {
   Zap,
 } from 'lucide-react';
 
-const VAULT_URL = '/vaults/5000/0x0000000000000000000000000000000000000000';
+const VAULT_URL = '/vaults/5003/0x3c13BDd505DE69bB0DF0a2e68A0Cd93a44beB0b4';
 const FEATURES = [
   {
     icon: Zap,
