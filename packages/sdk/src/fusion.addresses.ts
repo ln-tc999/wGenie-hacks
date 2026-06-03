@@ -7,6 +7,7 @@ import {
   ink,
   plasma,
   avalanche,
+  mantleSepoliaTestnet,
 } from 'viem/chains';
 import { createChainAddresses } from './utils/create-chain-addresses';
 
@@ -66,4 +67,9 @@ export const ERC4626_BALANCE_FUSE_SLOT4_ADDRESS = createChainAddresses({
 // ─── Universal Token Swapper Fuse ───
 export const UNIVERSAL_TOKEN_SWAPPER_FUSE_ADDRESS = createChainAddresses({
   [base.id]: '0x706ca1cA4EcE9CF23301D6AB35ce6fb7Cf25DA15',
+});
+
+// ─── WalletGenie Treasury (Mantle) ───
+export const WALLETGENIE_TREASURY_ADDRESS = createChainAddresses({
+  [mantleSepoliaTestnet.id]: '0x3c13BDd505DE69bB0DF0a2e68A0Cd93a44beB0b4',
 });
