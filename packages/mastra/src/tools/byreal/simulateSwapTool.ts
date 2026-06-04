@@ -4,6 +4,7 @@ import { exec } from 'child_process';
 import { promisify } from 'util';
 
 const execAsync = promisify(exec);
+const BYREAL_CLI = 'byreal-cli';
 
 export const simulateSwapTool = createTool({
   id: 'simulate-swap',
@@ -22,9 +23,9 @@ IMPORTANT: Always run this before executing a swap.`,
   }),
   execute: async ({ inputMint, outputMint, amount }) => {
     try {
-      const { stdout } = await execAsync(`byreal-cli swap execute --input-mint ${inputMint} --output-mint ${outputMint} --amount ${amount} --dry-run -o json`);
+      const { stdout } = await execAsync(`${BYREAL_CLI} swap execute --input-mint ${inputMint} --output-mint ${outputMint} --amount ${amount} --dry-run -o json`);
       const simulationResult = JSON.parse(stdout);
-      
+
       return {
         success: true,
         simulationResult,
