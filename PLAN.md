@@ -83,14 +83,15 @@ Byreal CLI udah terinstall (`@byreal-io/byreal-cli@0.3.6`).
 
 ---
 
-## Phase 4: UI Polish
+## Phase 4: UI Polish ✅
 
-### TODO:
-- [ ] Treasury overview card (balance, deposits chart)
-- [ ] Chat interface — streaming response
-- [ ] Action cards (Proposal → Execute / Cancel buttons)
-- [ ] Loading states
-- [ ] Error handling (model down, TX failed, insufficient balance)
+### DONE:
+- [x] Treasury overview card (balance, deposits chart)
+- [x] Chat interface — streaming response
+- [x] Action cards (Proposal → Execute / Cancel buttons)
+- [x] Loading states
+- [x] Error handling (model down, TX failed, insufficient balance)
+- [x] Ponder-based transaction history side panel
 
 ### Chat Route:
 - `packages/web/src/app/api/cfo/treasury/chat/route.ts` — proxy ke Mastra `POST /chat/wgenieCfoAgent`
