@@ -152,6 +152,38 @@ export const depositor = onchainTable(
   }),
 );
 
+// WalletGenieTreasury Events
+
+export const treasuryDeposit = onchainTable('treasury_deposit', (t) => ({
+  id: t.text().primaryKey(),
+  chainId: t.integer().notNull(),
+  treasuryAddress: t.hex().notNull(),
+  user: t.hex().notNull(),
+  amount: t.bigint().notNull(),
+  timestamp: t.integer().notNull(),
+  transactionHash: t.hex().notNull(),
+}));
+
+export const treasuryExecution = onchainTable('treasury_execution', (t) => ({
+  id: t.text().primaryKey(),
+  chainId: t.integer().notNull(),
+  treasuryAddress: t.hex().notNull(),
+  target: t.hex().notNull(),
+  value: t.bigint().notNull(),
+  data: t.hex().notNull(),
+  timestamp: t.integer().notNull(),
+  transactionHash: t.hex().notNull(),
+}));
+
+export const treasuryManager = onchainTable('treasury_manager', (t) => ({
+  id: t.text().primaryKey(),
+  chainId: t.integer().notNull(),
+  treasuryAddress: t.hex().notNull(),
+  manager: t.hex().notNull(),
+  timestamp: t.integer().notNull(),
+  transactionHash: t.hex().notNull(),
+}));
+
 // Fuse Events
 
 export const fuseEvent = onchainTable(
