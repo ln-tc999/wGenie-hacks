@@ -6,6 +6,7 @@ import { createSupabaseServerClient } from '@/lib/supabase/server';
 const WHITELISTED_ADDRESSES: Address[] = [
   '0xa6a7b66ebbb5cbfdff3c83781193618ee4e22f4d',
   '0x35b4915b0fCA6097167fAa8340D3af3E51AA3841',
+  '0x3a8d93D5F52a26689b075A49E67F4f8924BeC84B',
 ];
 
 // --- Rate limiting (in-memory, per IP) ---
