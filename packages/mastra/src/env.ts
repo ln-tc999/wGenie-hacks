@@ -19,9 +19,8 @@ const envSchema = z.object({
     .optional(),
 
   /**
-   * Model to use for agents
-   * Defaults to 'openrouter/anthropic/claude-haiku-4.5' (Claude Haiku 4.5)
-   * This model handles parallel tool calls excellently
+   * Model to use for agents (string ID — actual model instance is resolved in this module)
+   * Defaults to 'openrouter/anthropic/claude-haiku-4.5'
    */
   MODEL: z.string().optional().default('openrouter/anthropic/claude-haiku-4.5'),
 
@@ -62,6 +61,18 @@ const envSchema = z.object({
    * Must match the key sent by the Next.js web app in the X-API-Key header
    */
   MASTRA_API_KEY: z.string().min(1, 'MASTRA_API_KEY is required for API protection'),
+
+  /**
+   * NVIDIA API key for accessing NVIDIA AI Foundation models
+   * Required when MODEL uses nvidia/ provider (e.g. nvidia/meta/llama-3.1-70b-instruct)
+   */
+  NVIDIA_API_KEY: z.string().optional(),
+
+  /**
+   * NVIDIA API base URL (optional)
+   * Defaults to https://integrate.api.nvidia.com/v1
+   */
+  NVIDIA_BASE_URL: z.string().url().optional(),
 });
 
 /**
@@ -98,3 +109,9 @@ export const TENDERLY_RPC_URLS: Record<number, string | undefined> = {
   5000: env.TENDERLY_RPC_URL_MANTLE,
   5003: env.MANTLE_SEPOLIA_RPC_URL, /* no tenderly Sepolia */
 };
+
+function resolveModel() {
+  return env.MODEL;
+}
+
+export const model = resolveModel();
