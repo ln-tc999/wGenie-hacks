@@ -1,6 +1,6 @@
 import { Agent } from '@mastra/core/agent';
 import { Memory } from '@mastra/memory';
-import { env } from '../env';
+import { model } from '../env';
 import { createStorage } from '../storage';
 import {
   readTreasuryBalancesTool,
@@ -55,7 +55,7 @@ The treasury deployed at 0x3c13BDd505DE69bB0DF0a2e68A0Cd93a44beB0b4:
 1. User asks about their treasury → use readWalletGenieTreasuryTool.
 2. User wants to swap → describe what execute() would call on Merchant Moe.
 3. You cannot execute transactions directly — only propose what the manager should execute.`,
-  model: env.MODEL,
+  model,
   tools: {
     readTreasuryBalancesTool,
     readWalletGenieTreasuryTool,
