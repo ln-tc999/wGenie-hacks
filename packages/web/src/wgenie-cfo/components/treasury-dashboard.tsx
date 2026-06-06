@@ -8,6 +8,7 @@ import { useTreasuryPositions } from '../hooks/use-treasury-positions';
 import { useMantleVaultsData, useYoPrices } from '../hooks/use-vaults-data';
 import { PortfolioSummary } from './portfolio-summary';
 import { AllocationTable } from './allocation-table';
+import { TreasuryHistory } from './treasury-history';
 
 interface Props {
   chainId: ChainId;
@@ -45,14 +46,22 @@ export function TreasuryDashboard({ chainId, vaultAddress }: Props) {
         userAddress={userAddress}
       />
 
-      {/* Allocation table with vault APR/TVL */}
-      <AllocationTable
-        chainId={chainId}
-        positions={positions}
-        vaultsData={vaultsData}
-        prices={prices ?? {}}
-        isLoading={isPositionsLoading || isVaultsLoading}
-      />
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
+        <div className="lg:col-span-2">
+          {/* Allocation table with vault APR/TVL */}
+          <AllocationTable
+            chainId={chainId}
+            positions={positions}
+            vaultsData={vaultsData}
+            prices={prices ?? {}}
+            isLoading={isPositionsLoading || isVaultsLoading}
+          />
+        </div>
+        <div className="space-y-3">
+          {/* Recent activity from Ponder */}
+          <TreasuryHistory treasuryAddress={vaultAddress} chainId={chainId} />
+        </div>
+      </div>
     </div>
   );
 }
