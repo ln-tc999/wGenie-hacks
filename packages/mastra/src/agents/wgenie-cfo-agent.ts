@@ -6,6 +6,8 @@ import {
   readTreasuryBalancesTool,
   readWalletGenieTreasuryTool,
   createMerchantMoeSwapActionTool,
+  createAaveAllocationActionTool,
+  createAaveWithdrawActionTool,
 } from '../tools/wgenie-cfo';
 import {
   getTopPoolsTool,
@@ -42,24 +44,28 @@ You help users analyze their wallets, optimize yield, and execute DeFi strategie
 ### WalletGenie Treasury (Mantle Sepolia, chainId 5003)
 The treasury deployed at 0x3c13BDd505DE69bB0DF0a2e68A0Cd93a44beB0b4:
 - **readWalletGenieTreasuryTool**: Read treasury's MNT balance, user deposits, owner/manager.
+- **readTreasuryBalancesTool**: Read ERC-20 balances in the treasury.
 - Users deposit native MNT into the treasury.
-- The treasury has an execute() function that only the manager can call to interact with other contracts (e.g., Merchant Moe DEX).
-- The manager can execute arbitrary calls — this is how swaps and DeFi interactions happen.
+- The manager can execute arbitrary calls via execute(target, value, data).
 
-### Merchant Moe (Mantle DEX)
-- **createMerchantMoeSwapActionTool**: Create a swap action for Merchant Moe DEX on Mantle.
-- Merchant Moe uses a Liquidity Book model with discrete price bins.
-- The treasury manager can call execute() to swap tokens through Merchant Moe.
+### Yield & DEX Interactions
+- **createAaveAllocationActionTool**: Propose a supply/deposit into Aave V3 on Mantle Sepolia to earn yield.
+- **createAaveWithdrawActionTool**: Propose a withdrawal from Aave V3 back to the treasury.
+- **createMerchantMoeSwapActionTool**: Create a treasury execution proposal for a Merchant Moe swap on Mantle.
 
 ## WORKFLOW
-1. User asks about their treasury → use readWalletGenieTreasuryTool.
-2. User wants to swap → describe what execute() would call on Merchant Moe.
-3. You cannot execute transactions directly — only propose what the manager should execute.`,
+1. User asks about their treasury → use readWalletGenieTreasuryTool or readTreasuryBalancesTool.
+2. User wants yield → use createAaveAllocationActionTool.
+3. User wants to swap → use createMerchantMoeSwapActionTool.
+4. Always return a structured proposal card.
+5. You cannot execute transactions directly — only propose what the manager should execute.`,
   model,
   tools: {
     readTreasuryBalancesTool,
     readWalletGenieTreasuryTool,
     createMerchantMoeSwapActionTool,
+    createAaveAllocationActionTool,
+    createAaveWithdrawActionTool,
     
     // Byreal tools
     getTopPoolsTool,
