@@ -4,6 +4,7 @@ import { exec } from 'child_process';
 import { promisify } from 'util';
 
 const execAsync = promisify(exec);
+const BYREAL_CLI = 'byreal-cli';
 
 export const analyzePoolTool = createTool({
   id: 'analyze-pool',
@@ -19,9 +20,9 @@ Returns detailed pool stats like K-line data, precise APR, and fee tier.`,
   }),
   execute: async ({ poolAddress }) => {
     try {
-      const { stdout } = await execAsync(`byreal-cli pools analyze ${poolAddress} -o json`);
+      const { stdout } = await execAsync(`${BYREAL_CLI} pools analyze ${poolAddress} -o json`);
       const poolData = JSON.parse(stdout);
-      
+
       return {
         success: true,
         poolData,
