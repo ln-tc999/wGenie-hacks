@@ -13,7 +13,7 @@
     "dev:web": "pnpm --filter @wgenie/fusion-web dev",
     "dev:web:fusion": "NEXT_PUBLIC_APP_CONFIG=fusion pnpm --filter @wgenie/fusion-web dev",
     "dev:ponder": "pnpm --filter @wgenie/fusion-ponder dev",
-    "dev:mastra": "pnpm --filter @wgenie/fusion-mastra dev",
+    "dev:mastra": "echo 'Mastra removed - CFO agent now runs inside web package'",
     "build:sdk": "pnpm --filter @wgenie/fusion-sdk build",
     "build:web": "pnpm --filter @wgenie/fusion-web build",
     "test:sdk": "pnpm --filter @wgenie/fusion-sdk test",
