@@ -1,6 +1,6 @@
 import { Loader2 } from 'lucide-react';
 import type { ToolPartProps } from '@/alpha/agent-chat';
-import type { TreasuryTransactionProposalOutput } from '@wgenie/fusion-mastra/wgenie-cfo-types';
+import type { TreasuryTransactionProposalOutput } from '@/lib/types/wgenie-cfo';
 import { TreasuryTransactionProposal } from '../components/treasury-transaction-proposal';
 
 export function TreasuryToolRenderer({ state, output, chainId }: ToolPartProps) {
