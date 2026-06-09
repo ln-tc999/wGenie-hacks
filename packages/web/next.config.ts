@@ -3,7 +3,7 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  transpilePackages: ['@wgenie/fusion-supabase-ponder', '@wgenie/fusion-mastra'],
+  transpilePackages: ['@wgenie/fusion-supabase-ponder'],
   outputFileTracingRoot: path.resolve(import.meta.dirname, '../../'),
 };
 
