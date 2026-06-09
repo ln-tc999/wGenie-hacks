@@ -1,6 +1,0 @@
-{
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "installCommand": "cd ../.. && pnpm install --frozen-lockfile",
-  "buildCommand": "cd ../.. && pnpm --filter @wgenie/fusion-sdk build && NODE_OPTIONS='--max-old-space-size=16384' pnpm --filter @wgenie/fusion-mastra build",
-  "regions": ["fra1"]
-}
