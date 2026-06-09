@@ -30,7 +30,7 @@ import { useQueryClient } from '@tanstack/react-query';
 import { ProtocolIcon, getProtocolLabel } from '@/components/protocol-icon/protocol-icon';
 import { SimulationBalanceComparison } from '../action-with-simulation/simulation-balance-comparison';
 import { TxHashLink } from '@/activity/components/tx-hash-link';
-import type { TransactionProposalOutput, BalanceSnapshot } from '@wgenie/fusion-mastra/alpha-types';
+import type { TransactionProposalOutput, BalanceSnapshot } from '@/lib/types/alpha';
 
 const ALPHA_ROLE_ID = 200n;
 
