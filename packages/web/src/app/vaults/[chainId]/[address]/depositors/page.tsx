@@ -1,11 +1,10 @@
-import { VaultDepositorsContent } from '@/vault-details/components/vault-depositors-content';
+import { redirect } from 'next/navigation';
 
-import { getAppConfig } from '@/lib/app-config';
-
-export function generateMetadata() {
-  return { title: `Vault Depositors - ${getAppConfig().title}` };
-}
-
-export default function VaultDepositorsPage() {
-  return <VaultDepositorsContent />;
+export default async function VaultDepositorsRedirect({
+  params,
+}: {
+  params: Promise<{ chainId: string; address: string }>;
+}) {
+  const { chainId, address } = await params;
+  redirect(`/cfo/vaults/${chainId}/${address}/depositors`);
 }

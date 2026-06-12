@@ -1,278 +1,322 @@
-'use client';
-
 import Link from 'next/link';
 import {
   ArrowRight,
+  ArrowUpRight,
   Bot,
   GitFork,
-  Layers,
-  Lock,
   Shield,
-  Sparkles,
-  Wallet,
   Zap,
+  TrendingUp,
 } from 'lucide-react';
 
 const VAULT_URL = '/vaults/5003/0x3c13BDd505DE69bB0DF0a2e68A0Cd93a44beB0b4';
+const APP_URL = '/cfo';
+
+const STATS = [
+  { value: '$52.4K', label: 'Treasury managed' },
+  { value: '6.8%', label: 'Blended APY' },
+  { value: '3', label: 'Protocols' },
+  { value: '1', label: 'Signature to execute' },
+];
+
 const FEATURES = [
   {
     icon: Zap,
-    title: 'One-Sign Batch Execution',
+    title: 'One-sign batch execution',
     description:
-      'Swap, deposit, and rebalance across multiple Mantle vaults in a single atomic transaction. One signature, one gas payment — it either all succeeds or all reverts.',
+      'Swap, deposit, and rebalance across Mantle vaults in a single atomic transaction. One signature, one gas payment — all succeeds or all reverts.',
   },
   {
     icon: Bot,
-    title: 'AI Copilot',
+    title: 'AI copilot',
     description:
-      'Tell the agent what you want in natural language. It encodes the calldata, chains fuse actions, and presents a ready-to-sign proposal.',
+      'Describe the outcome in plain language. The agent encodes calldata, chains fuse actions, and returns a ready-to-sign proposal.',
   },
   {
     icon: GitFork,
-    title: 'Fork Simulation',
+    title: 'Simulated before signing',
     description:
-      'Every transaction is simulated on a temporary blockchain fork before you sign. See exact balance changes — no surprises.',
+      'Every transaction previews exact balance changes against live chain state before you commit. No surprises at signing time.',
   },
   {
     icon: Shield,
-    title: 'Role-Based Security',
+    title: 'Role-based security',
     description:
-      'The AI never touches private keys. Only whitelisted actions through whitelisted fuses to whitelisted markets. You control the strategy.',
+      'The agent never touches keys. Whitelisted actions, through whitelisted fuses, to whitelisted markets. You own the strategy.',
   },
 ];
 
 const STEPS = [
   {
     number: '01',
-    title: 'Deploy Your Vault',
+    title: 'Deploy your vault',
     description:
-      'A guided 6-step wizard deploys your personal PlasmaVault on Mantle with all roles, fuses, and market configurations ready.',
+      'A guided wizard deploys your personal PlasmaVault on Mantle with roles, fuses, and market configs ready.',
   },
   {
     number: '02',
     title: 'Deposit USDC',
     description:
-      'Fund your vault with a single deposit. Standard ERC-4626 flow — approve and deposit. Your capital is ready to allocate.',
+      'Fund the vault with a standard ERC-4626 deposit. Approve, deposit, and your capital is ready to allocate.',
   },
   {
     number: '03',
-    title: 'Let AI Allocate',
+    title: 'Let the agent allocate',
     description:
-      'Open the chat and say "Put 500 in USDY" or "Swap 200 to WETH and allocate to mETH." The agent handles the rest.',
+      'Say “supply 500 USDC to Aave” or “swap 200 MNT to USDC.” The agent proposes, you confirm, it executes.',
   },
 ];
 
-const VAULTS = [
-  { name: 'USDY', asset: 'USDC', color: '#00FF8B' },
-  { name: 'mETH', asset: 'WETH', color: '#627EEA' },
-  { name: 'Aave V3', asset: 'Multi-Asset', color: '#2EBAC6' },
-  { name: 'MNT', asset: 'Native', color: '#4E6FFF' },
+const STACK = [
+  'NVIDIA Llama 3.3 70B',
+  'Aave V3',
+  'Merchant Moe',
+  'Byreal CLMM',
+  'Mantle Network',
+  'Ponder Indexer',
+  'wGenie Fusion SDK',
+  'Next.js 16',
 ];
+
+function BrandMark() {
+  return (
+    <div className="flex items-center gap-2">
+      <div className="size-5 rounded-full bg-[#C5FF4A]" />
+      <span className="text-lg font-bold tracking-tight text-white">
+        WalletGenie
+      </span>
+    </div>
+  );
+}
 
 export function WalletGenieLandingPage() {
   return (
-    <div className="min-h-screen bg-wgenie-black font-sans text-white relative overflow-hidden">
-      {/* ── Hero ── */}
-      <section className="relative flex flex-col items-center justify-center px-6 pt-24 pb-20 md:pt-32 md:pb-28 text-center">
-        {/* Atmospheric glow */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
+    <div className="min-h-screen bg-[#0D0D0D] font-sans text-white">
+      {/* ── Top nav ── */}
+      <header className="sticky top-0 z-50 border-b border-[#262626] bg-[#0D0D0D]/90 backdrop-blur">
+        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+          <BrandMark />
+          <nav className="hidden items-center gap-8 text-sm text-[#8E8E8E] md:flex">
+            <a href="#features" className="transition-colors hover:text-white">
+              Product
+            </a>
+            <a href="#how" className="transition-colors hover:text-white">
+              How it works
+            </a>
+            <a href="#stack" className="transition-colors hover:text-white">
+              Stack
+            </a>
+          </nav>
+          <Link
+            href={APP_URL}
+            className="flex items-center gap-2 bg-[#C5FF4A] px-4 py-2 text-sm font-bold text-black transition-opacity hover:opacity-90"
+          >
+            Enter App
+            <ArrowRight className="size-4" />
+          </Link>
+        </div>
+      </header>
 
-        <div className="relative z-10 flex flex-col items-center gap-6 max-w-4xl">
-          <div className="flex items-center gap-3 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-bold uppercase tracking-widest animate-pulse">
-            <Bot className="w-3 h-3" />
-            AI-Powered Treasury Manager
+      {/* ── Hero ── */}
+      <section className="mx-auto max-w-6xl px-6 pb-16 pt-16 md:pt-24">
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+          {/* Copy */}
+          <div>
+            <div className="mb-6 inline-flex items-center gap-2 border border-[#262626] bg-[#141414] px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#C5FF4A]">
+              <Bot className="size-3" />
+              Personal Web3 CFO · Mantle
+            </div>
+            <h1 className="text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl">
+              Run your treasury
+              <br />
+              in one sentence.
+            </h1>
+            <p className="mt-6 max-w-md text-base leading-relaxed text-[#8E8E8E]">
+              WalletGenie is an AI agent that manages your on-chain treasury on
+              Mantle — yield on Aave, liquidity on Merchant Moe, research on
+              Byreal — through a single natural-language interface. You confirm,
+              it executes.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link
+                href={VAULT_URL}
+                className="flex items-center justify-center gap-2 bg-[#C5FF4A] px-6 py-3 text-sm font-bold text-black transition-opacity hover:opacity-90"
+              >
+                Enter Treasury
+                <ArrowRight className="size-4" />
+              </Link>
+              <Link
+                href={APP_URL}
+                className="flex items-center justify-center gap-2 border border-[#262626] bg-[#141414] px-6 py-3 text-sm font-bold text-white transition-colors hover:border-[#C5FF4A]/40"
+              >
+                View live dashboard
+              </Link>
+            </div>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-semibold tracking-tight leading-[1.1]">
-            Your Personal Web3 CFO <br />
-            <span className="text-primary">Powered by Llama 3.3</span>
-          </h1>
-
-          <p className="text-base md:text-lg text-wgenie-muted max-w-2xl leading-relaxed">
-            Stop juggling multiple protocols and manual swaps. WalletGenie AI Agent manages your treasury on Mantle — from yield optimization in Aave to liquidity on Merchant Moe — all through a single natural language interface.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 mt-2">
-            <Link
-              href={VAULT_URL}
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg bg-primary text-black font-semibold text-base hover:bg-primary/90 transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(0,255,139,0.3)]"
-            >
-              Enter Treasury
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+          {/* Product preview — echoes the /cfo overview card */}
+          <div className="border border-[#262626] bg-[#141414] p-4">
+            <div className="bg-[linear-gradient(135deg,#C5FF4A_0%,#A3E635_100%)] p-6 text-black">
+              <div className="flex items-start justify-between">
+                <span className="text-sm font-semibold opacity-70">
+                  Total Treasury Value
+                </span>
+                <span className="flex size-8 items-center justify-center rounded-full bg-black/10">
+                  <ArrowUpRight className="size-4" />
+                </span>
+              </div>
+              <p className="mt-6 text-4xl font-bold tracking-tight tabular-nums">
+                $52,418.90
+              </p>
+              <div className="mt-2 flex items-center gap-2 text-sm font-semibold">
+                <TrendingUp className="size-4" />
+                <span className="tabular-nums">+2.4%</span>
+                <span className="opacity-60 tabular-nums">
+                  +$1,228.40 · 24h
+                </span>
+              </div>
+            </div>
+            <div className="mt-4 grid grid-cols-3 divide-x divide-[#262626] border border-[#262626]">
+              {[
+                { k: 'Aave V3', v: '59.5%' },
+                { k: 'Merchant Moe', v: '28.8%' },
+                { k: 'Idle', v: '11.7%' },
+              ].map((a) => (
+                <div key={a.k} className="px-3 py-4">
+                  <p className="text-[10px] font-bold uppercase tracking-wider text-[#8E8E8E]">
+                    {a.k}
+                  </p>
+                  <p className="mt-1 text-lg font-bold tabular-nums">{a.v}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── Problem → Solution ── */}
-      <section className="relative px-6 py-16 md:py-24">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16">
-          <div className="space-y-4">
-            <span className="text-[11px] font-medium tracking-wider uppercase text-wgenie-muted">
-              The Problem
-            </span>
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
-              Treasury management is complex and time-consuming
-            </h2>
-            <ul className="space-y-3 text-wgenie-muted text-sm leading-relaxed">
-              <li className="flex gap-3">
-                <span className="text-white/30 shrink-0">—</span>
-                Fragmented liquidity across multiple Mantle protocols
-              </li>
-              <li className="flex gap-3">
-                <span className="text-white/30 shrink-0">—</span>
-                Manual execution of multi-step yield strategies
-              </li>
-              <li className="flex gap-3">
-                <span className="text-white/30 shrink-0">—</span>
-                Lack of real-time insights and automated analysis
-              </li>
-              <li className="flex gap-3">
-                <span className="text-white/30 shrink-0">—</span>
-                Managing risk and slippage on every manual swap
-              </li>
-            </ul>
-          </div>
-
-          <div className="space-y-4">
-            <span className="text-[11px] font-medium tracking-wider uppercase text-primary">
-              The Solution
-            </span>
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
-              A Unified AI Execution Hub
-            </h2>
-            <ul className="space-y-3 text-wgenie-muted text-sm leading-relaxed">
-              <li className="flex gap-3">
-                <Sparkles className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                Conversational interface for complex DeFi operations
-              </li>
-              <li className="flex gap-3">
-                <Sparkles className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                Atomic batch execution for swaps and deposits
-              </li>
-              <li className="flex gap-3">
-                <Sparkles className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                Automated yield farming via Aave V3 integration
-              </li>
-              <li className="flex gap-3">
-                <Sparkles className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                Real-time dashboard with positions, APY, and history
-              </li>
-            </ul>
-          </div>
+      {/* ── Stat strip ── */}
+      <section className="border-y border-[#262626]">
+        <div className="mx-auto grid max-w-6xl grid-cols-2 divide-[#262626] md:grid-cols-4 md:divide-x">
+          {STATS.map((s) => (
+            <div key={s.label} className="px-6 py-8">
+              <p className="text-3xl font-bold tracking-tight tabular-nums text-[#C5FF4A]">
+                {s.value}
+              </p>
+              <p className="mt-1 text-xs uppercase tracking-wider text-[#8E8E8E]">
+                {s.label}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* ── Features ── */}
-      <section className="relative px-6 py-16 md:py-24">
-        <div className="max-w-5xl mx-auto space-y-12">
-          <div className="text-center space-y-3">
-            <span className="text-[11px] font-medium tracking-wider uppercase text-wgenie-muted">
-              Engineered for Mantle
+      <section id="features" className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+        <div className="mb-12 max-w-xl">
+          <span className="text-[11px] font-bold uppercase tracking-widest text-[#8E8E8E]">
+            Engineered for Mantle
+          </span>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
+            Not a chatbot. An execution layer.
+          </h2>
+        </div>
+        <div className="grid gap-px border border-[#262626] bg-[#262626] sm:grid-cols-2">
+          {FEATURES.map((f) => (
+            <div
+              key={f.title}
+              className="group bg-[#141414] p-8 transition-colors hover:bg-[#171717]"
+            >
+              <div className="mb-5 flex size-10 items-center justify-center bg-[#C5FF4A]/10 text-[#C5FF4A]">
+                <f.icon className="size-5" />
+              </div>
+              <h3 className="text-lg font-semibold tracking-tight">
+                {f.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-[#8E8E8E]">
+                {f.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── How it works ── */}
+      <section id="how" className="border-t border-[#262626]">
+        <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+          <div className="mb-12 max-w-xl">
+            <span className="text-[11px] font-bold uppercase tracking-widest text-[#8E8E8E]">
+              From deposit to yield
             </span>
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
-              Smarter, Faster, On-Chain
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
+              Three steps to an AI-managed treasury
             </h2>
           </div>
-
-          <div className="grid sm:grid-cols-2 gap-4">
-            {FEATURES.map((feature) => (
-              <div
-                key={feature.title}
-                className="group relative bg-wgenie-dark rounded-lg border border-white/5 p-6 space-y-3 overflow-hidden backdrop-blur-sm"
-              >
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-primary/[0.05]" />
-                <div className="relative z-10">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4 ring-1 ring-primary/20 shadow-[0_0_15px_rgba(0,255,139,0.1)]">
-                    <feature.icon className="w-5 h-5 text-primary" />
-                  </div>
-                  <h3 className="text-lg font-semibold tracking-tight">
-                    {feature.title}
-                  </h3>
-                  <p className="text-sm text-wgenie-muted leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
+          <div className="grid gap-px border border-[#262626] bg-[#262626] md:grid-cols-3">
+            {STEPS.map((s) => (
+              <div key={s.number} className="bg-[#0D0D0D] p-8">
+                <p className="font-mono text-4xl font-bold tabular-nums text-[#C5FF4A]">
+                  {s.number}
+                </p>
+                <h3 className="mt-4 text-lg font-semibold tracking-tight">
+                  {s.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-[#8E8E8E]">
+                  {s.description}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── Built With ── */}
-      <section className="px-6 py-16 md:py-24">
-        <div className="max-w-4xl mx-auto space-y-8">
-          <div className="text-center space-y-3">
-            <span className="text-[11px] font-medium tracking-wider uppercase text-wgenie-muted">
-              Powered By
-            </span>
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
-              Cutting-edge AI and DeFi Stack
+      {/* ── Stack ── */}
+      <section id="stack" className="border-t border-[#262626]">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+            <h2 className="max-w-xs text-2xl font-semibold tracking-tight md:text-3xl">
+              Built on a serious stack.
             </h2>
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-3">
-            {[
-              'Mastra AI v1.2',
-              'NVIDIA Llama 3.3',
-              'Aave V3',
-              'Merchant Moe',
-              'Mantle Network',
-              'Ponder Indexer',
-              'wGenie Fusion SDK',
-              'React 19',
-              'TailwindCSS 4',
-            ].map((tech) => (
-              <span
-                key={tech}
-                className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-wgenie-muted hover:text-primary hover:border-primary/30 transition-all cursor-default"
-              >
-                {tech}
-              </span>
-            ))}
+            <div className="flex flex-wrap gap-2">
+              {STACK.map((tech) => (
+                <span
+                  key={tech}
+                  className="border border-[#262626] bg-[#141414] px-4 py-2 text-sm text-[#8E8E8E] transition-colors hover:border-[#C5FF4A]/40 hover:text-white"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* ── Final CTA ── */}
-      <section className="relative px-6 py-20 md:py-28">
-        <div className="absolute inset-0 bg-primary/[0.02]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
-
-        <div className="relative z-10 max-w-2xl mx-auto text-center space-y-6">
-          <h2 className="text-3xl md:text-5xl font-semibold tracking-tight">
-            Start managing your treasury
-          </h2>
-          <p className="text-wgenie-muted text-base md:text-lg max-w-lg mx-auto">
-            One vault for all your wgenie positions. AI-managed allocation. Atomic
-            batch execution. Full on-chain transparency.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4">
-            <Link
-              href={VAULT_URL}
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg bg-primary text-black font-semibold text-base hover:bg-primary/90 transition-colors"
-            >
-              Open App
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+      <section className="border-t border-[#262626]">
+        <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-8 px-6 py-20 md:flex-row md:items-center md:py-24">
+          <div>
+            <h2 className="text-3xl font-semibold tracking-tight md:text-5xl">
+              Start managing your treasury.
+            </h2>
+            <p className="mt-4 max-w-lg text-[#8E8E8E]">
+              One vault for every position. AI-proposed allocation, atomic batch
+              execution, full on-chain transparency.
+            </p>
           </div>
+          <Link
+            href={VAULT_URL}
+            className="flex shrink-0 items-center gap-2 bg-[#C5FF4A] px-8 py-4 text-base font-bold text-black transition-opacity hover:opacity-90"
+          >
+            Open App
+            <ArrowRight className="size-4" />
+          </Link>
         </div>
       </section>
 
       {/* ── Footer ── */}
-      <footer className="border-t border-white/5 px-6 py-8">
-        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-wgenie-muted">
-          <div className="flex items-center gap-2">
-            <img
-              src="/assets/wgenie/wgenie_no_bg.svg"
-              alt="wgenie"
-              className="h-5 w-auto opacity-50"
-            />
-            <span>WalletGenie Treasury</span>
-          </div>
-          <span>
-            Built with wgenie Protocol SDK & wGenie Fusion — Deployed on Mantle
-          </span>
+      <footer className="border-t border-[#262626]">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-8 text-xs text-[#8E8E8E] sm:flex-row">
+          <BrandMark />
+          <span>Built with wGenie Fusion SDK — deployed on Mantle</span>
         </div>
       </footer>
     </div>
