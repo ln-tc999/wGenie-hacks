@@ -20,6 +20,13 @@ const tAbi = [
   { type: 'function', name: 'owner', inputs: [], outputs: [{ name: '', type: 'address' }], stateMutability: 'view' },
   { type: 'function', name: 'manager', inputs: [], outputs: [{ name: '', type: 'address' }], stateMutability: 'view' },
   { type: 'function', name: 'paused', inputs: [], outputs: [{ name: '', type: 'bool' }], stateMutability: 'view' },
+  { type: 'function', name: 'guardrail', inputs: [], outputs: [
+    { name: 'dailyLimit', type: 'uint256', internalType: 'uint256' },
+    { name: 'maxPerTx', type: 'uint256', internalType: 'uint256' },
+    { name: 'usedToday', type: 'uint256', internalType: 'uint256' },
+    { name: 'lastReset', type: 'uint256', internalType: 'uint256' }
+  ], stateMutability: 'view' },
+  { type: 'function', name: 'whitelistedTargets', inputs: [{ name: '', type: 'address' }], outputs: [{ name: '', type: 'bool' }], stateMutability: 'view' },
 ] as const;
 const lrAbi = [
   { type: 'function', name: 'getWNATIVE', inputs: [], outputs: [{ name: '', type: 'address' }], stateMutability: 'view' },
@@ -50,6 +57,41 @@ const pAbi = [
 const AAVE_POOL: Record<number, Address> = { 5000: '0x458F293454fE0d67EC0655f3672301301DD51422', 5003: '0x458F293454fE0d67EC0655f3672301301DD51422' };
 
 const tools: Record<string, { description: string; parameters: z.ZodObject<any>; handler: (args: any) => Promise<any> }> = {
+  readGuardrailsConfig: {
+    description: 'Read treasury guardrails config, including daily limit, max per transaction, amount spent today, pause status, and whitelisted target addresses.',
+    parameters: z.object({ vaultAddress: z.string(), chainId: z.number() }),
+    handler: async (args: any) => {
+      const c = pc(args.chainId), a = args.vaultAddress as Address;
+      const [paused, guardrailData] = await Promise.all([
+        c.readContract({ address: a, abi: tAbi, functionName: 'paused' }),
+        c.readContract({ address: a, abi: tAbi, functionName: 'guardrail' }),
+      ]);
+      const MERCHANT_MOE_ROUTER = '0x013e138EF6008ae5FDFDE29700e3f2Bc61d21E3a' as Address;
+      const AAVE_POOL_ADDR = '0x458F293454fE0d67EC0655f3672301301DD51422' as Address;
+      const [isMoeWhitelisted, isAaveWhitelisted] = await Promise.all([
+        c.readContract({ address: a, abi: tAbi, functionName: 'whitelistedTargets', args: [MERCHANT_MOE_ROUTER] }),
+        c.readContract({ address: a, abi: tAbi, functionName: 'whitelistedTargets', args: [AAVE_POOL_ADDR] }),
+      ]);
+      return {
+        type: 'guardrails-config',
+        success: true,
+        data: {
+          paused,
+          dailyLimit: guardrailData[0].toString(),
+          dailyLimitFormatted: formatEther(guardrailData[0]),
+          maxPerTx: guardrailData[1].toString(),
+          maxPerTxFormatted: formatEther(guardrailData[1]),
+          usedToday: guardrailData[2].toString(),
+          usedTodayFormatted: formatEther(guardrailData[2]),
+          lastReset: guardrailData[3].toString(),
+          whitelist: {
+            merchantMoe: isMoeWhitelisted,
+            aaveV3: isAaveWhitelisted,
+          }
+        }
+      };
+    },
+  },
   readWalletGenieTreasury: {
     description: 'Read treasury MNT balance, owner, manager, user deposit.',
     parameters: z.object({ vaultAddress: z.string(), chainId: z.number(), callerAddress: z.string().optional() }),
@@ -184,6 +226,7 @@ Professional, concise CFO tone. Use plain language. Be direct.
 ## CAPABILITIES - Mantle L2 (5003 testnet / 5000 mainnet)
 - readWalletGenieTreasury: Check treasury MNT balance, owner, manager, deposits.
 - readTreasuryBalances: Check ERC-20 token balances with USD values.
+- readGuardrailsConfig: Query active daily limits, transaction limits, spent totals, and protocol whitelist status.
 - createMerchantMoeSwapAction: Propose a swap through treasury execute() on Merchant Moe.
 - createAaveAllocationAction: Propose Aave V3 supply.
 - createAaveWithdrawAction: Propose Aave V3 withdraw.
@@ -195,14 +238,19 @@ Byreal is a CLMM DEX on Solana. You can research and trade on it.
 - simulateByrealSwap: Dry-run a swap to preview price impact and output amount.
 - executeByrealSwap: Execute a swap (requires user confirmation for >$1000).
 
-## WORKFLOW
-1. User asks about treasury → readWalletGenieTreasury.
-2. User wants yield → propose supply/withdraw.
-3. User wants swap on Mantle → createMerchantMoeSwapAction.
-4. User wants Byreal research → getByrealTopPools / analyzeByrealPool.
-5. User wants Byreal trade → simulateByrealSwap first, then executeByrealSwap with confirmation.
-6. Always return structured proposals for on-chain actions.
-7. You cannot execute Mantle transactions directly - only propose.`;
+## WORKFLOW & GUARDRAIL SAFETY RULES
+1. If the user asks about treasury limits, whitelists, settings, or safety → call readGuardrailsConfig.
+2. Before proposing any transaction (swap/supply/withdraw) on Mantle:
+   a. Check the transaction amount against maxPerTx and dailyLimit (via readGuardrailsConfig).
+   b. Check if the target protocol contract address is whitelisted.
+   c. If a proposed action would exceed any limit or target is not whitelisted, DO NOT generate a proposal immediately. Instead, warn the user clearly about the specific guardrail violation and suggest they update their limits on the Settings page first, or offer to scale down the amount to fit their limits.
+3. User asks about treasury → readWalletGenieTreasury.
+4. User wants yield → propose supply/withdraw.
+5. User wants swap on Mantle → createMerchantMoeSwapAction.
+6. User wants Byreal research → getByrealTopPools / analyzeByrealPool.
+7. User wants Byreal trade → simulateByrealSwap first, then executeByrealSwap with confirmation.
+8. Always return structured proposals for on-chain actions.
+9. You cannot execute Mantle transactions directly - only propose.`;
 
 function buildToolDefs() {
   return Object.entries(tools).map(([name, t]) => {

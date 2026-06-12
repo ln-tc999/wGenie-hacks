@@ -394,7 +394,7 @@ export class PlasmaVault {
   }
 
   public async getBalanceFuses() {
-    const address = UNIVERSAL_READER_BALANCE_FUSES_ADDRESSES[this.chainId];
+    const address = UNIVERSAL_READER_BALANCE_FUSES_ADDRESSES[this.chainId] as Address;
 
     const [_, balanceFuseAddresses] = await this.publicClient.readContract({
       address,
@@ -732,7 +732,7 @@ export class PlasmaVault {
   }
 
   public async getPrehooksInfo() {
-    const address = UNIVERSAL_READER_PREHOOKS_INFO_ADDRESSES[this.chainId];
+    const address = UNIVERSAL_READER_PREHOOKS_INFO_ADDRESSES[this.chainId] as Address;
 
     const prehooksInfo = await this.publicClient.readContract({
       address,
