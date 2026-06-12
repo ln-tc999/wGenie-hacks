@@ -1,19 +1,29 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import {
   ArrowDownLeft,
   ArrowUpRight,
   Repeat,
+  Loader2,
   type LucideIcon,
 } from 'lucide-react';
-import {
-  ACTIVITY_ROWS,
-  type ActivityKind,
-} from '@/wgenie-cfo/components/dashboard/mock-data';
 import { cn } from '@/lib/utils';
+import { TREASURY } from '@/wgenie-cfo/components/dashboard/mock-data';
 
-const KIND_STYLE: Record<
-  ActivityKind,
-  { icon: LucideIcon; className: string }
-> = {
+type ActivityKind = 'deposit' | 'supply' | 'swap' | 'withdraw';
+
+type ActivityRow = {
+  kind: ActivityKind;
+  action: string;
+  detail: string;
+  amountLabel: string;
+  date: string;
+  status: string;
+  hash: string;
+};
+
+const KIND_STYLE: Record<ActivityKind, { icon: LucideIcon; className: string }> = {
   deposit: { icon: ArrowDownLeft, className: 'bg-[#C5FF4A]/10 text-[#C5FF4A]' },
   supply: { icon: ArrowUpRight, className: 'bg-[#8E8E8E]/10 text-[#8E8E8E]' },
   withdraw: { icon: ArrowDownLeft, className: 'bg-[#8E8E8E]/10 text-[#8E8E8E]' },
@@ -23,6 +33,37 @@ const KIND_STYLE: Record<
 const FILTERS = ['All', 'Deposit', 'Supply', 'Swap', 'Withdraw'] as const;
 
 export default function ActivityPage() {
+  const [rows, setRows] = useState<ActivityRow[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await fetch(
+          `/api/vaults/${TREASURY.chainId}/${TREASURY.address}/activity?limit=50`,
+        );
+        if (res.ok) {
+          const json = await res.json();
+          const activities = json.activities || [];
+          setRows(activities.map((a: any) => ({
+            kind: a.type === 'deposit' ? 'deposit' : a.type === 'withdraw' ? 'withdraw' : (a.type === 'swap' ? 'swap' : 'supply'),
+            action: a.type || 'Action',
+            detail: a.depositor ? `${a.depositor.slice(0, 6)}…${a.depositor.slice(-4)}` : '',
+            amountLabel: a.amount ? `${(Number(a.amount) / 1e18).toFixed(4)}` : '',
+            date: a.timestamp ? new Date(a.timestamp).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }) : '',
+            status: 'Confirmed',
+            hash: a.tx_hash?.slice(0, 10) || '',
+          })));
+        }
+      } catch {
+        // silent
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchData();
+  }, []);
+
   return (
     <div className="h-full space-y-6 overflow-y-auto p-6">
       {/* Filters */}
@@ -52,58 +93,61 @@ export default function ActivityPage() {
           <div className="col-span-2 text-right">Tx</div>
         </div>
 
-        {ACTIVITY_ROWS.map((row, idx) => {
-          const { icon: Icon, className } = KIND_STYLE[row.kind];
-          return (
-            <div
-              key={idx}
-              className="grid grid-cols-12 items-center gap-2 border-b border-[#262626] px-5 py-4 last:border-b-0 transition-colors hover:bg-[#171717]"
-            >
-              <div className="col-span-5 flex items-center gap-3">
-                <span
-                  className={cn(
-                    'flex size-9 shrink-0 items-center justify-center rounded-full',
-                    className,
-                  )}
-                >
-                  <Icon className="size-4" />
-                </span>
-                <div className="min-w-0">
-                  <p className="truncate font-bold text-white">
-                    {row.action}{' '}
-                    <span className="font-normal text-[#8E8E8E]">
-                      · {row.detail}
-                    </span>
-                  </p>
-                  <p className="truncate text-xs text-[#8E8E8E]">{row.date}</p>
-                </div>
-              </div>
-              <div className="col-span-3 text-right font-bold tabular-nums text-white">
-                {row.amountLabel}
-              </div>
-              <div className="col-span-2">
-                <span
-                  className={cn(
-                    'inline-block px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider',
-                    row.status === 'Confirmed'
-                      ? 'bg-[#C5FF4A]/10 text-[#C5FF4A]'
-                      : 'bg-[#FFAF4F]/10 text-[#FFAF4F]',
-                  )}
-                >
-                  {row.status}
-                </span>
-              </div>
-              <a
-                href="https://explorer.sepolia.mantle.xyz"
-                target="_blank"
-                rel="noreferrer"
-                className="col-span-2 text-right font-mono text-xs text-[#8E8E8E] transition-colors hover:text-[#C5FF4A]"
+        {loading ? (
+          <div className="flex items-center justify-center py-16">
+            <Loader2 className="size-6 animate-spin text-[#8E8E8E]" />
+          </div>
+        ) : rows.length === 0 ? (
+          <div className="px-5 py-12 text-center text-sm text-[#8E8E8E]">
+            No activity yet
+          </div>
+        ) : (
+          rows.map((row, idx) => {
+            const { icon: Icon, className } = KIND_STYLE[row.kind] || KIND_STYLE.supply;
+            return (
+              <div
+                key={idx}
+                className="grid grid-cols-12 items-center gap-2 border-b border-[#262626] px-5 py-4 last:border-b-0 transition-colors hover:bg-[#171717]"
               >
-                {row.hash}
-              </a>
-            </div>
-          );
-        })}
+                <div className="col-span-5 flex items-center gap-3">
+                  <span className={cn('flex size-9 shrink-0 items-center justify-center rounded-full', className)}>
+                    <Icon className="size-4" />
+                  </span>
+                  <div className="min-w-0">
+                    <p className="truncate font-bold text-white">
+                      {row.action}{' '}
+                      <span className="font-normal text-[#8E8E8E]">· {row.detail}</span>
+                    </p>
+                    <p className="truncate text-xs text-[#8E8E8E]">{row.date}</p>
+                  </div>
+                </div>
+                <div className="col-span-3 text-right font-bold tabular-nums text-white">
+                  {row.amountLabel}
+                </div>
+                <div className="col-span-2">
+                  <span
+                    className={cn(
+                      'inline-block px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider',
+                      row.status === 'Confirmed'
+                        ? 'bg-[#C5FF4A]/10 text-[#C5FF4A]'
+                        : 'bg-[#FFAF4F]/10 text-[#FFAF4F]',
+                    )}
+                  >
+                    {row.status}
+                  </span>
+                </div>
+                <a
+                  href="https://explorer.sepolia.mantle.xyz"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="col-span-2 text-right font-mono text-xs text-[#8E8E8E] transition-colors hover:text-[#C5FF4A]"
+                >
+                  {row.hash}
+                </a>
+              </div>
+            );
+          })
+        )}
       </div>
     </div>
   );
