@@ -23,7 +23,7 @@ export function TreasuryToolRenderer({ state, output, chainId }: ToolPartProps) 
     case 'treasury-transaction-proposal':
       return <TreasuryTransactionProposal {...(typed as TreasuryTransactionProposalOutput)} />;
     case 'guardrails-config': {
-      const { data } = typed as { data: any };
+      const { data } = typed as unknown as { data: any };
       if (!data) return null;
       return (
         <div className="bg-wgenie-dark rounded-lg p-3 border border-white/5 space-y-2 text-white max-w-sm mt-2">
