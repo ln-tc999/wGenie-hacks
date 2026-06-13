@@ -72,7 +72,7 @@ export function TreasuryProvider({ children }: { children: React.ReactNode }) {
       const mntFormatted = formatEther(mntBal);
       const mntValue = Number(mntFormatted) * 0.62;
       const positions = mntBal > 0n
-        ? [{ protocol: 'Idle', asset: 'MNT', amountLabel: Number(mntFormatted).toFixed(2), valueLabel: `$${mntValue.toFixed(2)}`, apyLabel: '—', changePct: 0, color: '#4E6FFF' }]
+        ? [{ protocol: 'Idle', asset: 'MNT', amountLabel: Number(mntFormatted).toFixed(2), valueLabel: `$${mntValue.toFixed(2)}`, apyLabel: '—', changePct: 0, color: '#3B5BDB' }]
         : [];
       setRaw({ mntBalance: mntBal.toString(), mntBalanceFormatted: mntFormatted, loading: false, error: null, totalValueUsd: mntValue, positions });
     } catch (e: any) {
