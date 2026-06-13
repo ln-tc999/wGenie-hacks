@@ -436,6 +436,45 @@ export type Database = {
         };
         Relationships: [];
       };
+      telegram_settings: {
+        Row: {
+          wallet_address: string;
+          chat_id: string;
+          display_name: string;
+          notif_tx_executed: boolean;
+          notif_guardrail: boolean;
+          notif_strategy_change: boolean;
+          notif_daily_report: boolean;
+          daily_report_hour: number;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          wallet_address: string;
+          chat_id: string;
+          display_name?: string;
+          notif_tx_executed?: boolean;
+          notif_guardrail?: boolean;
+          notif_strategy_change?: boolean;
+          notif_daily_report?: boolean;
+          daily_report_hour?: number;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          wallet_address?: string;
+          chat_id?: string;
+          display_name?: string;
+          notif_tx_executed?: boolean;
+          notif_guardrail?: boolean;
+          notif_strategy_change?: boolean;
+          notif_daily_report?: boolean;
+          daily_report_hour?: number;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
       treasury_manager: {
         Row: {
           id: string;
