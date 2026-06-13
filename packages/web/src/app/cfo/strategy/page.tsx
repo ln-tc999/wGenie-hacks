@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 const STATUS_STYLE: Record<Strategy['status'], string> = {
   Active: 'bg-[#C5FF4A]/10 text-[#C5FF4A]',
   Paused: 'bg-[#8E8E8E]/10 text-[#8E8E8E]',
-  Draft: 'bg-[#4E6FFF]/10 text-[#4E6FFF]',
+  Draft: 'bg-[#3B5BDB]/10 text-[#3B5BDB]',
 };
 
 export default function StrategyPage() {
@@ -34,7 +34,7 @@ export default function StrategyPage() {
             <div className="mb-3 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Target className="size-4 text-[#C5FF4A]" />
-                <h3 className="font-bold text-white">{s.name}</h3>
+                <h2 className="font-bold text-white">{s.name}</h2>
               </div>
               <span
                 className={cn(

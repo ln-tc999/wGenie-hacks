@@ -29,7 +29,7 @@ const KIND_STYLE: Record<ActivityKind, { icon: LucideIcon; className: string }> 
   deposit: { icon: ArrowDownLeft, className: 'bg-[#C5FF4A]/10 text-[#C5FF4A]' },
   supply: { icon: ArrowUpRight, className: 'bg-[#8E8E8E]/10 text-[#8E8E8E]' },
   withdraw: { icon: ArrowUpRight, className: 'bg-[#8E8E8E]/10 text-[#8E8E8E]' },
-  swap: { icon: Repeat, className: 'bg-[#4E6FFF]/10 text-[#4E6FFF]' },
+  swap: { icon: Repeat, className: 'bg-[#3B5BDB]/10 text-[#3B5BDB]' },
 };
 
 const FILTERS = ['All', 'Deposit', 'Withdraw'] as const;
@@ -70,7 +70,7 @@ export function RecentActivityCard() {
   return (
     <div className="flex flex-col border border-[#262626] bg-[#141414] p-6">
       <div className="mb-6 flex items-center justify-between">
-        <h3 className="text-lg font-bold text-white">Recent activity</h3>
+        <h2 className="text-lg font-bold text-white">Recent activity</h2>
         <div className="flex gap-3 text-[10px] font-bold uppercase tracking-wider">
           {FILTERS.map((f, i) => (
             <button

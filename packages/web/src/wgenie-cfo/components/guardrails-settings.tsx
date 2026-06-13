@@ -182,7 +182,7 @@ export function GuardrailsSettings({ chainId, vaultAddress }: GuardrailsSettings
         <Card className="bg-wgenie-dark p-4 border border-white/5 space-y-4">
           <div className="flex items-center gap-2 border-b border-white/5 pb-2">
             <Shield className="w-4 h-4 text-primary" />
-            <h3 className="text-sm font-semibold tracking-tight">On-Chain Spending Limits</h3>
+            <h2 className="text-sm font-semibold tracking-tight">On-Chain Spending Limits</h2>
           </div>
 
           <div className="space-y-3">
@@ -241,7 +241,7 @@ export function GuardrailsSettings({ chainId, vaultAddress }: GuardrailsSettings
         <Card className="bg-wgenie-dark p-4 border border-white/5 space-y-4">
           <div className="flex items-center gap-2 border-b border-white/5 pb-2">
             <Shield className="w-4 h-4 text-primary" />
-            <h3 className="text-sm font-semibold tracking-tight">DeFi Protocol Whitelist</h3>
+            <h2 className="text-sm font-semibold tracking-tight">DeFi Protocol Whitelist</h2>
           </div>
 
           <div className="space-y-4">
@@ -283,7 +283,7 @@ export function GuardrailsSettings({ chainId, vaultAddress }: GuardrailsSettings
         <Card className="bg-wgenie-dark p-4 border border-white/5 space-y-4">
           <div className="flex items-center gap-2 border-b border-white/5 pb-2">
             <Shield className="w-4 h-4 text-primary" />
-            <h3 className="text-sm font-semibold tracking-tight">Slippage & Local Limits</h3>
+            <h2 className="text-sm font-semibold tracking-tight">Slippage & Local Limits</h2>
           </div>
 
           <div className="space-y-3">
@@ -323,7 +323,7 @@ export function GuardrailsSettings({ chainId, vaultAddress }: GuardrailsSettings
         <Card className="bg-wgenie-dark p-4 border border-white/5 space-y-4">
           <div className="flex items-center gap-2 border-b border-white/5 pb-2">
             <Shield className="w-4 h-4 text-primary" />
-            <h3 className="text-sm font-semibold tracking-tight">System Status</h3>
+            <h2 className="text-sm font-semibold tracking-tight">System Status</h2>
           </div>
 
           <div className="space-y-3">

@@ -58,7 +58,7 @@ const MANTLE_VAULTS: Record<
       underlyingAddress: '0x60a3E35Cc302bFA44Cb288Bc5a4F316Fdb1adb42',
       underlyingDecimals: 6,
       logo: '/assets/wgenie/MNT.svg',
-      color: '#4E6FFF',
+      color: '#3B5BDB',
     },
   ],
   5003: [
@@ -80,7 +80,7 @@ const MANTLE_VAULTS: Record<
       underlyingAddress: '0x65e37b558f64e2be5768db46df22f93d85741a9e',
       underlyingDecimals: 18,
       logo: '/assets/wgenie/MNT.svg',
-      color: '#4E6FFF',
+      color: '#3B5BDB',
     },
     {
       id: 'mETH',

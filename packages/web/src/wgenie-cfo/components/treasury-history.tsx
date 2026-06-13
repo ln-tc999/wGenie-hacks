@@ -37,9 +37,9 @@ export function TreasuryHistory({ treasuryAddress, chainId }: Props) {
   return (
     <div className="bg-wgenie-dark rounded-lg border border-white/5 overflow-hidden">
       <div className="px-4 py-3 border-b border-white/5 bg-white/[0.02]">
-        <h3 className="text-xs font-semibold uppercase tracking-wider text-wgenie-muted">
+        <h2 className="text-xs font-semibold uppercase tracking-wider text-wgenie-muted">
           Recent Activity
-        </h3>
+        </h2>
       </div>
       <div className="divide-y divide-white/5">
         {history.map((item) => (

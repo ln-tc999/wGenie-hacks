@@ -89,9 +89,9 @@ export function AllocationTable({ chainId, positions, vaultsData, prices, isLoad
   return (
     <div className="bg-wgenie-dark rounded-lg border border-white/5 overflow-hidden">
       <div className="px-4 pt-4 pb-2">
-        <h3 className="text-xs font-medium tracking-wider uppercase text-wgenie-muted">
+        <h2 className="text-xs font-medium tracking-wider uppercase text-wgenie-muted">
           Yield Allocations
-        </h3>
+        </h2>
       </div>
 
       <table className="w-full text-sm">

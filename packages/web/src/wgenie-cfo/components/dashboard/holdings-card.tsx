@@ -2,6 +2,7 @@
 
 import { MoreVertical, ArrowUpRight, Loader2 } from 'lucide-react';
 import { useTreasury } from './treasury-provider';
+import { getTextColorForBg } from '@/lib/utils';
 
 export function HoldingsCard() {
   const { positions, totalValueUsd, loading } = useTreasury();
@@ -17,7 +18,7 @@ export function HoldingsCard() {
   return (
     <div className="flex h-full flex-col border border-[#262626] bg-[#141414] p-4">
       <div className="mb-4 flex items-center justify-between">
-        <h3 className="text-lg font-bold text-white">Treasury holdings</h3>
+        <h2 className="text-lg font-bold text-white">Treasury holdings</h2>
         <button
           type="button"
           className="flex items-center gap-1 rounded-full border border-[#262626] px-3 py-1 text-xs text-[#8E8E8E] transition-colors hover:text-white"
@@ -35,7 +36,7 @@ export function HoldingsCard() {
             className="flex items-center gap-4 border border-[#262626] p-3"
           >
             <div
-              className="flex size-10 items-center justify-center rounded-full text-xs font-bold text-white"
+              className={`flex size-10 items-center justify-center rounded-full text-xs font-bold ${getTextColorForBg(p.color)}`}
               style={{ backgroundColor: p.color }}
             >
               {p.asset.slice(0, 3)}

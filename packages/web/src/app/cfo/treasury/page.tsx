@@ -4,6 +4,7 @@ import { TrendingUp, TrendingDown, ArrowUpRight, Loader2 } from 'lucide-react';
 import { TreasuryChart } from '@/wgenie-cfo/components/dashboard/treasury-chart';
 import { useTreasury } from '@/wgenie-cfo/components/dashboard/treasury-provider';
 import { TREASURY } from '@/wgenie-cfo/components/dashboard/mock-data';
+import { getTextColorForBg } from '@/lib/utils';
 
 export default function TreasuryPage() {
   const { totalValueUsd, mntBalanceFormatted, positions, loading } = useTreasury();
@@ -46,7 +47,7 @@ export default function TreasuryPage() {
         {/* Positions table */}
         <div className="border border-[#262626] bg-[#141414] lg:col-span-7">
           <div className="flex items-center justify-between border-b border-[#262626] p-5">
-            <h3 className="text-lg font-bold text-white">Open positions</h3>
+            <h2 className="text-lg font-bold text-white">Open positions</h2>
             <span className="font-mono text-xs text-[#8E8E8E]">
               {TREASURY.address.slice(0, 6)}…{TREASURY.address.slice(-4)}
             </span>
@@ -73,7 +74,7 @@ export default function TreasuryPage() {
                 >
                   <div className="col-span-5 flex items-center gap-3">
                     <span
-                      className="flex size-9 items-center justify-center rounded-full text-[10px] font-bold text-white"
+                      className={`flex size-9 items-center justify-center rounded-full text-[10px] font-bold ${getTextColorForBg(p.color)}`}
                       style={{ backgroundColor: p.color }}
                     >
                       {p.asset.slice(0, 3)}

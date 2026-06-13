@@ -45,7 +45,7 @@ export const HOLDINGS: Holding[] = [
     name: 'Mantle',
     valueLabel: '$15,100.50',
     weightPct: 28.8,
-    color: '#4E6FFF',
+    color: '#3B5BDB',
   },
   {
     symbol: 'USDY',
@@ -63,7 +63,7 @@ export const ALLOCATIONS = [
     label: 'Merchant Moe',
     valueLabel: '$15,100',
     weightPct: 28.8,
-    color: '#4E6FFF',
+    color: '#3B5BDB',
   },
   { label: 'Idle', valueLabel: '$6,118', weightPct: 11.7, color: '#00FF8B' },
 ] as const;
@@ -153,7 +153,7 @@ export const POSITIONS: Position[] = [
     valueLabel: '$15,100.50',
     apyLabel: '11.2%',
     changePct: 2.1,
-    color: '#4E6FFF',
+    color: '#3B5BDB',
   },
   {
     protocol: 'Idle',

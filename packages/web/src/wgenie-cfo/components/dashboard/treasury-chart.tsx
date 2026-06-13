@@ -49,7 +49,7 @@ export function TreasuryChart() {
   return (
     <div className="flex flex-col border border-[#262626] bg-[#141414] p-6">
       <div className="mb-6 flex items-center justify-between">
-        <h3 className="text-lg font-bold text-white">Treasury value</h3>
+        <h2 className="text-lg font-bold text-white">Treasury value</h2>
         <div className="flex gap-2">
           <button
             type="button"
