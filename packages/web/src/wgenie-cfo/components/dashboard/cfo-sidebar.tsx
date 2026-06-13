@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Settings, Search, PanelLeft, PanelLeftClose } from 'lucide-react';
+import { PanelLeft, PanelLeftClose, Search } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { CFO_NAV, isNavActive } from './cfo-nav';
 
@@ -102,18 +102,7 @@ export function CfoSidebar({
         })}
       </nav>
 
-      {/* Settings */}
-      {!collapsed && (
-        <div className="mt-auto px-6 pb-6 pt-6">
-          <a
-            href="#"
-            className="flex items-center gap-3 px-3 py-2 text-sm text-[#8E8E8E] transition-colors hover:text-white"
-          >
-            <Settings className="size-5" />
-            Settings
-          </a>
-        </div>
-      )}
+      {/* Settings — now in nav */}
     </aside>
   );
 }
