@@ -27,7 +27,7 @@ const KIND_STYLE: Record<ActivityKind, { icon: LucideIcon; className: string }> 
   deposit: { icon: ArrowDownLeft, className: 'bg-[#C5FF4A]/10 text-[#C5FF4A]' },
   supply: { icon: ArrowUpRight, className: 'bg-[#8E8E8E]/10 text-[#8E8E8E]' },
   withdraw: { icon: ArrowDownLeft, className: 'bg-[#8E8E8E]/10 text-[#8E8E8E]' },
-  swap: { icon: Repeat, className: 'bg-[#4E6FFF]/10 text-[#4E6FFF]' },
+  swap: { icon: Repeat, className: 'bg-[#3B5BDB]/10 text-[#3B5BDB]' },
 };
 
 const FILTERS = ['All', 'Deposit', 'Supply', 'Swap', 'Withdraw'] as const;
