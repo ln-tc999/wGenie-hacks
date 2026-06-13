@@ -4,6 +4,7 @@ import {
   Target,
   Activity,
   Bot,
+  Settings,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -22,6 +23,7 @@ export const CFO_NAV: CfoNavItem[] = [
   { label: 'Strategy', href: '/cfo/strategy', icon: Target },
   { label: 'Activity', href: '/cfo/activity', icon: Activity },
   { label: 'Agent', href: '/cfo/agent', icon: Bot, title: 'AI Agent' },
+  { label: 'Settings', href: '/cfo/settings', icon: Settings },
 ];
 
 export function isNavActive(pathname: string, href: string): boolean {
