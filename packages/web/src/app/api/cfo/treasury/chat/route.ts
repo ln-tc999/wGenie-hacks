@@ -1,10 +1,54 @@
 import { NextRequest } from 'next/server';
 import { z } from 'zod';
-import { execSync } from 'child_process';
+import { spawnSync } from 'child_process';
 import { createPublicClient, http, formatEther, encodeFunctionData, zeroAddress, erc20Abi, formatUnits, type Address } from 'viem';
 import { mantle, mantleSepoliaTestnet, type Chain } from 'viem/chains';
 import { isAddress } from 'viem';
 import { PlasmaVault, MARKET_ID, substrateToAddress } from '@wgenie/fusion-sdk';
+
+// ── Byreal helpers ────────────────────────────────────────────────────────────
+
+/** Solana base58 address: 32-44 chars, no 0/O/I/l */
+const SOLANA_ADDR_RE = /^[1-9A-HJ-NP-Za-km-z]{32,44}$/;
+
+function assertSolanaAddress(value: string, label: string) {
+  if (!SOLANA_ADDR_RE.test(value)) {
+    throw new Error(`Invalid ${label}: must be a Solana base58 address (got "${value}")`);
+  }
+}
+
+function assertPositiveAmount(value: string, label: string) {
+  const n = Number(value);
+  if (!Number.isFinite(n) || n <= 0) {
+    throw new Error(`Invalid ${label}: must be a positive number (got "${value}")`);
+  }
+}
+
+/**
+ * Run byreal-cli safely using spawnSync with an args array.
+ * Shell is never involved — no injection possible.
+ */
+function runByreal(args: string[], timeoutMs = 20000): any {
+  const result = spawnSync('byreal-cli', args, {
+    encoding: 'utf-8',
+    timeout: timeoutMs,
+    // Do NOT use shell:true — that would re-introduce injection risk
+  });
+
+  if (result.error) throw new Error(`byreal-cli spawn error: ${result.error.message}`);
+  if (result.status !== 0) {
+    const stderr = result.stderr?.trim() || 'unknown error';
+    throw new Error(`byreal-cli exited with code ${result.status}: ${stderr}`);
+  }
+
+  try {
+    return JSON.parse(result.stdout);
+  } catch {
+    throw new Error(`byreal-cli returned non-JSON output: ${result.stdout?.slice(0, 200)}`);
+  }
+}
+
+// ── Chain / RPC helpers ───────────────────────────────────────────────────────
 
 const SUPPORTED: Record<number, Chain> = { 5000: mantle, 5003: mantleSepoliaTestnet };
 const RPC: Record<number, string | undefined> = { 5000: process.env.MANTLE_RPC_URL, 5003: process.env.MANTLE_SEPOLIA_RPC_URL };
@@ -172,12 +216,24 @@ const tools: Record<string, { description: string; parameters: z.ZodObject<any>;
     parameters: z.object({ sortField: z.string().default('apr24h'), limit: z.number().default(5) }),
     handler: async (args: any) => {
       try {
-        const sf = ['apr24h', 'tvlUsd', 'volume24hUsd', 'fee24hUsd', 'priceChange24h'].includes(args.sortField) ? args.sortField : 'apr24h';
+        const VALID_SORT = ['apr24h', 'tvlUsd', 'volume24hUsd', 'fee24hUsd', 'priceChange24h'];
+        const sf = VALID_SORT.includes(args.sortField) ? args.sortField : 'apr24h';
         const lim = Math.min(Math.max(Number(args.limit) || 5, 1), 20);
-        const out = execSync(`byreal-cli pools list --sort-field ${sf} -o json`, { encoding: 'utf-8', timeout: 20000 });
-        const parsed = JSON.parse(out);
+        const parsed = runByreal(['pools', 'list', '--sort-field', sf, '-o', 'json']);
         const pools = (parsed.data?.pools || []).slice(0, lim);
-        return { type: 'byreal-pools', success: true, count: pools.length, pools: pools.map((p: any) => ({ id: p.id, pair: p.pair, apr: (p.total_apr || 0).toFixed(2) + '%', tvlUsd: '$' + (p.tvl_usd || 0).toFixed(0), volume24hUsd: '$' + (p.volume_24h_usd || 0).toFixed(0), tokenA: p.token_a?.symbol, tokenB: p.token_b?.symbol })) };
+        return {
+          type: 'byreal-pools', success: true, count: pools.length,
+          pools: pools.map((p: any) => ({
+            id: p.id,
+            pair: p.pair,
+            // field name fallbacks in case CLI output schema varies
+            apr: ((p.total_apr ?? p.apr24h ?? p.apr ?? 0) as number).toFixed(2) + '%',
+            tvlUsd: '$' + ((p.tvl_usd ?? p.tvlUsd ?? 0) as number).toFixed(0),
+            volume24hUsd: '$' + ((p.volume_24h_usd ?? p.volume24hUsd ?? 0) as number).toFixed(0),
+            tokenA: p.token_a?.symbol ?? p.tokenA,
+            tokenB: p.token_b?.symbol ?? p.tokenB,
+          })),
+        };
       } catch (e: any) { return { type: 'byreal-pools', success: false, error: String(e.message || e) }; }
     },
   },
@@ -186,8 +242,8 @@ const tools: Record<string, { description: string; parameters: z.ZodObject<any>;
     parameters: z.object({ poolAddress: z.string() }),
     handler: async (args: any) => {
       try {
-        const out = execSync(`byreal-cli pools analyze ${args.poolAddress} -o json`, { encoding: 'utf-8', timeout: 15000 });
-        const parsed = JSON.parse(out);
+        assertSolanaAddress(args.poolAddress, 'poolAddress');
+        const parsed = runByreal(['pools', 'analyze', args.poolAddress, '-o', 'json'], 15000);
         return { type: 'byreal-pool-analysis', success: true, ...parsed.data };
       } catch (e: any) { return { type: 'byreal-pool-analysis', success: false, error: String(e.message || e) }; }
     },
@@ -197,8 +253,16 @@ const tools: Record<string, { description: string; parameters: z.ZodObject<any>;
     parameters: z.object({ inputMint: z.string(), outputMint: z.string(), amount: z.string() }),
     handler: async (args: any) => {
       try {
-        const out = execSync(`byreal-cli swap execute --input-mint ${args.inputMint} --output-mint ${args.outputMint} --amount ${args.amount} --dry-run -o json`, { encoding: 'utf-8', timeout: 20000 });
-        const parsed = JSON.parse(out);
+        assertSolanaAddress(args.inputMint, 'inputMint');
+        assertSolanaAddress(args.outputMint, 'outputMint');
+        assertPositiveAmount(args.amount, 'amount');
+        const parsed = runByreal([
+          'swap', 'execute',
+          '--input-mint', args.inputMint,
+          '--output-mint', args.outputMint,
+          '--amount', String(args.amount),
+          '--dry-run', '-o', 'json',
+        ]);
         return { type: 'byreal-swap-simulation', success: true, data: parsed.data };
       } catch (e: any) { return { type: 'byreal-swap-simulation', success: false, error: String(e.message || e) }; }
     },
@@ -209,8 +273,16 @@ const tools: Record<string, { description: string; parameters: z.ZodObject<any>;
     handler: async (args: any) => {
       try {
         if (!args.confirmed) return { type: 'byreal-swap-execution', success: false, error: 'Confirmation required. Set confirmed=true to proceed. For amounts >$1000, please confirm with user first.', needsConfirmation: true };
-        const out = execSync(`byreal-cli swap execute --input-mint ${args.inputMint} --output-mint ${args.outputMint} --amount ${args.amount} --confirm -o json`, { encoding: 'utf-8', timeout: 60000 });
-        const parsed = JSON.parse(out);
+        assertSolanaAddress(args.inputMint, 'inputMint');
+        assertSolanaAddress(args.outputMint, 'outputMint');
+        assertPositiveAmount(args.amount, 'amount');
+        const parsed = runByreal([
+          'swap', 'execute',
+          '--input-mint', args.inputMint,
+          '--output-mint', args.outputMint,
+          '--amount', String(args.amount),
+          '--confirm', '-o', 'json',
+        ], 60000);
         return { type: 'byreal-swap-execution', success: true, data: parsed.data };
       } catch (e: any) { return { type: 'byreal-swap-execution', success: false, error: String(e.message || e), needsConfirmation: false }; }
     },
