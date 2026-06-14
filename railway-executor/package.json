@@ -1,0 +1,7 @@
+{
+  "name": "tool-executor",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  }
+}
