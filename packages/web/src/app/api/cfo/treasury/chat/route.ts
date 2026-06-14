@@ -28,7 +28,41 @@ function assertPositiveAmount(value: string, label: string) {
  * Run byreal-cli safely using spawnSync with an args array.
  * Shell is never involved — no injection possible.
  */
-function runByreal(args: string[], timeoutMs = 20000): any {
+/**
+ * Run byreal-cli safely. If CFO_TOOL_EXECUTOR_URL or NEXT_PUBLIC_CFO_TOOL_EXECUTOR_URL is defined,
+ * we route the execution to the Railway tool executor backend.
+ * Otherwise, we fallback to spawnSync locally (standard behavior in local dev).
+ */
+async function runByreal(args: string[], timeoutMs = 20000): Promise<any> {
+  const executorUrl = process.env.CFO_TOOL_EXECUTOR_URL || process.env.NEXT_PUBLIC_CFO_TOOL_EXECUTOR_URL;
+
+  if (executorUrl) {
+    const tool = `byreal:${args[0]}`;
+    const restArgs = args.slice(1);
+    
+    const res = await fetch(`${executorUrl}/api/execute`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ tool, args: restArgs }),
+    });
+
+    if (!res.ok) {
+      const errText = await res.text();
+      throw new Error(`Tool executor error: ${res.status} ${errText}`);
+    }
+
+    const data = await res.json();
+    if (!data.success) {
+      throw new Error(data.error || 'Unknown error from tool executor');
+    }
+
+    try {
+      return JSON.parse(data.output);
+    } catch {
+      throw new Error(`Tool executor returned non-JSON output: ${data.output?.slice(0, 200)}`);
+    }
+  }
+
   const result = spawnSync('byreal-cli', args, {
     encoding: 'utf-8',
     timeout: timeoutMs,
@@ -219,7 +253,7 @@ const tools: Record<string, { description: string; parameters: z.ZodObject<any>;
         const VALID_SORT = ['apr24h', 'tvlUsd', 'volume24hUsd', 'fee24hUsd', 'priceChange24h'];
         const sf = VALID_SORT.includes(args.sortField) ? args.sortField : 'apr24h';
         const lim = Math.min(Math.max(Number(args.limit) || 5, 1), 20);
-        const parsed = runByreal(['pools', 'list', '--sort-field', sf, '-o', 'json']);
+        const parsed = await runByreal(['pools', 'list', '--sort-field', sf, '-o', 'json']);
         const pools = (parsed.data?.pools || []).slice(0, lim);
         return {
           type: 'byreal-pools', success: true, count: pools.length,
@@ -243,7 +277,7 @@ const tools: Record<string, { description: string; parameters: z.ZodObject<any>;
     handler: async (args: any) => {
       try {
         assertSolanaAddress(args.poolAddress, 'poolAddress');
-        const parsed = runByreal(['pools', 'analyze', args.poolAddress, '-o', 'json'], 15000);
+        const parsed = await runByreal(['pools', 'analyze', args.poolAddress, '-o', 'json'], 15000);
         return { type: 'byreal-pool-analysis', success: true, ...parsed.data };
       } catch (e: any) { return { type: 'byreal-pool-analysis', success: false, error: String(e.message || e) }; }
     },
@@ -256,7 +290,7 @@ const tools: Record<string, { description: string; parameters: z.ZodObject<any>;
         assertSolanaAddress(args.inputMint, 'inputMint');
         assertSolanaAddress(args.outputMint, 'outputMint');
         assertPositiveAmount(args.amount, 'amount');
-        const parsed = runByreal([
+        const parsed = await runByreal([
           'swap', 'execute',
           '--input-mint', args.inputMint,
           '--output-mint', args.outputMint,
@@ -276,7 +310,7 @@ const tools: Record<string, { description: string; parameters: z.ZodObject<any>;
         assertSolanaAddress(args.inputMint, 'inputMint');
         assertSolanaAddress(args.outputMint, 'outputMint');
         assertPositiveAmount(args.amount, 'amount');
-        const parsed = runByreal([
+        const parsed = await runByreal([
           'swap', 'execute',
           '--input-mint', args.inputMint,
           '--output-mint', args.outputMint,
