@@ -8,10 +8,10 @@ export default function CfoDashboardPage() {
     <div className="h-full space-y-6 overflow-y-auto p-6">
       {/* Top row: overview + holdings */}
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
-        <div className="lg:col-span-4">
+        <div className="flex lg:col-span-4">
           <OverviewCard />
         </div>
-        <div className="lg:col-span-8">
+        <div className="flex lg:col-span-8">
           <HoldingsCard />
         </div>
       </div>
