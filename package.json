@@ -16,6 +16,7 @@
     "dev:mastra": "echo 'Mastra removed - CFO agent now runs inside web package'",
     "build:sdk": "pnpm --filter @wgenie/fusion-sdk build",
     "build:web": "pnpm --filter @wgenie/fusion-web build",
+    "start": "pnpm --filter @wgenie/fusion-ponder start",
     "test:sdk": "pnpm --filter @wgenie/fusion-sdk test",
     "test:hardhat": "pnpm --filter @wgenie/fusion-hardhat-tests test",
     "compile": "~/.foundry/bin/forge build",
